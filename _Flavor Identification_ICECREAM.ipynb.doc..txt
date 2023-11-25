@@ -1,0 +1,122 @@
+
+#  _Flavor Identification_ICECREAM.ipynb
+   - Module name: _Flavor Identification_ICECREAM.ipynb
+   - Purpose: Apply rapidfuzz.process.extract match algorithm to get 'Detected_Flavor(s)' to match ice cream flavor. 
+   - The module includedthe following steps:
+     - Data preparation
+       1. Created a df 'ic_df' which contained 'GTIN_NO', 'VND_ECOM_DSC' from 'ICE_CREAM_VND_DESCS.csv'.
+       2. EXTRACTING FLAVOR FIELD FROM PRIVATE SELECTION LABELS. 
+          - Create a DF pvt_slc from 'ic_df' if ic_df.VND_ECOM_DSC.str.contains('PRIVATE SELECTION') ]
+          - Create a column 'SPLIT_ON_ICECREAM' for pvt_slc by using ''ICE CREAM')' to split VND_ECOM_DSC
+          - Create a column 'Flavor' by strip the leading or trailing spaces from 'SPLIT_ON_ICECREAM'. 
+       3. Create a list bnj_flvs_ct from 'Ben_Jerrys_Flavors_CTribune.csv', convert the  'Flavor' to uppercase, strip the leading or trailing spaces
+       4, Define a dictionary 'replacements' to replace abreviations, spelling variants and punctuation, e.g.,
+          replacements = {'MOCHI': 'MOCHIE', ' VAN ': ' VANILLA ',  ... ' PBCHCSWRL': ' PEANUT BUTTER CHOCOLTE SWIRL', ',': ' ', '/': ' ', '>':' ', '<': ' '}
+       5. Created a New flavors manually discovered review list 'newest_flavors' by combining flavors from sheet_name= 'Sheet1', 'Sheet2', 'Sheet3', 'Sheet4', and 'Sheet5' in 'New_Flavors_Combos_102723.xlsx'
+          - sheet1: List of flavor  reviewede by Mallik
+          - sheet2: List of single flavor reviewede by Paul Friemal
+          - sheet3: List of double flavor reviewede by Paul Friemal
+          - sheet4: List of multiple flavor reviewede by Paul Friemal
+          - sheet5: List of other flavor reviewede by Paul Friemal
+        6. Contructed a list of 'Flavors_combo' by combining the following 'Base Flavor Categories', applied replacement define in the dictionary 'replacements', and drop 'EVERYTHING BUT THE…'.
+           - Base Flavor Categodries (Please refer to the code for the details) are 
+             - core_flavors = ['VANILLA','CHOCOLATE'.....,'RED VELVET','NEAPOLITAN']
+             - Create a list of 'pvt_slc_flavors' from 'pvt_slc.Flavor' by 
+               - Replacing 'PREMIUM' with '', replacing 'SORBET' with '', .replace 'SHERBET' with '', replacing 'NAUTRALLY' with 'NATURALLY'
+               - Removing 'PRIVATE SELECTION' from the list
+               - Using 'NATURALLY' as a seperator to split the flavor.
+             - original_fruits = ['CHERRY', 'LEMON', 'ORANGE', 'LIME', 'PEACH', 'BANANA',......, 'POMEGRANATE', 'BLUEBERRY','TANGERINE']
+             - Fruits =  original_fruits + ['MARIONBERRY','HUCKLEBERRY'......,'QUINCE','GOLDENBERRY']
+             - Nuts = ['PEANUT','ALMOND','PISTACHIO', ....,'OATMEAL','COCONUT MILK','OAT MILK','AVOCADO','TAHINI']
+             - Candy = ['CHOCOLATE','PEPPERMINT',...,'BABY RUTH','HEATH','SKITTLES'] 
+             - Desserts = ['TOFFEE','CINNAMON ROLL', ...., 'CUP CAKE', 'PB & J','FLUFFERNUTTER'] 
+             - Dairy = ['MILK','BUTTER','BROWN BUTTER','SOUR CREAM','CHEESE','CREAM CHEESE','RICOTTA','MASCARPONE','CREME FRAICHE','GOAT CHEESE'] 
+             - Sweeteners = ['HONEY','BROWN SUGAR','MOLASSES','MAPLE','DATES','PALM SUGAR','SYRUP','SAUCE']
+             - Spices = ['GINGER','CARDAMOM','CINNAMON','NUTMEG','TURMERIC','ANISE','ALLSPICE','SPICE']
+             - Boozes = ['RUM','BRANDY','BOURBON',...,'COINTREAU','AMARULA','PINA COLADA']
+             - Herbs = ['BASIL','MINT','LAVENDER']
+             - Aromas = ['ROSE','ELDERFLOWER','PANDAN','SAFFRON']
+             - Cereals = ['FROSTED','FRUIT LOOPS','CHEERIOS','TOASTED RICE','RICE KRISPIES','MALT','BARLEY','COCOA PEBBLES']
+             - Bevs = ['COFFEE','GREEN TEA','CHAI','ESPRESSO',...,'TEA','BIRTHDAY PARTY','BAIRTHDAY BASH']
+             - Others = ['SWEAT CREAM','UNICORN',..., 'STRAWBERRIES AND CREAM','PEACHES AND CREAM','BLUE RASPBERRY']
+             - Ethnic = ['ITALIAN','FRENCH VANILLA','FRENCH SILK',...,'THAI TEA','THAI ICED COFFEE', 'VIETNAMESE ICED COFFEE']
+             - Process = ['TOASTED','BAKED','ROASTED','FROSTED','SHAVED','CRUSHED','SLICED','WHIPPED','DIPPED','COATED']
+             - New = ['2IN1 SNICKERS M&Ms', "A LI'L BIT CHIPPY", 'ALMOND',..., 'CANDY CANE CHOCOLATE CHIP CORNFLAKE', 'CHOCOLATE CHIP COOKIE DOUGH','CHOCOLATE CHIP COOKIES & VANILLA & DIPPED MILK CHOCOLATE']
+
+       7.  Contructed a list of 'Flavors_combo_bnj' by combining  'Flavors_combo' and 'bnj_flvs_ct'
+       8.  Merged 'ic_df' with 'masterlist' by left join and used "GTIN_NO" as key
+           - Created a df 'masterlist' from 'ice_cream_items_org.csv'
+           - Created a df 'latest_labeled' from 'ICECREAM_OTHER_FLAVORS_101623.xlsx' and included 'Flavor_New.notnull()
+           - Created a dictionary 'latest_flav_map' from latest_labeled with key  and value = Flavor_New
+           - Excluded GTIN_NO in 'latest_labeled' from 'masterlist'   
+           - Created a column 'New_Flavor' for ic_df by mapping the GTIN_NO from the dictionary 'latest_flav_map'  
+             - If there is amatch,  the 'Flavor_New' from the dictionary will asssign to  'New_Flavor'. Otherwise,assign 'OTHER' to 'New_Flavor'
+           - Left join Ic_df with 'masterlist' on "GTIN_NO"
+
+     - Match process
+       1. Created a DF DF 'ic_df_corrected' for 'SME corrected flavors' 
+          -  Created 'SME corrected flavors' DF 'corrected' with column 'GTIN_NO','CORRECTED' by combining the DF created from the worksheet below in 'ICE_CREAM_FLAVORS_102523__Pauls_Corrections.xlsx'. Only included CORRECTED.notnull  
+             - Single_Flavors: Used to create DF corrected_single
+             - 2_Flavors: Used to create DF corrected_double 
+             - 3_Flavors: Used to create DF corrected_multiple
+             - 'OTHERs: Used to create DF corrected_other
+          - Created a df 'ic_df_corrected' from 'ic-df' by include all the GRTN_NO are in DF 'corrected' only 
+          - Removed all  the GTIN_NO in  'corrected'  from 'ic_df'
+          - Created a column 'Detected_Flavor(s)' for DF 'ic_df_corrected' by mapping the GTIN_NO in corrected to the value at 'CORRECTED' 
+
+
+      2. Fuzzy Matching Ben & Jerry's items on Flavor List  
+         - Created a df 'ic_df_bnj' for 'Ben & Jerry')from 'ic_df' included VND_ECOM_DSC.str.contains('Ben & Jerry') only
+         - Excluded 'ic_df_bnj' from 'ic_df'
+
+
+# Fuzzy Matching Ben & Jerry's items on Flavor List
+ic_df_bnj = ic_df[ic_df.VND_ECOM_DSC.str.contains('Ben & Jerry')]
+ic_df = ic_df[~ic_df.VND_ECOM_DSC.str.contains('Ben & Jerry')]
+ic_df_bnj['Detected_Flavor(s)']= \
+ic_df_bnj.ECOMMERCE_DESCRIPTION.fillna('').str.upper().replace(replacements, regex = True).apply(lambda x:flavor_match(x, flavor_list_org= Flavors_combo_bnj + [i.replace(" ","") for  i in  Flavors_combo_bnj] ))
+
+
+
+pim_load by grouping 'DPT_DSC', and the 'UNIQUE COLORS'  is joining all the colors under the same DPT_DSC with '|' as a separator.
+       2. Created a ndarray "color_DPT_DSCs" from 'colors_DPT' by joining colors in 'COLOR.unique' separated by '|' and exclude 'NONE','OTHER'.
+       3. Created a DF colors_COM with column name 'COM_CD' and 'UNIQUE COLORS' from pim_load by grouping 'COM_CD', and the 'UNIQUE COLORS'  is joining all the colors under the same COM_CD with '|' as a separator.
+       4. Created a ndarray "color_COM_CDs" from 'colors_COM' by joining colors in 'COLOR.unique' separated by '|' and exclude 'NONE','OTHER'.
+       5. Excluded COMS without color from pim_load
+       6. Created a column 'MATCHING_DESCRIPTION' for pim_load by concatenating 'ITM_LVL_DSC', 'VND_ECOM_DSC',and 'TAG_DSC'
+       7. Ran a loop for all DPT from colors_DPT.DPT_DSC to invoke 'color_match' function to get 'Detected color'  by matching 'MATCHING_DESCRIPTION' with 'color_list' and keep the result in a excel worksheet.
+   - Function "color_match" 
+       - Purpose: Called/Invoked rapidfuzz.process.extract twice to match color.
+       - "color_match" had the following parameters:
+         - item: The string you want to find the color. It passed the value to ‘query’ in rapidfuzz.process.extract. It used  the value of pim_dpt.MATCHING_DESCRIPTION.
+         - color_list_org: A list of all colors the item should be compared with. It passed the value to ‘choice’ in rapidfuzz.process.extract. 
+           - The function invoked rapidfuzz.process.extract twice. The first call used “fuzz.token_set_ratio” as a scorer, and used “color_list" for the matching process. The limit for the first call was 100.
+           - Created “final_rematch “ from the second call used “fuzz.partial_ratio” as a score and used match list from the first call as “choice” to match the “color. The limit for the second call was 5.
+         - Cutoff: Assigned value to score_cutoff which would be used to set a minimum similarity for the string improve to the performance. The first call, the default value was 85. For the second call, it used the maximum score from the first call.  
+       - Return "matched"
+         - Invoked function “remove_substrings“ to eliminate item in another item from 'final_rematch' created from the second call and created 'final_rematch'. 
+         - The 'final_rematch' will match every word in the item to determined the contents of matched.
+ 
+   - Input & Output
+     - input 
+       -  PIM_Color_Attributes_111623.csv - Extracted from CURIDQ.pimmart.CLS_SPC_ATB. 
+       -  ITM_ID_GTIN_Map_111623.csv - Extracted from CURIDQ.PIMMART.ITEM_VIEW. 
+          - Will  be used to add ITEM_NO to PIM_color_Attributes_111623.csv. 
+       -  PIM_DATA_W_TAG_DSC_110323.zip 
+          - A new PIM file where we can use TAG_DSC in addition to VND_ECOM_DSC and ITM_LVL_DSC. 
+          - Would merge with  PIM_color_Attributes_111623.csv.
+   - output: COLOR_DPT_DSC_mmddyy.xlsx.
+          - For each DPT in colors_DPT.DPT_DSC, keep 'Detected color' in the worksheet with 'DPT' as a sheet_name. 
+   - Notes
+     - Cloned from PIM_COLOR_EXTRACTION_111623.ipynb written by Shiladitya Chakraborty
+     - There were 429 colors in color_COM_CDs and 95 DPT from colors_DPT
+   - written by: Sophia Yue
+   - date: 11.17.23 
+
+Questions? 
+1). Why 'COCONUT MILK','OAT MILK','AVOCADO' are under 'nuts'
+
+EXTRACTED_COLOR
+Plese refer to 'COLOR_WAREHOUSE_DPT_112123.xlsx' which applied "matched = '|'.join(list(pd.Series(match_list)))". The foloowing are examples in 'EXTRACTED_COLOR'. They might need to tune.
+RED|Red|Lollipop|rede
+GREY|grey|Grey|Love|LOVE
