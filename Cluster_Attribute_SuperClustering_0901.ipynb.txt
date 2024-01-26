@@ -1,0 +1,59 @@
+Cluster_Attribute_SuperClustering_0901.ipynb - Shila
+Input
+ 1. clust_itm_atb - AttributeData_Itemwise_Clustering_500K_081723.csv   (320846, 274)
+   Index(['GTIN_NO', 'ClusterLabel', 'Cluster Name', 'Cluster Size',
+       'Method of Sweetening', 'Level of Sugar/Sucrose/Sweetener Claim',
+       'Whole Grains - Contained in Product', 'Flavor(s)',  ....'Color','size Description'....
+       'Ginkgo Nuts and Their Derivatives', 'Bonito fish and its derivatives']
+   -  clust_itm_atb.dtype['ClusterLabel'] # dtype('O')
+   - #clust_itm_atb['ClusterLabel'].value_counts(dropna =  False).sort_index() 
+     df_atb['ClusterLabel'].value_counts(dropna =  False).sort_index() # len = 7158
+     - type of ClusterLabel is int32
+     - ClusterLabel from  0 to 7158
+    
+atb_cols = clust_itm_atb.columns[4:]
+   - ['Method of Sweetening', 'Level of Sugar/Sucrose/Sweetener Claim',   .... 'Ginkgo Nuts and Their Derivatives', 'Bonito fish and its derivatives']
+resx = clust_itm_atb.groupby('ClusterLabel', as_index = False).apply(lambda x:{i: dict(x[i].value_counts()/len(x)) for i in atb_cols})
+  - got NAN after apply the function 
+res = pd.DataFrame(clust_itm_atb.groupby('ClusterLabel').apply(lambda x:{i: dict(x[i].value_counts()/len(x)) for i in atb_cols})).reset_index()
+for clust_itm_atb, groupby('ClusterLabel')
+for each ClusterLabel group, create a dictionary
+    key: column name from atb_cols 
+    value: a dictionary 
+      key: each value in the column
+      value: count of the value/total count of the group. 
+ - run very slow and got the following 6 extra ClusterLabel from CSV  file (7164 row in csv and 7158 from 'res')
+y and its Derivatives': {}
+
+ 
+   ClusterLabel
+
+212928
+n and Gluten Containing Grain Products': {'Contains': 0.0026845637583892616
+rivatives': {}
+#NAME?
+
+
+ClusterLabel
+y and its Derivatives': {}
+212928
+n and Gluten Containing Grain Products': {'Contains': 0.0026845637583892616
+rivatives': {}
+#NAME?
+
+====
+atb_cols = clust_itm_atb.columns[4:]
+res_freq = pd.DataFrame(clust_itm_atb.groupby('ClusterLabel').apply(lambda x:{i: len(x[i].dropna())/len(x) for i in atb_cols})).reset_index()
+pd.DataFrame(list(res[0])).to_csv('Clust_Attribute_Frequency_0831.csv', index = None)res.to_csv(path + 'Clust_Attribute_Distributions_0831.csv', index = None)
+
+
+pd.DataFrame(list(res_freq[0])).to_csv(path + 'Clust_Attribute_Frequency_0831.csv', index = None)
+res_freq[0] : column '0' in res_freq
+   - A dictionary
+     key: column name
+     value: get non null count /  length of the column
+
+  
+
+
+
