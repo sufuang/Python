@@ -1,0 +1,16 @@
+
+    att1 = set(clust_attr.iloc[clustid_1]['Non-Null Attributes'])
+    att2 = set(clust_attr.iloc[clustid_2]['Non-Null Attributes'])
+    overlap = att1.intersection(att2)
+    return len(overlap)/(np.sqrt(len(att1))*np.sqrt(len(att2)))
+
+
+
+
+#Inter cluster overlap
+def cluster_attribute_overlap(clustid_1, clustid_2):
+    att1 = set(clust_attr.iloc[[clustid_1]]['Non-Null Attributes'].apply(lambda x: ast.literal_eval(x)).sum())
+    att2 = set(clust_attr.iloc[[clustid_2]]['Non-Null Attributes'].apply(lambda x: ast.literal_eval(x)).sum())
+    overlap = att1.intersection(att2)
+    return len(overlap)/(np.sqrt(len(att1))*np.sqrt(len(att2)))
+    
