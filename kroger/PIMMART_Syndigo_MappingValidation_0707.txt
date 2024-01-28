@@ -1,0 +1,88 @@
+
+  - PIMMART_Syndigo_MappingValidation_0707  
+    - FROM sHILA
+
+%matplotlib inline
+import pandas as pd, numpy as np
+import matplotlib.pyplot as plt
+from sklearn.manifold import TSNE
+import matplotlib
+matplotlib.rcParams.update({'font.size': 16})
+#Load PIMMART Data
+pimview = pd.read_parquet('/dbfs/FileStore/tables/DATA_SCIENCE/ITM_DSC_ATTRIBUTES_NEW_parquet.gzip') # (4937400, 34)
+
+### Add correct ITM_ID and KFT level codes
+pim_ITM_ID_CODES = pd.read_csv('/dbfs/FileStore/tables/DATA_SCIENCE/PIM_CORRECT_ITM_ID_GTIN__LEVEL_CODES_061423.csv')
+pimview = pimview.merge(pim_ITM_ID_CODES, on = 'GTIN_NO', how = 'left')
+pimview['ITM_ID'] = pimview.CORRECT_ITM_ID.fillna(0).astype(int)
+
+
+SUBCOMS_excluded = ['INVENTORY VALUES','MISC SALES TRANS','MISC SALES TRANS (NON TAX)','CENTRAL SUPPLIES','MISC SALES TRANS (TX TAXABLE)','COUPON','MISCELLANEOUS INCOME','CRV/EXCISE TAX NT/NF','CRV DEPOSIT NT/F','CRV DEPOSIT T/NF','MISCELLANEOUS REFUNDS','CUSTOMER EXPENSES','ROUND UP COUPONS']
+pimview = pimview[~pimview.SUBCOM_DSC.isin(SUBCOMS_excluded)]
+
+syndigo_mapped = pd.read_csv('/dbfs/FileStore/tables/DATA_SCIENCE/Syndigo_GTIN_Mapping_060723.csv')
+syndigo_3 = pd.read_csv('/dbfs/FileStore/tables/DATA_SCIENCE/Syndigo_part3.csv')
+syndigo_4 = pd.read_csv('/dbfs/FileStore/tables/DATA_SCIENCE/Syndigo_part4.csv')
+syndigo_5 = pd.read_csv('/dbfs/FileStore/tables/DATA_SCIENCE/Syndigo_part5.csv')
+
+syndigo_concat = pd.concat([syndigo_3, syndigo_4,syndigo_5])
+syndigo_concat.dropna(how = 'all',inplace= True)
+syndigo_concat.shape    # (43501, 3)
+
+
+syndigo_concat['Levels_map'] = syndigo_concat.taxo.fillna('None').apply(lambda x: dict(zip(['Level '+str(i+1) for i in range(len(x.split('>')))],[i.strip() for i in x.split('>')])))
+
+GTIN	taxo	Taxonomy	Levels_map
+0	8.434731e+11	Health & Beauty > Personal Care > Wipes	NaN	{'Level 1': 'Health & Beauty', 'Level 2': 'Per..
+
+syndigo_concat['Level 9'].value_counts()
+ None            43499
+Short Sleeve        2
+
+for i in range(len(syndigo_concat)):
+    #print(i)
+    mapping = syndigo_concat['Levels_map'].iloc[i]
+    for (k,v) in mapping.items():
+        if not k in syndigo_concat.columns:
+            syndigo_concat[k] = 'None'
+        syndigo_concat[k].iloc[i] = v
+
+	GTIN	taxo	Taxonomy	Levels_map	Level 1	Level 2	Level 3	Level 4	Level 5	Level 6	Level 7	Level 8	Level 9
+0	8.434731e+11	Health & Beauty > Personal Care > Wipes	NaN	{'Level 1': 'Health & Beauty', 'Level 2': 'Per...	Health & Beauty	Personal Care	Wipes	None	None	None	None	None	None
+
+
+syndigo_concat.fillna('None', inplace= True)
+syndigo_concat['Level 2'].value_counts()
+
+syndigo_concat[[i for i in syndigo_concat.columns if not i in ['Levels_map','Taxonomy']]].to_csv('/dbfs/FileStore/tables/DATA_SCIENCE/syndigo3_4_5_Levels.csv', index = None)
+syndigo_GTINs = pd.concat([syndigo_mapped['GTIN'], syndigo_3.GTIN, syndigo_4.GTIN,syndigo_5.GTIN])
+
+syndigo_GTINs.nunique()  #  138533
+
+pimview[pimview['GTIN_NO'].isin(syndigo_GTINs.unique())].SUBCOM_CD.nunique()  # 3379
+SUBCOMs_absent = [i for i in SUBCOMs_unmapped if not i in SUBCOMs_mapped
+len(SUBCOMs_absent) # 1862
+<CMD 36> 
+pimview_excl = pimview[pimview.SUBCOM_CD.isin(SUBCOMs_absent)]
+pimview_excl[['GTIN_NO','PMY_DPT_CD', 'REC_DPT_CD','DPT_CD','COM_CD','SUBCOM_CD']].nunique()
+COMs_syndigo = pimview[]
+
+Syndigo_COMs = pimview[pimview['GTIN_NO'].isin(syndigo_GTINs.unique())].COM_CD.unique()
+
+pimview_excl[pimview_excl.PMY_DPT_Present_in_Syndigo ==0].PMY_DPT_DSC.value_counts()
+
+pimview_excl[pimview_excl.DPT_Present_in_Syndigo ==0].DPT_DSC.value_counts()
+(pimview_excl)
+
+pimview_excl.DPT_Present_in_Syndigo.value_counts()#/len(pimview_excl)
+
+pimview_excl.REC_DPT_Present_in_Syndigo.value_counts()/len(pimview_excl)
+pimview_excl[pimview_excl.REC_DPT_Present_in_Syndigo ==0].REC_DPT_DSC.value_counts()
+
+pimview_excl[pimview_excl.COM_Present_in_Syndigo == 0].PMY_DPT_DSC.value_counts()
+
+pimview_excl[pimview_excl.COM_Present_in_Syndigo == 0].REC_DPT_DSC.value_counts()
+
+pimview_excl[pimview_excl.DPT_Present_in_Syndigo == 0].DPT_DSC.value_counts()
+
+pimview_excl.to_csv('/dbfs/FileStore/tables/DATA_SCIENCE/Non_Syndigo_SUBCOMS_Items_072623.csv', index = None)
