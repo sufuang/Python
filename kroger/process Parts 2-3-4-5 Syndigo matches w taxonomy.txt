@@ -1,0 +1,27 @@
+
+syndigo_3 = pd.read_csv('/dbfs/FileStore/tables/DATA_SCIENCE/Syndigo_part3.csv')
+syndigo_4 = pd.read_csv('/dbfs/FileStore/tables/DATA_SCIENCE/Syndigo_part4.csv')
+syndigo_5 = pd.read_csv('/dbfs/FileStore/tables/DATA_SCIENCE/Syndigo_part5.csv')
+
+syndigo_concat = pd.concat([syndigo_3, syndigo_4,syndigo_5])syndigo_concat.dropna(how = 'all',inplace= True)
+syndigo_concat.shape    # (43501, 3)
+
+
+syndigo_concat['Levels_map'] = syndigo_concat.taxo.fillna('None').apply(lambda x: dict(zip(['Level '+str(i+1) for i in range(len(x.split('>')))],[i.strip() for i in x.split('>')])))
+for i in range(len(syndigo_concat)):
+    #print(i)
+    mapping = syndigo_concat['Levels_map'].iloc[i]
+    for (k,v) in mapping.items():
+        if not k in syndigo_concat.columns:
+            syndigo_concat[k] = 'None'
+        syndigo_concat[k].iloc[i] = v
+
+
+syndigo_concat.fillna('None', inplace= True)
+syndigo_concat['Level 2'].value_counts()
+
+
+
+-1179579992 (GTN) < 0 ????
+Would reset_index create a index column 
+syndigo_concat.to_excel(path + "Parts 2-3-4-5 Syndigo matches w taxonomy classification.xlsx",index=None)
