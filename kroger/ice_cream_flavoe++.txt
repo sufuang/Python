@@ -1,0 +1,47 @@
+
+0. ICECREAM_OTHER_FLAVORS_101323.csv
+   10731493120407 with missing 'VND_ECOM_DSC' 
+   df_oth  : 
+     - include "Detected_Flavor(s)" == OTHER	 
+     - proc  ECOMMERCE_DESCRIPTION contains "Ben &"
+	
+1. i- icce_cream_items.xlsx ~ ice_cream_items_org.xlsx
+
+    - TAG_DESCRIPTION
+2). ice_cream_items_org.xlsx :   shape (12386, 12) 
+ic_gtins = pd.read_csv('ice_cream_items_org.csv', encoding= 'ISO-8859-1', sep = '|')
+ic_gtins = f_read(path_atb, 'ice_cream_items_org.csv', encoding= 'ISO-8859-1', sep = '|')
+ ['GTIN_NO' 'ECOMMERCE_DESCRIPTION' 'RECEIPT_DESCRIPTION' 'TAG_DESCRIPTION'
+ 'PRODUCT_DESCRIPTION/MKT_MSG' 'KROGER_OWNED_FLAVOR' 'FLV_DSC'
+ 'PID_COM_DSC' 'PID_SUBCOM_DSC' 'CFIC_DEPT_NAM' 'CFIC_COM_NAM'
+ 'CFIC_SUBCOM_NAM']
+ - KROGER_OWNED_FLAVOR 
+    - (null) 320/132386
+3). Flavor - Classification(Oct11).xlsx"	
+4). df_oth = f_read(path_atb, 'ICECREAM_OTHER_FLAVORS_101323.csv')
+    columns: ['GTIN_NO' 'VND_ECOM_DSC' 'Original_Flavor' 'Detected_Flavor(s)']
+5).ICECREAM_FLAVORS_101123_comma_delim.xlsx  ~ (7) (x)
+   Flavor = other (all)
+   
+   ic_df = f_read(path_atb, 'ICECREAM_FLAVORS_101223_pipe_delim.csv', sep = '|') # shape (11086, 3) 
+   ic_df['VND_ECOM_DSC'].isnull().sum()  # 1
+6). Flavor Attribute.xlsx  (x)
+
+7). ICECREAM_FLAVORS_101123_comma_delim_101223.xlsx (x)  - I added keyword to remove non ice cream rows
+
+8). PIM_DATA_WITH_FLAVOR_ATTB_101123
+    -use GTIN_nO to match ICECREAM_OTHER_FLAVORS_101323.csv 
+	- No match
+9). PIM_Data_New_50_82Mn.csv
+    - add  ‘COM_DSC’ and ‘SUBCOM_DSC’ for 	
+	
+	
+	df_flavor = f_read(path_db, 'Flavor_CLS_SPC_ATB.xlsx', sheet_name = 'Flavor(s)') order by ITM_ID
+
+-- Remove vender name  ---
+   
+   ========== 	=================
+   +pris*       PRIVATE SELECTION/Private Selection
+
+	
+	
