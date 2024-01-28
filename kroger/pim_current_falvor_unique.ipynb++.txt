@@ -1,0 +1,46 @@
+pim_current_falvor_unique.ipynb
+
+Please add the 'Other Flavor'  field in 'PIM_DATA_WITH_FLAVOR_ATTB_100323.csv'
+
+1. PIM_DATA_WITH_FLAVOR_ATTB_100323.csv
+2. ITM_ID_GTIN_Map_100323.csv (df_gtin_map)
+    GTIN_NO    object
+    ITM_ID     object
+	file ITM_ID_GTIN_Map_100323.csv shape (5180312, 2) 
+ columns: ['GTIN_NO' 'ITM_ID']
+head: 
+           GTIN_NO     ITM_ID
+0  00000000000000  791427701
+	
+3. PIM_Data_New_50_82Mn.csv
+    GTIN_NO    object
+    ITM_ID     object
+	-     ITM_ID,GTIN with decimal; convert them to int64
+	-df_gtin_map['ITM_ID'] = df_pim_data['ITM_ID'].astype(np.int64)
+	head: 
+         ITM_ID           GTIN PMY_DPT_CD PMY_DPT_DSC REC_DPT_CD REC_DPT_DSC  \
+0   743491057.0  38000136429.0        1.0     GROCERY        1.0     GROCERY
+    - df_pim_data['ITM_ID'] = df_pim_data['ITM_ID'].astype(np.float64).astype(np.int64) 
+
+- [Friday 1:36 PM] Chakraborty, Shiladitya (NonEmp)
+You will need to map ITM_ID to GTIN first using this file, before merging with the PIM data using GTIN., since ITM_NO are not consistent and change over time
+ITM_ID_GTIN_Map_100323.csv
+a). convert 
+
+
+merged_df = pd.merge(df_pim_data[['GTIN','ITM_ID']], df_gtin_map, left_on=['GTIN'],  right_on=['GTIN_NO'],suffixes=('_df1', '_df2'), how='outer')
+merged_df.head(10)
+
+	GTIN			   ITM_ID_df1		   GTIN_NO			ITM_ID_df2
+0	38,000,136,429.00	743,491,057.00	38,000,136,429.00	789,667,912.00
+1	38,000,165,153.00	743,491,059.00	38,000,165,153.00	789,667,913.00
+2	38,000,170,423.00	743,491,061.00	38,000,170,423.00	789,667,914.00
+3	38,000,189,746.00	743,491,063.00	38,000,189,746.00	789,667,915.00
+4	38,000,180,392.00	743,491,065.00	38,000,180,392.00	789,667,916.00
+5	38,000,178,580.00	743,491,067.00	38,000,178,580.00	789,667,917.00
+6	36,000,123,333.00	743,491,069.00	36,000,123,333.00	789,667,918.00
+7	36,000,413,946.00	743,491,071.00	36,000,413,946.00	789,667,919.00
+8	40,088,502,264,265.00	743,491,073.00	40,088,502,264,265.00	789,667,920.00
+9	20,036,000,474,682.00	743,491,075.00	20,036,000,474,682.00	789,667,921.00
+
+print(merged_df[merged_df.isnull().any(axis=1)])
