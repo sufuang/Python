@@ -1,0 +1,742 @@
+
+
+#  PIM_COLOR_EXTRACTION_111723.ipynb
+   - module name: PIM_COLOR_EXTRACTION_111723.ipynb
+   - purpose: Apply rapidfuzz.process.extract match algorithm to get 'Detected color' to match color. 
+   - The module include the following steps:
+     - Data preparation
+     1. ReCreated a column 'ad PIM_color_Attributes_111623.csv to create a df 'pim_color' which contained 'TIM_ID, COLOR_CD_VLU' 
+     2. Read ITM_ID_GTIN_Map_111623.csv  to create a df 'gtin_itm_id' which contained 'GTIN_NO, ITM_ID'  
+     3. created a column 'GTIN_NO' for 'pim_color' by mapping ITM_ID between 'pim_color' and  'gtin_itm_id' 
+     4. read 'PIM_DATA_W_TAG_DSC_110323.zip' to create a df 'pim_df'
+     5. Used 'GTIN_NO' as ket to right join pim_color and pim_df to create a DF 'pim_load ='. 
+     6. In 'pim_load' renamed 'COLOR_CD_VLU' to 'COLOR', and apply fillna('NONE')
+   - Match within DPT
+     - Create a DF colors_DPT with columme name 'DPT_DSC' and 'UNIQUE COLORS' from pim_load by grouping 'DPT_DSC', and the 'UNIQUE COLORS'  is joining all the colors under the same DPT_DSC with '|' as a seperator,
+     - Create a ndarray "color_DPT_DSCs" from 'colors_DPT' by joining colors in 'COLOR.unique'  separated by '|' and exclude 'NONE','OTHER'.
+     - Create a DF colors_COM with columme name 'COM_CD' and 'UNIQUE COLORS' from pim_load by grouping 'COM_CD', and the 'UNIQUE COLORS'  is joining all the colors under the same DPT_DSC with '|' as a seperator,
+     - Create a ndarray "color_COM_CDs" from 'colors_COM' by joining colors in 'COLOR.unique'  separated by '|' and exclude 'NONE','OTHER'.
+     - Exclude COMS without color from pim_load
+     - Create a column 'MATCHING_DESCRIPTION' for pim_load by Concatenating 'ITM_LVL_DSC', 'VND_ECOM_DSC', 'TAG_DSC'
+     - Ran a loop for all DPT from colors_DPT.DPT_DSC to invoke 'color_match' function to get 'Detected color'  by matching 'MATCHING_DESCRIPTION' with 'color_list' and keep the result in a excel woerlsheet.
+    - Function "color_match" 
+      - Purpose: Call/Invoke rapidfuzz.process.extract twice to match color.
+      - color_match has the following parameters:
+a.	- item: The string you want to find the color. It passed the value to  ‘query’ in rapidfuzz.process.extract. It might be a value of pim_dpt.MATCHING_DESCRIPTION.
+b.	flavor_list_org: A list of all flavors the item should be compared with.  It passed the value to   ‘choice’ in rapidfuzz.process.extract. 
+i.	The function will invoke rapidfuzz.process.extract twice.  
+          - The first call  used “fuzz.token_set_ratio” as a scorer , will  use  ‘Flavo rs_combo_bnj’ to match the flavor for 'Ben & Jerry',  or  ‘Flavors_combo’ for the rest of matching process. The pre-process will build ‘Flavo rs_combo_bnj’ and ‘Flavors_combo’. The limit for the first call is 100.
+ii.	  - The second call will use match list from the first call as “choice” to match the flavor. Cutoff:  the  value of  score_cutoff. Or the first call, the default value is 85. For the second call.  It’ll use the maximum score from the first call. The limit for the first call is 5.
+c.	Cutoff: Assign value to score_cutoff which will be used to set a minimum similarity for the string improve to the performance.  
+3.	Return matched, flavor_count, fuzz_score
+a.	The  match list from the second call of process.extract will match every word in the item to determined the contents of matched.
+b.	The count  of flavor is determined by the the length of matched.
+c.	The score is determined by the max_score.
+d.	If the length of matched is 0, will assign ‘OTHER’ to the matched, the count and  score would be 0.
+ 
+
+
+
+
+' 'MATCHING_DESCRIPTION'  xlget 'Detected color' for all DPT from colors_DPT.DPT_DSC and   
+#Concatenate multiple item description fields
+pim_load['MATCHING_DESCRIPTION'] = \
+pim_load.ITM_LVL_DSC.fillna('') + ' ' + pim_load.VND_ECOM_DSC +' '+  pim_load.TAG_DSC.fillna('')#Concatenate multiple item description fields
+pim_load['MATCHING_DESCRIPTION'] = \
+pim_load.ITM_LVL_DSC.fillna('') + ' ' + pim_load.VND_ECOM_DSC +' '+  pim_load.TAG_DSC.fillna('')
+
+colors_DPT = pd.DataFrame(pim_load.groupby('DPT_DSC').apply(lambda x: '|'.join(x.COLOR.unique())), columns= ['UNIQUE COLORS']).reset_index()
+color_DPT_DSCs = colors_DPT[~colors_DPT['UNIQUE COLORS'].apply(lambda x: set(x.split('|')).issubset({'NONE','OTHER'}))].DPT_DSC.unique()
+len(color_DPT_DSCs)
+COLOR.unique
+   - input: ' 
+     1).  PIM_Color_Attributes_102523.csv - Exracted from CURIDQ.pimmart.CLS_SPC_ATB 
+     2).  ITM_ID_GTIN_Map_111623.csv - Rxtracted from CURIDQ.PIMMART.ITEM_VIEW 
+       - will  be used to add ITEM_NO to PIM_color_Attributes_111623.csv 
+     3).  PIM_DATA_W_TAG_DSC_110323.zip 
+          - A new PIM file where we can use TAG_DSC in addition to VND_ECOM_DSC and ITM_LVL_DSC 
+          - will merge with  PIM_color_Attributes_111623.csv
+   - output- : COLOR_DPT_DSC_mmddyy.xlsx.
+          - For each DPT in colors_DPT.DPT_DSC,  Keep 'Detected color' in the worksheet with 'DPT' as a sheet_name for all  DPT in colors_DPT.DPT_DSC in the 
+   - functions: 
+   - writen by: Sophia Yue
+   - date: 10.25.23 
+   - Notes:
+     - Cloned from PIM_COLOR_EXTRACTION_111723.ipynb
+     - There are 429 colors in color_COM_CDs which is created from  
+
+
+
+process.extract(item, color_list, score_cutoff= cutoff, scorer = fuzz.token_set_ratio,
+pim_dpt['EXTRACTED_COLOR']  =  \
+                   pim_dpt.MATCHING_DESCRIPTION.fillna('').str.upper().replace(replacements).apply(lambda x:color_match(x, color_list_org= color_list))# + [i.replace(" ","") for  i in  scent_list]))   
+--- cust_facing_df.shape = (3865549, 13)   
+cust_facing_df = pd.read_csv('/dbfs/FileStore/tables/DATA_SCIENCE/CUSTOMER_FACING_ITEM_DATA_112823.zip', low_memory = False)
+cfic_cols = ['GTIN_NO', 'ITM_CFIC_FYT_DPT_CD', 'ITM_CFIC_FYT_COM_CD',
+       'ITM_CFIC_FYT_SUB_COM_CD', 'ITM_CFIC_FYT_DPT_NAM',
+       'ITM_CFIC_FYT_COM_NAM', 'ITM_CFIC_FYT_SUB_COM_NAM',
+       'ITM_CFIC_FYT_CGY_CD', 'ITM_CFIC_FYT_CGY_VLU']
+
+pim_load.shape# 
+%pip install rapidfuzz
+Note: you may need to restart the kernel using dbutils.library.restartPython() to use updated packages.
+Requirement already satisfied: rapidfuzz in /local_disk0/.ephemeral_nfs/cluster_libraries/python/lib/python3.10/site-packages (3.5.2)
+Note: you may need to restart the kernel using dbutils.library.restartPython() to use updated packages.
+Command took 5.85 seconds -- by shiladitya.chakraborty@kroger.com at 11/27/2023, 3:03:48 PM on unknown compute
+import pandas as pd, numpy as np
+import datetime as dt
+from rapidfuzz import process, fuzz,utils
+np.set_printoptions(threshold=np.inf)
+Command took 0.15 seconds -- by sophia.yue@kroger.com at 12/5/2023, 3:44:13 PM on DMP Access - Stage
+pim_color = pd.read_csv('/dbfs/FileStore/tables/DATA_SCIENCE/COLOR/PIM_Color_Attributes_102523.csv')
+gtin_itm_id = pd.read_csv('/dbfs/FileStore/tables/DATA_SCIENCE/COLOR/ITM_ID_GTIN_102523.csv')
+pim_color['GTIN_NO'] = pim_color.ITM_ID.map(dict(zip(gtin_itm_id.ITM_ID, gtin_itm_id.GTIN_NO)))
+#flavors_COM = pd.DataFrame(pim_flavors.groupby('COM_CD').apply(lambda x: '|'.join(x.Flavor_Code.unique())), columns= ['UNIQUE FLAVORS']).reset_index()
+Command took 8.79 seconds -- by sophia.yue@kroger.com at 12/5/2023, 3:44:23 PM on DMP Access - Stage
+pim_df = pd.read_csv('/dbfs/FileStore/tables/DATA_SCIENCE/COLOR/PIM_DATA_W_TAG_DSC_110323.zip')
+Command took 19.52 seconds -- by sophia.yue@kroger.com at 12/5/2023, 3:44:50 PM on DMP Access - Stage
+### Filer out inactive, non-saleable, unverified items
+''' Source fields:
+pimmart.ITEM_VIEW.ITM_INA_FL = Item Inactive Flag -> 'Yes' means inactive item pimmart.ITEM_VIEW.VER_FL = Verified Flag -> True means verified item pimmart.ITEM_VIEW.SV_SV_FL = Sales Variant (Sellable) Flag -> 'Yes' means saleable item '''
+
+item_validity = pd.read_csv('/dbfs/FileStore/tables/DATA_SCIENCE/PIM_Valid_item_Filters_112823.csv') 
+good_GTINs = ite
+Command took 4.03 seconds -- by sophia.yue@kroger.com at 12/5/2023, 3:45:20 PM on DMP Access - Stage
+pim_load = pim_color.merge(pim_df, how = 'right', on = 'GTIN_NO')
+# SCENT_VLU different from SCENT_CD
+pim_load[pim_load.COLOR_VLU.notnull() & (pim_load.COLOR_VLU != pim_load.COLOR_CD)]\
+.drop_duplicates(['COLOR_CD','COLOR_VLU'])[['COLOR_CD','COLOR_VLU']]
+
+Command took 6.11 seconds -- by sophia.yue@kroger.com at 12/5/2023, 3:45:43 PM on DMP Access - Stage
+# USE _VLU if present, else use _CD
+pim_load['COLOR'] = np.where(pim_load.COLOR_VLU.notnull(), pim_load.COLOR_VLU, pim_load.COLOR_CD)
+Command took 0.17 seconds -- by sophia.yue@kroger.com at 12/5/2023, 3:46:06 PM on DMP Access - Stage
+pim_load['COLOR'] = pim_load.COLOR.fillna('NONE')
+Command took 0.17 seconds -- by sophia.yue@kroger.com at 12/5/2023, 3:46:17 PM on DMP Access - Stage
+replacements = {          
+ ',': ' ',
+ '/': ' ',
+ '>':' ',
+'<': ' '}
+
+Command took 0.03 seconds -- by sophia.yue@kroger.com at 12/5/2023, 3:46:29 PM on DMP Access - Stage
+### Remove substrings like 'CHOCOLATE' if 'CHOCOLATE CHIP' is also present as a top result
+def remove_substrings(string_list):
+    str_df = pd.DataFrame(string_list, columns= ['Sentence'])
+    str_df['Word Length'] = str_df.Sentence.apply(lambda x: len(x.split(' ')))
+    str_df['Drop'] = ''
+    str_df.sort_values('Word Length', inplace= True)
+    str_df.reset_index(drop = True, inplace= True)
+    for j in range(len(str_df)):
+        str_1 = str_df.Sentence.loc[j]
+        for i in range(len(str_df)-(j +1)):
+            str_2 = str_df.Sentence.loc[i+j+1]
+            if str_1 in str_2: 
+                str_df.Drop.loc[j] = 'Yes'
+                break
+        if len(str_df) <2: 
+            break
+    return str_df[str_df.Drop != 'Yes'].Sentence.tolist()
+Command took 0.06 seconds -- by sophia.yue@kroger.com at 12/5/2023, 3:46:37 PM on DMP Access - Stage
+#MAtch using 'token set ratio' with threshold
+def color_match(item, color_list_org, cutoff = 90):
+    #devowelized = [devowelize(i) for i in flavor_list_org]
+    #derepeated = [remove_adjacent_repititions(i) for i in flavor_list_org]
+    color_list = color_list_org #+ extras#+ devowelized
+    #flavor_list += derepeated
+    #abbrev_maps = dict(zip(devowelized+ derepeated, flavor_list_org + flavor_list_org))
+    color_no_spaces = [ i for i in color_list_org if not '' in i]
+    color_with_spaces = 
+Command took 0.12 seconds -- by sophia.yue@kroger.com at 12/5/2023, 3:46:57 PM on DMP Access - Stage
+Match within DPT
+colors_DPT = pd.DataFrame(pim_load.groupby('DPT_DSC').apply(lambda x: '|'.join(x.COLOR.dropna().unique())), columns= ['UNIQUE COLORS']).reset_index()
+color_DPT_DSCs = colors_DPT[~colors_DPT['UNIQUE COLORS'].apply(lambda x: set(x.split('|')).issubset({'NONE','OTHER'}))].DPT_DSC.unique()
+
+len(color_DPT_DSCs)
+60
+Command took 2.35 seconds -- by sophia.yue@kroger.com at 12/5/2023, 3:47:44 PM on DMP Access - Stage
+colors_COM = pd.DataFrame(pim_load.groupby('COM_CD').apply(lambda x: '|'.join(x.COLOR.dropna().unique())), columns= ['UNIQUE COLORS']).reset_index()
+color_COM_CDs = colors_COM[~colors_COM['UNIQUE COLORS'].apply(lambda x: set(x.split('|')).issubset({'NONE','OTHER'}))].COM_CD.unique()
+len(color_COM_CDs)
+354
+Command took 1.93 seconds -- by sophia.yue@kroger.com at 12/5/2023, 3:48:15 PM on DMP Access - Stage
+#Exclude COMS without color
+pim_load = pim_load[pim_load.COM_CD.isin(color_COM_CDs)]
+Command took 0.65 seconds -- by sophia.yue@kroger.com at 12/5/2023, 3:48:38 PM on DMP Access - Stage
+#Concatenate multiple item description fields
+pim_load['MATCHING_DESCRIPTION'] = \
+pim_load.ITM_LVL_DSC.fillna('') + ' ' + pim_load.VND_ECOM_DSC +' '+  pim_load.TAG_DSC.fillna('')
+Command took 2.42 seconds -- by sophia.yue@kroger.com at 12/5/2023, 3:49:06 PM on DMP Access - Stage
+color_list = [i.replace('_',' ') for i in pim_load['COLOR'].dropna().unique() if not i in  ['OTHER','NONE']]
+additional_colors = ['ANTIQUE BRONZE','ANTIQUE CHERRY','ANTIQUE COPPER','ANTIQUE OAK','ANTIQUE FAWN', 'ANTIQUE LIGHT', 'ANTIQUE WOOD','IVORY WHITE']
+color_list += additional_colors
+Command took 0.34 seconds -- by sophia.yue@kroger.com at 12/5/2023, 3:49:27 PM on DMP Access - Stage
+pim_load = pim_load.merge(cust_facing_df[cfic_cols], how = 'left', on = 'GTIN_NO')       
+Command took 22.60 seconds -- by sophia.yue@kroger.com at 12/5/2023, 3:49:44 PM on DMP Access - Stage
+#Match selected DPT
+display_cols = cfic_cols + ['VND_ECOM_DSC','ITM_LVL_DSC','TAG_DSC','COLOR_CURRENT','EXTRACTED_COLOR']
+today = dt.datetime.today().strftime("%m%d%Y")
+cfic_dpt = 'Rugs'
+pim_dpt = pim_load[pim_load.ITM_CFIC_FYT_DPT_NAM == cfic_dpt]
+pim_dpt.rename(columns={'COLOR':'COLOR_CURRENT'}, inplace= True)
+pim_dpt['EXTRACTED_COLOR']  =  \
+                pim_dpt.MATCHING_DESCRIPTION.str.upper().replace(replacements, regex = True).apply(lambda x:color_match(x, color_list_org= color_list))# 
+/local_disk0/.ephemeral_nfs/cluster_libraries/python/lib/python3.10/site-packages/pandas/core/frame.py:5039: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  return super().rename(
+Command took 2.64 seconds -- by sophia.yue@kroger.com at 12/5/2023, 3:52:56 PM on DMP Access - Stage
+cust_facing_df.ITM_CFIC_FYT_DPT_NAM.value_counts(dropna = False)
+Garden, Patio & Grills               458078
+Home Décor                           421262
+Kitchen & Dining                     260713
+Beauty                               213354
+Furniture                            206674
+Pantry                               177303
+Toys & Games                         154999
+Pet                                  154085
+Hardware & Home Improvement          153169
+Dining                               135443
+Children's Clothing & Accessories    126275
+Cleaning and Household               104793
+Health & Wellness                    101593
+Personal Care                         97660
+Holiday                               93969
+Craft & Hobby                         93352
+Beer, Wine & Liquor                   89818
+School & Office                       83739
+Natural & Organic                     83658
+Electronics                           77919
+Home                                  73784
+Beverages                             52112
+Sporting Goods                        49772
+Bedding                               45003
+Cleaning and Organization             43510
+Candy                                 31809
+Bath                                  29756
+Frozen Foods                          24951
+Meat & Seafood                        24708
+Breakfast                             24655
+Nursing & Feeding                     20643
+Deli                                  19549
+Dairy & Eggs                          16568
+Women's Clothing                      16404
+Baby                                  13166
+Men's Clothing                        12569
+Fresh Fruits & Vegetables             11424
+Floral                                11038
+Bakery                                10389
+Toys & Learnings                      10376
+Shoes                                  7986
+Bath and Diapering                     5423
+Nursery                                5311
+Latin American & Mexican               5277
+Car Seats, Stroller, & Travel          2980
+Tobacco                                2462
+Health & Safety                        2305
+Accessories                            2259
+Kids' Clothes                           568
+Checkout, Grab & Go                     478
+Jewelry                                 328
+Toddler Clothes                          72
+Baby Clothes                             58
+Name: ITM_CFIC_FYT_DPT_NAM, dtype: int64
+Command took 3.13 seconds -- by sophia.yue@kroger.com at 12/5/2023, 4:09:59 PM on DMP Access - Stage
+cust_facing_df.ITM_CFIC_FYT_DPT_NAM.isnull().sum()
+0
+Command took 0.48 seconds -- by sophia.yue@kroger.com at 12/5/2023, 4:13:02 PM on DMP Access - Stage
+cust_facing_df.ITM_CFIC_FYT_DPT_NAM.value_counts(dropna = False, sort = False)
+Natural & Organic                     83658
+Health & Wellness                    101593
+Candy                                 31809
+Pantry                               177303
+Bath                                  29756
+Bakery                                10389
+Personal Care                         97660
+Beauty                               213354
+Beverages                             52112
+Hardware & Home Improvement          153169
+Kitchen & Dining                     260713
+Pet                                  154085
+Breakfast                             24655
+Cleaning and Household               104793
+Deli                                  19549
+Home Décor                           421262
+Frozen Foods                          24951
+Shoes                                  7986
+Latin American & Mexican               5277
+Dairy & Eggs                          16568
+Garden, Patio & Grills               458078
+Dining                               135443
+Cleaning and Organization             43510
+Nursing & Feeding                     20643
+Checkout, Grab & Go                     478
+Fresh Fruits & Vegetables             11424
+School & Office                       83739
+Floral                                11038
+Holiday                               93969
+Toys & Games                         154999
+Home                                  73784
+Beer, Wine & Liquor                   89818
+Bedding                               45003
+Electronics                           77919
+Meat & Seafood                        24708
+Sporting Goods                        49772
+Craft & Hobby                         93352
+Furniture                            206674
+Bath and Diapering                     5423
+Baby                                  13166
+Health & Safety                        2305
+Accessories                            2259
+Nursery                                5311
+Car Seats, Stroller, & Travel          2980
+Toys & Learnings                      10376
+Tobacco                                2462
+Men's Clothing                        12569
+Women's Clothing                      16404
+Children's Clothing & Accessories    126275
+Kids' Clothes                           568
+Jewelry                                 328
+Toddler Clothes                          72
+Baby Clothes                             58
+Name: ITM_CFIC_FYT_DPT_NAM, dtype: int64
+Command took 0.25 seconds -- by sophia.yue@kroger.com at 12/5/2023, 4:31:45 PM on DMP Access - Stage
+len(cust_facing_df.ITM_CFIC_FYT_DPT_NAM == 'Rugs')  # 3865549
+len(cust_facing_df[cust_facing_df.ITM_CFIC_FYT_DPT_NAM == 'Rugs'])  # 0
+#len(df1[df1.Check == True])
+0
+
+pim_load.shape# (3133739, 29)
+COLOR_NORMALIZED_Rugs_12062023.csv
+
+attributed_df = attributed_df[attributed_df.GTIN_NO.isin(df_non_mkt_gtin)]
+
+
+INY8251CHAKRABORTY, SHILADITYA added a comment - Yesterday
+Post Normalization Extraction Results  - Iteration 1  
+Summary
+ 86,264 ( of a total 104,117) items attributed with (non-OTHER) color values
+
+Normalized_COLORS_HomeDecor_NoRugs.xlsx
+
+FRIEMEL, PAUL A    Attached is the initial normalized Color list for  Home Decor (minus Rugs) .
+The highlighted ones are found to be ambiguous and error-inducing and shall be discarded unless you think otherwise.
+Please go over the rest as well and share your thoughts on this.
+
+What Color Is Taupe?
+
+Color Psychology
+https://www.colorpsychology.org › taupe
+taupe color from www.colorpsychology.org
+Taupe is a grey-brown color that can be described as 'a pale brownish gray'. It's a neutral color that goes well with most other shades, making it ideal for ...
+
+
+Taupe is a dark gray-brown color. The word derives from the French noun taupe meaning "mole". The name originally referred only to the average color of the French mole, but beginning in the 1940s, its usage expanded to encompass a wider range of shades. Wikipedia
+import datetime as dt
+today = dt.datetime.today().strftime("%m%d%Y")
+
+Validation_Data_Color_Rugs_12062023.csvHi Prateek,
+
+Please review the attached file which is the validation file for Color -Rugs.
+
+Thank you.
+
+Sophia
+
++ New change
+'''Add a flag to indicate marketplace items
+Query used to generate the list:
+"SELECT  GTIN_NO, SLS_CHA_VLU
+FROM CURIDQ.pimmart.ITEM_VIEW"
+'''
+mkt_flg = pd.read_csv('/dbfs/FileStore/tables/DATA_SCIENCE/MARKETPLACE_FLAG_120723.csv')
+attributed_df = attributed_df.merge(mkt_flg, how = 'left', on = 'GTIN_NO')
+- to  replace filtering
+df_non_mkt_gtin = pd.read_csv('/dbfs/FileStore/tables/DATA_SCIENCE/NON_MARKETPLACE_GTINs.csv')
+attributed_df = attributed_df[attributed_df.GTIN_NO.isin(df_non_mkt_gtin.GTIN_NO.unique())]
+Nomalization after Paul
+discard =['Natural','Medium','Dark','Striped','Antique','Bark','Linen','Urban','Tobacco']
+discard-nonrug = ['LIGHT','WOOD','LOVE','NATURAL','LINEN','IRON','ANTIQUE','MIRROR MIRROR','DARK','MEDIUM','SEA','WALNUT','ORCHID','BERRY','PACIFIC','URBAN','PEONY','PEACOCK','APPLE','CAPRI','CORAL','VALENTINE','SAND','LEMON','VANILLA','D-7','MANGO','SAGE', 'MAPLE','PEARL','DEEP','CLAY']
+                                                                                                             ?      ?                 ?                                                  ?       ?                   ?                                      ?
+'SEA','WALNUT','BERRY','CAPRI','CORAL', 'SAND','SAGE','CLAY','PEARL',
+rename = {'ASSORTED':'MULTI COLOR','GREY':'GRAY','VIOLET':'PURPLE','NAVY':'NAVY BLUE','MULTI-COLORED':'MULTI COLOR']
+
+Multi-color & Multi Color to Multicolor
+Dark green to Green
+Dark Gray to Gray
+Dark Blue to Blue
+Dark Brown to Brown
+Grey to Gray
+Light blue to Blue
+Light Brown to Brown
+Light Gray to Gray
+Light Green to Green
+Navy blue to Navy
+92fnxixkbdzv7ap
+z9ryi8ruuju3dv
+
+discard_din = ['ANTIQUE','DEEP','FISH','BUTTERFLY','SCOOP','LIGHT','UNICORN','OWL','MIRROR MIRROR','ALPHABET','UNIVERSAL','HAPPY BIRTHDAY','LOVELY','STAINLESS-STEEL','STAINLESS STEEL',
+'COFFEE','IRON','ZINC','COPPER','NATURAL','STAINLESS','STEEL','MEDIUM','BRONZE','LOVE','PORCELAIN','MAPLE','PINEAPPLE','CHAMPAGNE','WALNUT','APPLE','BRASS','PEWTER','NICKEL','CHOCOLATE',
+'ESPRESSO','BUTTER','CREAM','CARBON','DARK','JUNGLE','DRINK'
+['COPPER', 'STEEL','BRONZE', 'CHAMPAGNE','PEWTER', 'CHOCOLATE', 'CREAM']
+
+rename = {'ASSORTED':'MULTICOLOR','MULTI-COLORED':'MULTICOLOR','MULTI COLORED':'MULTICOLOR','GREY':'GRAY','DARK GRAY':'GRAY','LIGHT GRAY':'GRAY', \
+'NAVY BLUE':'NAVY','DARK BLUE' : 'BLUE', 'LIGHT BLUE': 'BLUE', 'DARK BROWN' : 'BROWN', 'LIGHT BROWN' : 'BROWN', \
+'DARK GREEN' :  'GREEN', 'LIGHT GREEN' :  'GREEN'}  
+'MULTI-COLOR & MULTI COLOR TO MULTICOLOR DARK GREEN TO GREEN DARK GRAY TO GRAY DARK BLUE TO BLUE DARK BROWN TO BROWN GREY TO GRAY    LIGHT BROWN TO BROWN LIGHT GRAY TO GRAY LIGHT GREEN TO GREEN NAVY BLUE TO NAVY'
+
+
+
+Sophia -  Attribute_Normalization_color_rugs_12062023
+attributed_df = pd.read_csv(attr_path + 'COLOR_Rugs_12052023_COM.csv', dtype={"GTIN_NO": 'int64'}, low_memory=False)
+
+attrib_cum_counts[attrib_cum_counts.PERCENT_CUMULATIVE_COUNT <= cutoff][:100]\
+    .reset_index(drop = False).rename(columns = {'index':attrib_field}).to_csv(attr_path+'Normalized_COLORS_Rugs.csv', index =None)
+
+
+### Incorporating PO Feedback
+normalized_list = list(attrib_cum_counts[attrib_cum_counts.PERCENT_CUMULATIVE_COUNT <= cutoff][:100].index)
+
+normalized_list = [ i for i in normalized_list if i not in discard] + ['OTHER']
+rename = {'ASSORTED':'MULTICOLOR','MULTI-COLORED':'MULTICOLOR','MULTI COLOR':'MULTICOLOR',\
+          'GREY':'GRAY','DARK GRAY':'GRAY','LIGHT GRAY':'GRAY', \
+          'NAVY BLUE':'NAVY','DARK BLUE' : 'BLUE', 'LIGHT BLUE': 'BLUE', 'DARK BROWN' : 'BROWN', 'LIGHT BROWN' : 'BROWN', \
+          'DARK GREEN' :  'GREEN', 'LIGHT GREEN' :  'GREEN'} 
+normalized_list += rename.values()
+
+discard = ['NATURAL', 'MEDIUM', 'DARK', 'LIGHT', 'STRIPED', 'ANTIQUE', 'BARK', 'LINEN', 'URBAN', 'TOBACCO', 'SEA','WALNUT',  'BERRY','CAPRI','CORAL', 'SAND','SAGE','CLAY','PEARL', 'COPPER', 'STEEL','BRONZE', 'CHAMPAGNE','PEWTER', 'CHOCOLATE', 'CREAM']
+normalized_list = [ i for i in normalized_list if i not in discard] + ['OTHER']
+rename = {'ASSORTED':'MULTICOLOR','MULTI-COLORED':'MULTICOLOR','MULTI COLOR':'MULTICOLOR',\
+          'GREY':'GRAY','DARK GRAY':'GRAY','LIGHT GRAY':'GRAY', \
+          'NAVY BLUE':'NAVY','DARK BLUE' : 'BLUE', 'LIGHT BLUE': 'BLUE', 'DARK BROWN' : 'BROWN', 'LIGHT BROWN' : 'BROWN', \
+          'DARK GREEN' :  'GREEN', 'LIGHT GREEN' :  'GREEN'} 
+normalized_list += rename.values()
+
+
+### Cumulative Percent Prevalence of Single Attributes ranked from top
+### Cumulative Percent Prevalence of Single Attributes ranked from top
+attrib_cum_counts[attrib_cum_counts.PERCENT_CUMULATIVE_COUNT <= cutoff][:100]\
+    .reset_index(drop = False).rename(columns = {'index':attrib_field}).to_csv(attr_path+'Normalized_COLORS_Rugs.csv', index =None)
+
+
+### Write normalized attributes in semicolon-separated format
+pd.options.mode.chained_assignment = None
+cf_com = 'Rugs' # CFIC Comodity name
+attributed_df['NORMALIZED_COLOR'] = attributed_df.EXTRACTED_COLOR.apply(lambda x: normalize_colors(x))
+attributed_df['GTIN_NO'] = attributed_df.GTIN_NO.astype(str).apply(lambda x:(14- len(x))*'0' + x )
+display_cols = ['GTIN_NO','VND_ECOM_DSC','ITM_LVL_DSC','TAG_DSC','COLOR_CURRENT','NORMALIZED_COLOR','SLS_CHA_VLU']
+today = dt.datetime.today().strftime("%m%d%Y")### Write normalized attributes in semicolon-separated format
+pd.options.mode.chained_assignment = None
+cf_com = 'Rugs' # CFIC Comodity name
+attributed_df['NORMALIZED_COLOR'] = attributed_df.EXTRACTED_COLOR.apply(lambda x: normalize_colors(x))
+attributed_df['GTIN_NO'] = attributed_df.GTIN_NO.astype(str).apply(lambda x:(14- len(x))*'0' + x )
+display_cols = ['GTIN_NO','VND_ECOM_DSC','ITM_LVL_DSC','TAG_DSC','COLOR_CURRENT','NORMALIZED_COLOR','SLS_CHA_VLU']
+today = dt.datetime.today().strftime("%m%d%Y")
+attributed_df[display_cols].drop_duplicates('GTIN_NO').to_csv(attr_path +'COLOR_NORMALIZED_'+\
+     cf_com.replace(' ','_').replace('-','_') + '_' + today + '.csv', index = None)
+attributed_df[display_cols].drop_duplicates('GTIN_NO').to_csv(attr_path +'COLOR_NORMALIZED_'+\
+     cf_com.replace(' ','_').replace('-','_') + '_' + today + '.c
+
+cmd 12
+### Please create this config file only once the normalized list is validated, sanitized and  finalized
+# Store Item group (DPT/ COM) specific configs in config - file
+import json
+config_path = '/dbfs/FileStore/tables/DATA_SCIENCE/FuzzyConfigs/'
+attrib = 'COLOR'
+me = 'SHILADITYA'
+configs = {}
+configs['CFIC_DPT'] = cf_dpt
+configs['Attribute'] = attrib
+configs['Normalized_list'] = normalized_list
+configs['Substitutions'] = rename
+with open(config_path + attrib + '_' +cf_dpt + '_' + me + '_'+ today+ '.json', 'w') as fp:
+    json.dump(configs, fp)
+
+cmd 13
+#Write normalized list to csv for manual validation guidance
+pd.Series(normalized_list).to_csv(attr_path + 'NORMALIZED_LIST_'+attrib + '_' +cf_dpt +  '_'+ today+ '.csv',index = None )
+
+cmd 14
+with open('/dbfs/FileStore/tables/DATA_SCIENCE/FuzzyConfigs/COLOR_Home_Decor_NoRugs_SHILADITYA_12082023.json') as f:
+    d = json.load(f)
+    print(d)
+
+COLOR_Rugs_12052023_COM.csv
+COLOR_NORMALIZED_Home_Decor_Rugs_12122023.csv
+Validation_Data_Color_HomeDecor_Rugs_121223.csv
+
+validation 12.15.23
+Input
+df1 = COLOR_NORMALIZED_Home_Decor_Rugs_12152023.csv
+df2 = Validation_Data_Color_HomeDecor_Rugs_12122023_Prateek.xlsx
+  GTIN_NO Review Status	Issue
+df1 merge df2 on GTIN_NO  
+n='header')
+merged_df = df1.merge(df2[[ 'Review Status', 'Issue']], how = 'left', on = 'GTIN_NO')
+Safavieh CPR706B Capri Ivory 195058624688
+
+
+--- floral ----
+cust_facing_df = pd.read_csv('/dbfs/FileStore/tables/DATA_SCIENCE/CUSTOMER_FACING_ITEM_DATA_112823.zip', low_memory = False)
+cfic_cols = ['GTIN_NO', 'ITM_CFIC_FYT_DPT_CD', 'ITM_CFIC_FYT_COM_CD',
+       'ITM_CFIC_FYT_SUB_COM_CD', 'ITM_CFIC_FYT_DPT_NAM',
+       'ITM_CFIC_FYT_COM_NAM', 'ITM_CFIC_FYT_SUB_COM_NAM',
+       'ITM_CFIC_FYT_CGY_CD', 'ITM_CFIC_FYT_CGY_VLU']
+
+pim_load = pim_load.merge(cust_facing_df[cfic_cols], how = 'left', on = 'GTIN_NO') 
+
+cfic_dpt = 'Home Décor'
+cfic_com = 'Rugs'.
+
+
+pim_dpt = pim_load[(pim_load.ITM_CFIC_FYT_DPT_NAM == cfic_dpt) & (pim_load.ITM_CFIC_FYT_COM_NAM == cfic_c
+
+cust_facing_df.cfic_dpt.value_counts(dropna = Falser)
+
+
+
+Normalized_COLORS_Rugs.xlsx
+discard =['NATURAL', 'MEDIUM', 'DARK', 'LIGHT', 'STRIPED', 'ANTIQUE', 'BARK', 'LINEN', 'URBAN', 'TOBACCO', 'SEA','WALNUT',  \
+          'BERRY','CAPRI','CORAL', 'SAND','SAGE','CLAY','PEARL', 'COPPER', 'STEEL','BRONZE', 'CHAMPAGNE','PEWTER', 'CHOCOLATE', 'CREAM']
+normalized_list = [ i for i in normalized_list if i not in discard] + ['OTHER']
+rename = {'ASSORTED':'MULTICOLOR','MULTI-COLORED':'MULTICOLOR','MULTI COLOR':'MULTICOLOR',\
+          'GREY':'GRAY','DARK GRAY':'GRAY','LIGHT GRAY':'GRAY', \
+          'NAVY BLUE':'NAVY','DARK BLUE' : 'BLUE', 'LIGHT BLUE': 'BLUE', 'DARK BROWN' : 'BROWN', 'LIGHT BROWN' : 'BROWN', \
+          'DARK GREEN' :  'GREEN', 'LIGHT GREEN' :  'GREEN'} 
+rencol = {'EXTRACTED_COLOR': 'ext_clr', 'PERCENT_CUMULATIVE_COUNT': 'pct_cum_cnt'}
+df_rug.rename(columns=rencol)
+
+
+-- kitchen& dinning - kitdin ----
+norm_clr_kitdin = "Normalized_COLORS_Kitchen&Dining.csv"
+discard_kitdin = ['ANTIQUE','DEEP','FISH','BUTTERFLY','SCOOP','LIGHT','UNICORN','OWL','MIRROR MIRROR','ALPHABET','UNIVERSAL','HAPPY BIRTHDAY', \
+'LOVELY','STAINLESS-STEEL','STAINLESS STEEL','COFFEE','IRON','ZINC','COPPER','NATURAL','STAINLESS','STEEL','MEDIUM','BRONZE','LOVE','PORCELAIN',\
+'MAPLE','PINEAPPLE','CHAMPAGNE','WALNUT','APPLE','BRASS','PEWTER','NICKEL','CHOCOLATE','ESPRESSO','BUTTER','CREAM','CARBON','DARK','JUNGLE','DRINK']
+rename_kitdin = {'ASSORTED':'MULTI COLOR','GREY':'GRAY','VIOLET':'PURPLE','NAVY':'NAVY BLUE','MULTI-COLORED':'MULTI COLOR'}
+df_kitdin = cr_norm_clr_df(norm_clr_kitdin, discard_kitdin, rename_kitdin, '_kitdin')   
+df_kitdin.head()
+
+dfs = [df_kitdin, df_hd_norug, df_rug, df_floral]
+import functools as ft
+df_final = ft.reduce(lambda left, right: pd.merge(left, right, on='name'), dfs) 
+
+Create excel
+
+from datetime import date
+from pandas import ExcelWriter
+from pandas import ExcelFile
+
+dte = date.today().strftime('%m%d%y')
+excel_file = path_atb + "Normalized_COLORS_FLORA_"+dte + '.xlsx'
+writer = pd.ExcelWriter(excel_file)
+norm_clr_floral.to_excel(writer,'Normalized_COLORS_FLORAL', index = False)
+df_df_final.to_excel(writer,'Normalized_COLORS_Combine', index = False)
+   
+writer.close()
+
+Paul validation
+
+we combined ‘'ASSORTED' to 'MULTICOLOR'.
+combine ‘
+
+For rugs, we combined 'ASSORTED' to ’MULTICOLOR’.  For floral, shall we combine 'ASSORTED' and ‘ASSORTED COLORS’ to ’ MULTICOLOR’?
+
+Color Floral to be discarded
+
+discard =['ANTIQUE','APPLE','BARK','BERRY','BI-COLOR','BRONZE','CAYENNE','CHAMPAGNE', \
+'CHOCOLATE','CLAY','COFFEE','CONCRETE', \
+'COPPER','CORAL','CREAM','CRUSH','DARK','DEEP','FROST','HAPPY BIRTHDAY','HEIRLOOM', \
+'IRON', 'LIGHT','LOVE','MARIGOLD', 'MEDIUM','MELON','NATURAL','ORCHID','PEARL', \
+'PEONY','PINEAPPLE','SAGE','STEEL','STRIPED','URBAN','VALENTINE','VARIETY',\
+'WATERMELON','WOOD','ZINNIA']
+
+rename = {'ASSORTED':'MULTICOLOR','ASSORTED COLORS':'MULTICOLOR', 'CLASSIC WHITE':'WHITE', \
+          'MULTI-COLORED':'MULTICOLOR','MULTI COLOR':'MULTICOLOR',\
+          'GREY':'GRAY','DARK GRAY':'GRAY','LIGHT GRAY':'GRAY', \
+          'NAVY BLUE':'NAVY','DARK BLUE' : 'BLUE', 'LIGHT BLUE': 'BLUE', \
+          'DARK BROWN' : 'BROWN', 'LIGHT BROWN' : 'BROWN', \
+          'DARK GREEN' :  'GREEN', 'LIGHT GREEN' :  'GREEN','GOLDEN':'GOLD', \
+          'LIGHT PINK':'PINK', 'DARK PINK':'PINK', 'DARK RED': 'RED'}
+
+
+•	There are 408 samples in the validation file, and 3322 samples are marketplace.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+rename_get = rename.get    
+normalized_list = list(set([rename_get(n,n) for n in normalized_list]))
+
+
