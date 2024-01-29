@@ -1,0 +1,44 @@
+Syndigo_Mapping_ML_060723.ipynb
+Input
+ 1. syndigo_mapp: /dbfs/FileStore/tables/DATA_SCIENCE/Syndigo_GTIN_Mapping_060723.csv (113898, 13)
+ 2. pimmart     : dbfs/FileStore/tables/DATA_SCIENCE/ITM_DSC_ATTRIBUTES_NEW_parquet.gzip' (4937400, 34)
+SUBCOMS_excluded = ['INVENTORY VALUES','MISC SALES TRANS','MISC SALES TRANS (NON TAX)','CENTRAL SUPPLIES','MISC SALES TRANS (TX TAXABLE)','COUPON','MISCELLANEOUS INCOME','CRV/EXCISE TAX NT/NF','CRV DEPOSIT NT/F','CRV DEPOSIT T/NF','MISCELLANEOUS REFUNDS','CUSTOMER EXPENSES','ROUND UP COUPONS']
+pimmart = pimmart[~pimmart.SUBCOM_DSC.isin(SUBCOMS_excluded)]  (4916751, 34) ( eliminate ~21K )
+ 3. ### Add correct ITM_ID and KFT level codes
+   pim_ITM_ID_CODES: /dbfs/FileStore/tables/DATA_SCIENCE/PIM_CORRECT_ITM_ID_GTIN__LEVEL_CODES_061423.csv
+
+pim_ITM_ID_CODES = pd.read_csv('/dbfs/FileStore/tables/DATA_SCIENCE/PIM_CORRECT_ITM_ID_GTIN__LEVEL_CODES_061423.csv')
+pimmart = pimmart.merge(pim_ITM_ID_CODES, on = 'GTIN_NO', how = 'left')
+pimmart['CORRECT_ITM_ID'] = pimmart.CORRECT_ITM_ID.fillna(0).astype(int)
+ 4. syndigo_mapped = pd.read_csv('/dbfs/FileStore/tables/DATA_SCIENCE/Syndigo_GTIN_Mapping_060723.csv')
+ 5.
+syndigo_3 = pd.read_csv('/dbfs/FileStore/tables/DATA_SCIENCE/Syndigo_part3.csv')
+syndigo_4 = pd.read_csv('/dbfs/FileStore/tables/DATA_SCIENCE/Syndigo_part4.csv')
+syndigo_5 = pd.read_csv('/dbfs/FileStore/tables/DATA_SCIENCE/Syndigo_part5.csv')
+syndigo_5.rename(columns={'Taxonomy':'taxo'}, inplace= True)
+
+syndigo_concat = pd.concat([syndigo_3, syndigo_4,syndigo_5])
+syndigo_concat.dropna(how = 'all',inplace= True)
+syndigo_concat['Levels_map'] = syndigo_concat.taxo.fillna('None').apply(lambda x: dict(zip(['Level '+str(i+1) 
+        for i in range(len(x.split('>')))],[i.strip() for i in x.split('>')])))
+for i in range(9):
+    col = 'Level '+str(i+1)
+    syndigo_concat[col] = syndigo_concat['Levels_map'].apply(lambda x: x[col] if col in x else 'None')
+
+6. Get all the GTIN 
+syndigo_GTINs = pd.concat([syndigo_mapped['GTIN'], syndigo_3.GTIN, syndigo_4.GTIN,syndigo_5.GTIN])
+
+pimmart.groupby(['SUBCOM_DSC']).apply(lambda x: x.PMY_DPT_DSC.nunique()).sort_values(ascending = False)[:60]\
+    .reset_index().to_csv('/dbfs/FileStore/tables/DATA_SCIENCE/PIMMART_SUBCOMS_NON_UNIQUE_PMY_DPT.csv', index = None)
+7. add more columns from pimmart to syndigo_mapped
+item_cols = ['GTIN','PMY_DPT_DSC', 'REC_DPT_DSC', 'DPT_DSC', 'COM_DSC', 'SUBCOM_DSC', 'SUBCOM_CD' ,'VND_ECOM_DSC']
+pimmart.rename(columns={'GTIN_NO':'GTIN'}, inplace= True)
+syndigo_mapped = syndigo_mapped.merge(pimmart[item_cols], on = 'GTIN', how = 'left') 
+
+7. subcoms = pimmart.groupby(['SUBCOM_DSC','SUBCOM_CD'], group_keys = True) <58>
+8. ### import word2vec model trained on entire PIMMART data
+KeyedVectors.load_word2vec_format <
+
+from gensim.models import Word2Vec, KeyedVectors
+model = KeyedVectors.load_word2vec_format('/dbfs/FileStore/tables/DATA_SCIENCE/w2vmodel_053123_PIM_ALL.bin', binary=True)
+model.most_similar('chips')
