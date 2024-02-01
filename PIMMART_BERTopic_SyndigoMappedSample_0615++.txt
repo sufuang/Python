@@ -1,0 +1,85 @@
+PIMMART_BERTopic_SyndigoMappedSample_0615.    <Shila>
+
+%matplotlib inline
+import pandas as pd, numpy as np
+import matplotlib.pyplot as plt
+from sklearn.manifold import TSNE
+import matplotlib
+matplotlib.rcParams.update({'font.size': 16})
+import seaborn as sns
+
+#Load PIMMART Data
+pimview = pd.read_parquet('/dbfs/FileStore/tables/DATA_SCIENCE/ITM_DSC_ATTRIBUTES_NEW_parquet.gzip')
+#Load Syndigo mapping data
+syndigo_levels = pd.read_csv('/dbfs/FileStore/tables/DATA_SCIENCE/Syndigo_GTIN_Mapping_060723.csv')
+syndigo_levels.drop_duplicates('GTIN', inplace = True)
+syndigo_levels.rename(columns = {'GTIN':'GTIN_NO'}, inplace = True)
+syndigo_levels = syndigo_levels[syndigo_levels['Level Mapped']!= 'Not Available in Syndigo File']
+
+pim_mapped = pimview.merge(syndigo_levels, how = 'right', on = 'GTIN_NO')
+
+lowest_level_descs = ['SUBCOM_DSC','VND_ECOM_DSC']
+pim_mapped['LL_text'] = pim_mapped[lowest_level_descs].fillna('').apply(lambda x: ' '.join(x).lower(), axis = 1)
+#Creating text corpus for model training
+corpus_LL_all = list(pim_mapped.LL_text)
+
+#Exclude non-item SUBCOMs
+SUBCOMS_excluded = ['INVENTORY VALUES','MISC SALES TRANS','MISC SALES TRANS (NON TAX)','CENTRAL SUPPLIES','MISC SALES TRANS (TX TAXABLE)','COUPON','MISCELLANEOUS INCOME','CRV/EXCISE TAX NT/NF','CRV DEPOSIT NT/F','CRV DEPOSIT T/NF','MISCELLANEOUS REFUNDS','CUSTOMER EXPENSES','ROUND UP COUPONS']
+
+pim_sub = pim_mapped.copy()#[pimview.PMY_DPT_DSC == 'PRODUCE']
+pim_sub = pim_sub[~pim_sub.SUBCOM_DSC.isin(SUBCOMS_excluded)]
+pim_sub.shape
+
+list(pim_sub.SUBCOM_DSC.unique())
+len(corpus_sub)
+
+from bertopic import BERTopic
+topic_model = BERTopic(verbose= True, nr_topics= 33)
+topics, probs = topic_model.fit_transform(corpus_sub)
+
+topic_model.save('/dbfs/FileStore/tables/DATA_SCIENCE/BERTopicModel_SyndigoMappedData_061523')
+topic_model_28.save('/dbfs/FileStore/tables/DATA_SCIENCE/BERTopicModel_SyndigoMappedData_28_061523')
+topic_model_40.save('/dbfs/FileStore/tables/DATA_SCIENCE/BERTopicModel_SyndigoMappedData_40_061523')
+
+len(topics)
+
+pim_sub['ClusterLabel'] = topics
+pim_sub['ClusterLabel_28'] = topics_28
+pim_sub['ClusterLabel_40'] = topics_40
+
+pim_sub.ClusterLabel_28.nunique()
+pim_sub[pim_sub.ClusterLabel_28 !=-1].groupby('ClusterLabel_28').apply(lambda x: x['Level 1'].nunique()).describe()
+
+pim_sub[pim_sub.ClusterLabel !=-1].groupby('Level 2').apply(lambda x: x.ClusterLabel.nunique()).describe()
+pim_sub.SUBCOM_DSC.nunique()
+
+pim_sub.SUBCOM_DSC.value_counts()
+
+Subcoms_in_clusters = pd.DataFrame(pim_sub[pim_sub.ClusterLabel != -1].groupby('ClusterLabel').\
+             apply(lambda x: x.SUBCOM_DSC.nunique()).value_counts(), columns= ['Number of Clusters']).reset_index()\
+            .rename(columns={'index':'Unique SUBCOMS in cluster'})
+Subcoms_in_clusters['Cumulative % of Clusters'] = 100*Subcoms_in_clusters['Number of Clusters'].cumsum()/Subcoms_in_clusters['Number of Clusters'].sum()
+Subcoms_in_clusters
+len(topics)
+col = 'PMY_DPT_DSC'
+pim_sub[pim_sub.ClusterLabel != -1].groupby('ClusterLabel').apply(lambda x: x[col].nunique()).describe()
+
+pim_sub['Level 1'].unique()
+len(range(-1,31))
+
+cluster_name_map  = dict(zip(range(-1, 32),topic_model.generate_topic_labels(nr_words= 10)))
+pim_sub['ClusterName'] = pim_sub.ClusterLabel.map(cluster_name_map)
+
+cluster_name_28_map  = dict(zip(range(-1, 32),topic_model_28.generate_topic_labels(nr_words= 10)))
+pim_sub['ClusterName_28'] = pim_sub.ClusterLabel_28.map(cluster_name_28_map)
+
+cluster_name_40_map  = dict(zip(range(-1, 32),topic_model_40.generate_topic_labels(nr_words= 10)))
+pim_sub['ClusterName_40'] = pim_sub.ClusterLabel_40.map(cluster_name_40_map)
+
+syndigoL1_clust = pim_sub.groupby('ClusterLabel').apply(lambda x: x['Level 1'].value_counts()[:3]/len(x)).reset_index()
+#.to_csv('/dbfs/FileStore/tables/DATA_SCIENCE/Clustering_Syndigo_Level1_convergence.csv', index = None)
+
+clust_syndigoL1 = pim_sub.groupby('Level 1').apply(lambda x: x['ClusterLabel'].value_counts()[:5]/len(x)).reset_index()
+
+clust_syndigoL1['ClusterName'] = clust_syndigoL1.level_1.map(cluster_name_map)
+
