@@ -1,7 +1,7 @@
 import requests, re
 import pandas as pd
 
-url_end_points = “http://10.177.213.119:8081”
+url_end_points = "http://10.177.213.119:8081"
 remote_api_url_p = url_end_points+"/set_prompt"
 remote_api_url_img = url_end_points+"/inference"
 
@@ -34,7 +34,7 @@ for url in url:
     scent_flavour = 1    # Temporary
     
     if scent_flavour == 1: # For Flavor detection
-        product_image = https://www.kroger.com/product/images/large/front/ + str(url.split('/')[-1].split('?')[0])
+        product_image = "https://www.kroger.com/product/images/large/front/" + str(url.split('/')[-1].split('?')[0])
         respons = requests.get(product_image)
         if respons.status_code:
             fp = open('flavour_img.jpg', 'wb')
@@ -64,3 +64,4 @@ for url in url:
         print("Invalid input. Try again..")
 
 # sample_file.to_csv("GenAI_Results.csv", index=False)
+
