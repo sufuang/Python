@@ -1,0 +1,615 @@
+(base) C:\Users\sophia.yue\AI>python api_call_yue.py
+Length:  35
+
+0
+Item name-link: "The name of the item in the URL is \"Drumstick Vanilla Frozen Dairy Dessert Cones\"."
+Item name-img : "The name of the item in this image is Drumstick."
+Flavor-link: "The flavor name of the item in the URL is \"Vanilla\"."
+Flavor-img : "The flavor name of the item in this image is Drumstick."
+Product Details: "The product details of the item in this page are:\n\n* Drumstick Vanilla Frozen Dairy Dessert Cones\n* 8 count box\n* Original vanilla flavor\n* No artificial flavors or colors\n* Made with real vanilla\n* 80 calories per cone\n* 100% fat free\n* 100% dairy free\n* 100% gluten free\n* 100% nut free\n* 100% vegan\n* 100% delicious"
+Flavor: "The product details of the item in this page are as follows:\n\n* Brand: Drumstick\n* Type: Frozen Dairy Dessert Cones\n* Flavor: Vanilla\n* Packaging: Box of 8 cones\n* Ingredients: Vanilla ice cream, sugar, cream, and vanilla flavoring\n* Nutritional Information: 1 cone contains 120 calories, 4.5 grams of fat, 1.5 grams of saturated fat, 0 grams of trans fat, 10 milligrams of cholesterol, 100 milligrams of sodium, 26 grams of carbohydrates, and 1 gram of protein."
+
+1
+Item name-link: "The name of the item in the URL is \"Kroger Deluxe Mint Chocolate Chip Ice Cream\"."
+Item name-img : "The name of the item in this image is a container of mint chocolate chip ice cream."
+Flavor-link: "The flavor name of the item in the URL is \"Mint Chocolate Chip\"."
+Flavor-img : "mint chocolate chip"
+Product Details: "The product details of the item in this page are:\n\n* Brand: Kroger\n* Name: Deluxe Mint Chocolate Chip Ice Cream\n* Type: Ice Cream\n* Flavor: Mint Chocolate Chip\n* Size: 1.5 quart\n* Packaging: Plastic container\n* Ingredients: Cream, sugar, corn syrup, whey protein concentrate, cocoa, mint, and other natural flavors."
+Flavor: "The product details of the item in this page are as follows:\n\n* Brand: Kroger\n* Product Name: Deluxe Mint Chocolate Chip Ice Cream\n* Package Type: Container\n* Package Size: 1.5 quart\n* Flavor: Mint Chocolate Chip\n* Ice Cream Type: Ice Cream\n* Weight: 1.5 pounds\n* Ingredients: Cream, sugar, corn syrup, whey protein concentrate, cocoa, mint, and other natural flavors.\n* Allergens: Milk, eggs, and wheat.\n* Manufacturer: Kroger\n* UPC: 0001111050711\n* Item Number: 0001111050711\n* Product Image: A container of mint chocolate chip ice cream."
+
+2
+Item name-link: "The name of the item in the URL is \"Kroger Deluxe Triple Brownie Ice Cream Tub\"."
+Item name-img : "the name of the item in this image is a tub of ice cream"
+Flavor-link: "The flavor name of the item in the URL is \"Triple Brownie\"."
+Flavor-img : "The flavor name of the item in this image is Triple Brownie."
+Product Details: "The product details of the item in this page are as follows:\n\n* Brand: Kroger\n* Name: Deluxe Triple Brownie Ice Cream\n* Type: Ice Cream\n* Flavor: Triple Brownie\n* Size: 1.5 quart (1.66 liters)\n* Packaging: Plastic container\n* Ingredients: Cream, sugar, cocoa, butter, wheat flour, eggs, and vanilla\n* Nutritional Information: Calories per serving: 320, Fat: 18g, Saturated Fat: 10g, Cholesterol: 60mg, Carbohydrates: 36g, Fiber: 0g, Sugar: 30g, Protein: 8g, Vitamin A: 600 IU, Vitamin C: 0mg, Calcium: 200mg, Iron: 0mg\n* Allergens: Milk, eggs, wheat, and soy\n* Manufacturer: Kroger\n* Country of Origin: United States"
+Flavor: "The product details of the item in this page are as follows:\n\n* Brand: Kroger\n* Product Name: Deluxe Triple Brownie Ice Cream\n* Package Type: Tub\n* Flavor: Triple Brownie\n* Size: 1.5 quarts\n* Ingredients: Cream, sugar, skim milk, cocoa, wheat flour, butter, eggs, chocolate, and vanilla\n* Nutrition Facts: Calories 350, Fat 18g, Saturated Fat 10g, Cholesterol 55mg, Carbohydrates 28g, Fiber 0g, Sugar 26g, Protein 4g, Vitamin A 550IU, Vitamin C 0mg, Calcium 200mg, Iron 0mg\n* Allergens: Milk, eggs, wheat, and chocolate\n* Manufacturer: Kroger\n* Country of Origin: United States"
+
+3
+Item name-link: "The name of the item in the URL is \"Simple Truth Organic Dairy Free Strawberry Fruit Bars\"."
+Item name-img : "The name of the item in this image is a box of Simple Truth Organic Strawberry Fruit Bars."
+Flavor-link: "The flavor name of the item in the URL is \"Strawberry\"."
+Flavor-img : "The flavor name of the item in this image is \"Strawberry\"."
+Product Details: "The product details of the item in this page are:\n\n* Brand: Simple Truth\n* Product Name: Organic Dairy Free Strawberry Fruit Bars\n* Package Type: Box\n* Package Quantity: 6\n* Package Dimensions: 6.8 x 6.8 x 1.2 inches\n* Number of Servings: 80\n* Servings Per Container: 6\n* Calories Per Serving: 60\n* Fat Calories Per Serving: 0\n* Sugar Calories Per Serving: 15\n* Sodium Per Serving: 0\n* Ingredients: Organic Strawberries, Organic Cane Sugar, Organic Palm Kernel Oil, Organic Gellan Gum, Sea Salt."
+Flavor: "The product details of the item in the image are as follows:\n\n* Brand: Simple Truth\n* Product Name: Organic Strawberry Fruit Bars\n* Type: Fruit Bars\n* Flavor: Strawberry\n* Calories: 80 per bar\n* Weight: 6.8 oz\n* Packaging: Pink and white box\n* Ingredients: Organic strawberries, organic cane sugar, organic palm kernel oil, organic cocoa butter, organic soy protein, organic carrageenan, organic natural flavors, organic sunflower lecithin, organic sea salt."
+
+4
+Item name-link: "The name of the item in the URL is \"Dreyer's Edy's Grand Cookie Cobblestone Ice Cream Tub\"."
+Item name-img : "The name of the item in this image is a container of ice cream."
+Flavor-link: "The flavor name of the item in the URL is \"Eddy's Grand Cookie Cobblestone Ice Cream.\""
+Flavor-img : "Cookie Cobbler"
+Product Details: "The product details of the item in this page are as follows:\n\nBrand: Dreyer's\nProduct Name: Edy's Grand Cookie Cobblestone Ice Cream Tub\nProduct Type: Ice Cream\nFlavor: Cookie Cobblestone\nSize: 1.5 qt\nPackaging: Tub"
+Flavor: "The product details of the item in this page are as follows:\n\n* Brand: Dreyer's\n* Product Name: Edy's Grand Cookie Cobblestone Ice Cream Tub\n* Package Type: Tub\n* Size: 1.5 qt\n* Flavor: Cookie Cobblestone\n* Ingredients: Ice Cream, Cookie Pieces, Chocolate Chips\n* Dietary Restrictions: None\n* Allergens: None\n* Manufacturer: Dreyer's\n* UPC: 0004154877219\n* Weight: 1.5 lbs\n* Dimensions: 7.5 x 7.5 x 7.5 inches"
+
+5
+Item name-link: "The name of the item in the URL is \"Ben & Jerry's Americone Dream Vanilla Ice Cream\"."
+Item name-img : "The name of the item in this image is a Ben & Jerry's ice cream."
+Flavor-link: "The flavor name of the item in the URL is \"America's Favorite Vanilla Ice Cream.\""
+Flavor-img : "The flavor name of the item in this image is \"America's favorite flavor.\""
+Product Details: "The product details of the item in this page are as follows:\n\n* Brand: Ben & Jerry's\n* Product Name: Americone Dream Vanilla Ice Cream\n* Size: 16 oz\n* Flavor: Vanilla\n* Type: Ice Cream"
+Flavor: "The product details of the item in this page are:\n\n* Brand: Ben & Jerry's\n* Flavor: Americone Dream\n* Size: 16 oz\n* Type: Ice Cream"
+
+6
+Item name-link: "The name of the item in the URL is \"Blue Bunny Chocolate Cookie Crumble Mini Ice Cream Bars\"."
+Item name-img : "Blue Bunny Mini Bars Chocolate Cookie Crumbble"
+Flavor-link: "The flavor name of the item in the URL is \"Chocolate Cookie Crumbles\"."
+Flavor-img : "The flavor name of the item in this image is Chocolate Cookie Crumbble."
+Product Details: "The product details of the item in this page are as follows:\n\n* Brand: Blue Bunny\n* Type: Ice Cream\n* Flavor: Chocolate Cookie Crumbles\n* Size: Mini\n* Number of Bars: 6\n* Weight: 12.6 ounces\n* Ingredients: Milk, Cream, Sugar, Cocoa, Wheat Flour, Eggs, Butter, Chocolate Chips, Vanilla Extract, Salt, Baking Soda, Baking Powder, Cinnamon, Nutmeg, Cloves, Allspice, Vanilla Bean Extract, Natural Vanilla Flavor, Caramel Color, Annatto Color, Blue 1 Lake, Yellow 5 Lake, Yellow 6 Lake, Red 40 Lake, Blue 2 Lake, Titanium Dioxide, Carrageenan, Locust Bean Gum, Gellan Gum, Carrageenan, Sunflower Lecithin, Natural Flavors, Artificial Flavors, and Artificial Colors."
+Flavor: "The product details of the item in this page are as follows:\n\n* Brand: Blue Bunny\n* Product Name: Chocolate Cookie Crumbles Mini Ice Cream Bars\n* Package Quantity: 6\n* Package Type: Box\n* Number of Servings: 6\n* Servings Per Container: 1\n* Calories Per Serving: 120\n* Fat Per Serving: 6g\n* Saturated Fat Per Serving: 3g\n* Cholesterol Per Serving: 20mg\n* Sodium Per Serving: 70mg\n* Carbohydrates Per Serving: 18g\n* Sugars Per Serving: 16g\n* Protein Per Serving: 2g\n* Ingredients: Chocolate ice cream, chocolate chip cookies, sugar, cocoa butter, milk, cream, whey, eggs, vanilla extract, salt, natural flavor."
+
+7
+Item name-link: "The name of the item in the URL is \"Haagen-Dazs Vanilla Milk Chocolate Almond Ice Cream Bars\"."
+Item name-img : "the name of the item in this image is haagen-dazs vanilla milk chocolate almond ice cream bar."
+Flavor-link: "The flavor name of the item in the URL is \"Vanilla Milk Chocolate Almond Ice Cream Bars.\""
+Flavor-img : "The flavor name of the item in this image is Vanilla Milk Chocolate Almond Ice Cream Bar."
+Product Details: "The product details of the Haagen-Dazs Vanilla Milk Chocolate Almond ice cream bars are as follows:\n\n* Flavor: Vanilla Milk Chocolate Almond\n* Type: Ice Cream Bars\n* Size: 3-pack\n* Weight: 3.5 lbs (1.6 kg)\n* Ingredients: Vanilla ice cream, milk chocolate, almonds, and other natural flavors\n* Allergens: Milk, almonds, and soy\n* Dietary restrictions: Lactose intolerant, nut allergies\n* Manufacturer: Haagen-Dazs\n* Brand: Haagen-Dazs\n* Package: 3-pack of ice cream bars\n* Price: $6.99\n* Availability: Available at Kroger stores"
+Flavor: "The product details of the Haagen-Dazs Vanilla Milk Chocolate Almond Ice Cream Bars are as follows:\n\n* 3-pack of ice cream bars\n* Each bar contains 3 ounces of ice cream\n* Flavors include vanilla, milk chocolate, and almond\n* Made with real vanilla, milk chocolate, and almonds\n* Contains 360 calories per bar\n* Dairy and almond ingredients\n* Suitable for vegetarians\n* Contains no artificial flavors or colors\n* Gluten-free\n* Kosher\n* Made in the USA\n* Available in a 3-pack for convenience and sharing\n\nThese ice cream bars are a delicious and indulgent treat that can be enjoyed by those who love the combination of vanilla, milk chocolate, and almond flavors. The 3-pack offers a convenient way to share and enjoy these treats with friends and family."
+
+8
+Item name-link: "The name of the item in the URL is Blue Bell Dutch Chocolate and Homemade Vanilla Ice Cream Cups."
+Item name-img : "Blue Bell Dutch Chocolate and Homemade Vanilla Ice Cream"
+Flavor-link: "The flavor name of the item in the URL is Blue Bell Dutch Chocolate and Homemade Vanilla Ice Cream Cups."
+Flavor-img : "The flavor name of the item in this image is Blue Bell Dutch Chocolate and Homemade Vanilla ice cream."
+Product Details: "The product details of the item in this page are:\n\n* Brand: Blue Bell\n* Type: Ice Cream\n* Flavor: Dutch Chocolate and Homemade Vanilla\n* Size: 12 cups\n* Packaging: Plastic bag\n* Ingredients: Dutch chocolate ice cream and homemade vanilla ice cream\n* Nutritional Information:\n\t+ Calories: 260 per cup\n\t+ Fat: 16g per cup\n\t+ Saturated Fat: 9g per cup\n\t+ Cholesterol: 30mg per cup\n\t+ Carbohydrates: 20g per cup\n\t+ Sugar: 18g per cup\n\t+ Protein: 4g per cup\n\t+ Vitamin A: 5% per cup\n\t+ Vitamin C: 0% per cup\n\t+ Calcium: 10% per cup\n\t+ Iron: 0% per cup"
+Flavor: "The product details of the item in this page are:\n\n* Brand: Blue Bell\n* Product Name: Dutch Chocolate and Homemade Vanilla Ice Cream Cups\n* Package Type: Ice Cream Cups\n* Package Quantity: 12\n* Package Weight: 12.5 lbs\n* Package Dimensions: 10.5 x 7.5 x 7.5 inches\n* Ingredients: Ice Cream, Cream, Sugar, Milk, Cocoa, Vanilla, Carrageenan, Mono and Diglycerides, Artificial Flavor, Annatto (for color), Vitamin A Palmitate (for color)."
+
+9
+Item name-link: "The name of the item in the URL is \"Blue Bell Gold Rim Assorted Flavors Ice Cream Tub\"."
+Item name-img : "the name of the item in this image is blue bell ice cream"
+Flavor-link: "The flavor name of the item in the URL is \"Gold Rim Assorted Flavors Ice Cream Tub\"."
+Flavor-img : "The flavor name of the item in this image is Blue Bell Ice Cream."
+Product Details: "The product details of the item in this page are as follows:\n\n* Brand: Blue Bell\n* Product Name: Gold Rim Assorted Flavors Ice Cream Tub\n* Flavors: Blue Bell Ice Cream in four different flavors\n* Packaging: Gold rimmed tubs\n* Size: 1.5 quarts\n* Price: $5.99\n* Availability: Available at Kroger stores\n* Product Image: A stack of four tubs of Blue Bell ice cream in different flavors."
+Flavor: "The product details of the item in this page are as follows:\n\n* Brand: Blue Bell\n* Type: Ice Cream\n* Flavor: Assorted\n* Packaging: Tub\n* Size: 1.5 quarts\n* Price: $4.99\n* Availability: In-store\n* Store: Kroger"
+
+10
+Item name-link: "The name of the item in the URL is \"Kroger Blueberry Mini Muffins Big Deal\"."
+Item name-img : "the name of the item in this image is a box of mini muffins."
+Flavor-link: "The flavor name of the item in the URL is \"Blueberry\"."
+Flavor-img : "The flavor name of the item in this image is Mini Blueberry Muffins."
+Product Details: "The product details of the item in the image are as follows:\n\n1. Brand: Kroger\n2. Product Name: Mini Muffins Blueberry\n3. Type: Muffins\n4. Flavor: Blueberry\n5. Size: Mini\n6. Packaging: Box\n7. Number of Muffins: 20\n8. Ingredients: Real Blueberries\n9. Allergens: Wheat, Milk, Eggs, Soy, and Nuts (in the facility)\n10. Nutritional Information: Per 1 muffin, there are 100 calories, 2.5 grams of fat, 15 grams of carbohydrates, and 2 grams of protein."
+Flavor: "The product details of the item in this page are as follows:\n\n* Brand: Kroger\n* Product Name: Mini Muffins Blueberry\n* Type: Muffins\n* Flavor: Blueberry\n* Size: Mini\n* Packaging: Box\n* Number of Muffins: 80\n* Net Weight: 16.9 oz\n* Ingredients: Real Blueberries\n* Allergens: Wheat, Milk, Eggs, Soy, Blueberries\n* Manufacturer: Kroger\n* Country of Origin: United States"
+
+11
+Item name-link: "The name of the item in the URL is \"Smucker's Uncrustables Peanut Butter & Strawberry Jam Sandwiches\"."
+Item name-img : "The name of the item in this image is Smugglers' Uncrustables."
+Flavor-link: "The flavor name of the item in the URL is \"Peanut Butter & Strawberry Jam Sandwiches\"."
+Flavor-img : "The flavor name of the item in this image is \"Peanut Butter & Strawberry Jam Sandwich.\""
+Product Details: "The product details of the item in this page are as follows:\n\n* Brand: Smucker's\n* Product Name: Uncrustables Peanut Butter & Strawberry Jam Sandwiches\n* Package Type: Box\n* Package Quantity: 10\n* Package Weight: 20.0 ounces\n* Package Dimensions: 6.5 x 6.5 x 0.8 inches\n* Ingredients: Uncrustables Peanut Butter & Strawberry Jam Sandwiches contain peanut butter, strawberry jam, and a flaky, buttery crust. They are made with whole grain bread and contain no high fructose corn syrup.\n* Nutritional Information: Each sandwich contains 10 grams of protein, 10 grams of fiber, and 10 grams of sugar. They are also a good source of vitamins and minerals, including vitamin C, vitamin E, and iron.\n* Allergens: The sandwiches contain peanuts and wheat, so they are not suitable for individuals with peanut or wheat allergies.\n* Storage: Uncrustables Peanut Butter & Strawberry Jam Sandwiches should be stored in a cool, dry place, and they can be refrigerated for up to 7 days or frozen for up to 3 months.\n* Preparation: The sandwiches are ready to eat and do not require any additional preparation. Simply open the package and enjoy."
+Flavor: "The product details of the item in this page are:\n\n* Brand: Smucker's\n* Product Name: Uncrustables Peanut Butter & Strawberry Jam Sandwiches\n* Package Type: Box\n* Package Quantity: 10\n* Package Dimensions: 6.75 x 6.75 x 0.75 inches\n* Item Weight: 20.5 pounds\n* Ingredients: Peanut Butter, Strawberry Jam, Unbaked Pie Crusts\n* Nutrition Facts:\n\t+ Calories: 200 per sandwich\n\t+ Fat: 10g per sandwich\n\t+ Sodium: 200mg per sandwich\n\t+ Sugar: 12g per sandwich\n\t+ Protein: 4g per sandwich\n\t+ Carbohydrates: 30g per sandwich\n* Allergens: Peanuts, Wheat, Milk\n* Dietary Preferences: No High Fructose Corn Syrup, No Artificial Flavors, No Artificial Colors, No Preservatives\n* Manufacturer: The J.M. Smucker Company\n* Country of Origin: United States"
+
+12
+Item name-link: "The name of the item in the URL is Yoplait Original Low Fat Mountain Blueberry Yogurt Cup."
+Item name-img : "the name of the item in this image is yoplait yogurt."
+Flavor-link: "The flavor name of the item in the URL is \"Mountain Blueberry.\""
+Flavor-img : "The flavor name of the item in this image is Mountain Blueberry."
+Product Details: "The product details of the item in this page are:\n\n* Yoplait Original Low Fat Mountain Blueberry Yogurt Cup\n* 6 oz\n* Made with real fruit\n* Low fat\n* 6 oz\n* Mountain blueberry flavor\n* Yoplait brand\n* Packaging: Cup\n* Product type: Yogurt"
+Flavor: "The product details of the item in this page are:\n\n* Yoplait Original Low Fat Mountain Blueberry Yogurt Cup\n* 6 oz\n* Made with real fruit\n* Low fat\n* 6 oz\n* Mountain blueberry flavor\n* Yoplait brand\n* Packaging: Cup\n* Product type: Yogurt"
+
+13
+Item name-link: "The name of the item in the URL is Gatorade Thirst Quencher Mini Yellow Lemon Lime Electrolyte Enhanced Sports Drink."
+Item name-img : "the name of the item in this image is gatorade."
+Flavor-link: "The flavor name of the item in the URL is Lemon Lime."
+Flavor-img : "Lemon Lime"
+Product Details: "The product details of the item on the Kroger website are as follows:\n\n* Brand: Gatorade\n* Product Name: Thirst Quencher Mini Yellow Lemon Lime Electrolyte Enhanced Sports Drink\n* Size: 12 fl oz\n* Flavor: Lemon Lime\n* Packaging: 12-pack\n* Ingredients: Water, Lemon Juice Concentrate, Lime Juice Concentrate, Natural Flavors, Sodium Citrate, Citric Acid, Monopotassium Phosphate, Potassium Chloride, Sodium Chloride, Magnesium Chloride, Calcium Chloride\n* Nutrition Facts:\n\t+ Calories: 100\n\t+ Sugar: 0 g\n\t+ Sodium: 350 mg\n\t+ Potassium: 300 mg\n\t+ Vitamin C: 100 mg\n\t+ Vitamin B6: 0 mg\n\t+ Vitamin B12: 0 mg\n\t+ Magnesium: 0 mg\n\t+ Calcium: 0 mg\n\t+ Iron: 0 mg\n\t+ Thiamine: 0 mg\n\t+ Riboflavin: 0 mg\n\t+ Niacin: 0 mg\n\t+ Vitamin A: 0 mg\n\t+ Vitamin E: 0 mg\n\t+ Vitamin K: 0 mg\n\t+ Folate: 0 mcg\n\t+ Choline: 0 mg\n\t+ Inositol: 0 mg\n\t+ Carnitine: 0 mg\n\t+ Taurine: 0 mg\n\t+ Tyrosine: 0 mg\n\t+ Cysteine: 0 mg\n\t+ Methionine: 0 mg\n\t+ Phenylalanine: 0 mg\n\t+ Tryptophan: 0 mg\n\t+ Histidine: 0 mg\n\t+ Arginine: 0 mg\n\t+ Glutamine: 0 mg\n\t+ Aspartic Acid: 0 mg"
+Flavor: "The product details of the item on the Kroger website are as follows:\n\n* Brand: Gatorade\n* Product Name: Thirst Quencher Mini Yellow Lemon Lime Electrolyte Enhanced Sports Drink\n* Size: 12 oz\n* Flavor: Lemon Lime\n* Packaging: 12-pack\n* Ingredients: Water, Lemon Juice, Lime Juice, Sucralose, Citric Acid, Natural Flavors, Potassium Chloride, Sodium Chloride, Calcium Chloride, Magnesium Chloride, Vitamin C (Ascorbic Acid)\n* Nutrition Facts:\n\t+ Calories: 100\n\t+ Sugar: 0 g\n\t+ Sodium: 350 mg\n\t+ Potassium: 300 mg\n\t+ Vitamin C: 100 mg\n\t+ Vitamin B6: 0 mg\n\t+ Vitamin B12: 0 mg\n\t+ Calcium: 200 mg\n\t+ Iron: 0 mg\n\t+ Magnesium: 0 mg\n\t+ Phosphorus: 0 mg\n\t+ Zinc: 0 mg"
+
+14
+Item name-link: "The name of the item in the URL is \"Campbell's Creamy Parmesan Sauce\"."
+Item name-img : "Campbell's Creamy Parmesan Sauce"
+Flavor-link: "The flavor name of the item in the URL is \"Creamy Parmesan\"."
+Flavor-img : "Creamy Parmesan"
+Product Details: "The product details of the item in this page are as follows:\n\nBrand: Campbell's\n\nProduct Name: Creamy Parmesan Sauce\n\nProduct Type: Cooking Sauces\n\nSize: 30.25 oz\n\nNumber of Servings: 4\n\nIngredients: Chicken Broth, Parmesan Cheese (Milk, Cheese Cultures, Salt, Enzymes), Modified Food Starch, Salt, Onion Powder, Garlic Powder, Black Pepper."
+Flavor: "The product details of the item in this page are:\n\n* Brand: Campbell's\n* Product Name: Creamy Parmesan Sauce\n* Package Type: Box\n* Package Quantity: 1\n* Package Weight: 11.0 ounces\n* Package Dimensions: 5.5 x 5.5 x 1.0 inches\n* Item Weight: 11.0 ounces\n* Item Dimensions: 5.5 x 5.5 x 1.0 inches\n* Item Weight: 11.0 ounces\n* Item Dimensions: 5.5 x 5.5 x 1.0 inches\n* Item Weight: 11.0 ounces\n* Item Dimensions: 5.5 x 5.5 x 1.0 inches\n* Item Weight: 11.0 ounces\n* Item Dimensions: 5.5 x 5.5 x 1.0 inches\n* Item Weight: 11.0 ounces\n* Item Dimensions: 5.5 x 5.5 x 1.0 inches\n* Item Weight: 11.0 ounces\n* Item Dimensions: 5.5 x 5.5 x 1.0 inches\n* Item Weight: 11.0 ounces\n* Item Dimensions: 5.5 x 5.5 x 1.0 inches\n* Item Weight: 11.0 ounces\n* Item Dimensions: 5.5 x 5.5 x 1.0 inches\n* Item Weight: 11.0 ounces\n* Item Dimensions: 5.5 x 5.5 x 1.0 inches\n* Item Weight: 11.0 ounces\n* Item Dimensions: 5.5 x 5.5 x 1.0 inches\n* Item Weight: 11.0 ounces\n* Item Dimensions: 5.5 x 5.5 x 1.0 inches\n* Item Weight: 11.0 ounces\n* Item Dimensions: 5.5 x 5.5 x 1.0 inches\n* Item Weight: 11"
+
+15
+Item name-link: "The name of the item in the URL is \"Thomas' Cinnamon Swirl Bread\"."
+Item name-img : "Thomas' Swirl Bread"
+Flavor-link: "The flavor name of the item in the URL is \"Cinnamon Swirl.\""
+Flavor-img : "The flavor name of the item in this image is \"Cinnamon.\""
+Product Details: "The product details of the item in the image are as follows:\n\n1. Brand: Thomas'\n2. Product Name: Cinnamon Swirl Bread\n3. Packaging: Plastic bag\n4. Ingredients: Enriched flour (wheat flour, maltodextrin, niacin, iron, thiamine mononitrate, riboflavin, folic acid), sugar, cinnamon, salt, yeast.\n5. Nutritional Information:\n* Calories: 190\n* Fat: 1g\n* Sodium: 190mg\n* Carbohydrates: 39g\n* Fiber: 1g\n* Sugar: 12g\n* Protein: 4g\n6. Allergens: Wheat, yeast.\n7. Dietary Preferences: Suitable for vegetarians.\n8. Storage: Keep the bread in a closed plastic bag at room temperature.\n9. Best if used by date: See the bottom of the bag for the best if used by date."
+Flavor: "The product details of the item in this page are as follows:\n\n* Brand: Thomas'\n* Product Name: Cinnamon Swirl Bread\n* Package Type: Plastic Bag\n* Package Size: 16.0 oz\n* Number of Servings: 16\n* Ingredients: Unbleached Enriched Wheat Flour, Water, Sugar, Yeast, Cinnamon, Salt, and Oil.\n* Allergens: Wheat, Yeast, and Cinnamon.\n* Dietary Restrictions: Contains Wheat and Yeast.\n* Manufacturer: Thomas'\n* Country of Origin: United States\n* Product Description: Thomas' Cinnamon Swirl Bread is a delicious and easy-to-make bread that is perfect for breakfast or snacking. The bread is made with a swirl of cinnamon and sugar, which adds a sweet and spicy flavor to the bread. It is made with unbleached enriched wheat flour, water, sugar, yeast, cinnamon, salt, and oil. This bread is perfect for toasting or eating as is, and it is a great addition to any breakfast or snack spread."
+
+16
+Item name-link: "The name of the item in the URL is \"Burt's Bees Red Dahlia Tinted Lip Balm\"."
+Item name-img : "the name of the item in this image is burts bees lip balm."
+Flavor-link: "The flavor name of the item in the URL is \"Red Dahlia\"."
+Flavor-img : "The flavor name of the item in this image is \"Red Bees.\""
+Product Details: "The product details of the item in this page are as follows:\n\n* Brand: Burt's Bees\n* Product Name: Red Dahlia Tinted Lip Balm\n* Product Type: Lip Balm\n* Color: Red\n* Size: 0.17 oz\n* Ingredients: Beeswax, Camellia Oil, Coconut Oil, Shea Butter, Vitamin E, Flavor (Natural Flavor, Natural Vanilla Flavor)\n* Packaging: Tube\n* Packaging Material: Plastic\n* Packaging Color: Red\n* Packaging Type: Tube\n* Packaging Shape: Round\n* Packaging Size: 0.17 oz\n* Packaging Weight: 0.17 oz\n* Ingredients Origin: Natural\n* Ingredients Source: Beeswax, Camellia Oil, Coconut Oil, Shea Butter, Vitamin E, Flavor (Natural Flavor, Natural Vanilla Flavor)\n* Ingredients Source Country: United States\n* Ingredients Source State: California\n* Ingredients Source City: San Francisco\n* Ingredients Source Zip Code: 94105\n* Ingredients Source Country Code: US\n* Ingredients Source State Code: CA\n* Ingredients Source City Code: 94105\n* Ingredients Source Zip Code Code: 94105\n* Ingredients Source Country Code: US\n* Ingredients Source State Code: CA\n* Ingredients Source City Code: 94105\n* Ingredients Source Zip Code Code: 94105\n* Ingredients Source Country Code: US\n* Ingredients Source State Code: CA\n* Ingredients Source City Code: 94105\n* Ingredients Source Zip Code Code: 94105\n* Ingredients Source Country Code: US\n* Ingredients Source State Code: CA\n* Ingredients Source City Code: 94105\n* Ingredients Source Zip Code Code: 94105\n* Ingredients Source Country Code: US\n* Ingredients Source State Code: CA\n*"
+Flavor: "The product details of the item in this page are as follows:\n\n* Brand: Burt's Bees\n* Product Name: Red Dahlia Tinted Lip Balm\n* Product Type: Lip Balm\n* Color: Red\n* Size: 0.15 oz\n* Ingredients: Beeswax, Camellia Oil, Coconut Oil, Shea Butter, Vitamin E\n* Packaging: Tube\n* Packaging Material: Plastic\n* Packaging Color: Red\n* Packaging Type: Tube\n* Packaging Shape: Round\n* Packaging Size: 0.15 oz\n* Packaging Weight: 0.15 oz\n* Ingredients: Beeswax, Camellia Oil, Coconut Oil, Shea Butter, Vitamin E\n* Ingredients Type: Natural\n* Ingredients Source: Beeswax, Camellia Oil, Coconut Oil, Shea Butter, Vitamin E\n* Ingredients Origin: Beeswax, Camellia Oil, Coconut Oil, Shea Butter, Vitamin E\n* Ingredients Quality: Natural\n* Ingredients Purity: Natural\n* Ingredients Content: Beeswax, Camellia Oil, Coconut Oil, Shea Butter, Vitamin E\n* Ingredients Source: Beeswax, Camellia Oil, Coconut Oil, Shea Butter, Vitamin E\n* Ingredients Quality: Natural\n* Ingredients Purity: Natural\n* Ingredients Content: Beeswax, Camellia Oil, Coconut Oil, Shea Butter, Vitamin E\n* Ingredients Source: Beeswax, Camellia Oil, Coconut Oil, Shea Butter, Vitamin E\n* Ingredients Quality: Natural\n* Ingredients Purity: Natural\n* Ingredients Content: Beeswax, Camellia Oil, Coconut Oil, Shea Butter, Vitamin E\n* Ingredients Source: Beeswax, Camellia Oil, Coconut Oil, Shea Butter, Vitamin E\n*"
+
+17
+Item name-link: "The name of the item in the URL is \"Safetec Lip Balm\"."
+Item name-img : "the name of the item in this image is lip balm"
+Flavor-link: "The flavor name of the item in the URL is \"Lip Balm\"."
+Flavor-img : "Lip Balm"
+Product Details: "The product details of the item in this page are:\n\n* Brand: Safetec\n* Product Name: Lip Balm\n* Package Quantity: 144\n* Package Type: Individual Packet\n* Package Size: 0.5 gram\n* Item Type: Health & Beauty\n* UPC: 0077219508692\n* Weight: 0.53123 ounces\n* Dimensions: 0.53123 x 0.53123 x 0.53123 inches"
+Flavor: "The product details of the item in this page are:\n\n* Brand: Safetec\n* Product Name: Lip Balm\n* Package Type: Individual Packet\n* Package Quantity: 144 Count\n* Package Dimensions: 2.5 x 2.5 x 0.5 inches\n* Item Weight: 0.5 grams\n* Ingredients: Pomegranate Raspberry Flavored with Vitamin E, Beeswax, and Other Natural Ingredients\n* Product Description: Safetec Lip Balm is a lip balm that is flavored with pomegranate raspberry and contains vitamin E, beeswax, and other natural ingredients. It is available in individual packets, making it a convenient and portable option for those who want to keep their lips moisturized and protected."
+
+18
+Item name-link: "The name of the item in the URL is \"It's Delish 100% Natural Cocoa Butter\"."
+Item name-img : "The item in this image is a piece of butter."
+Flavor-link: "The flavor name of the item in the URL is \"100% natural cocoa butter\"."
+Flavor-img : "The item in the image is butter."
+Product Details: "The product details of the item in the image are as follows:\n\n1. It is a 100% natural cocoa butter.\n2. The cocoa butter is made from cocoa beans.\n3. It is a versatile ingredient that can be used in various recipes, such as baking, cooking, and skincare.\n4. The cocoa butter is creamy and has a mild chocolate flavor.\n5. It is a great alternative to butter or shortening in recipes.\n6. The cocoa butter is available in a 1-pound package."
+Flavor: "The product details of the item in the image are as follows:\n\n1. The product is a 100% natural cocoa butter.\n2. It is a white, creamy substance.\n3. The cocoa butter is cut into small pieces.\n4. The image shows the cocoa butter in a close-up view.\n5. The cocoa butter is displayed on a white background."
+
+19
+Item name-link: "The name of the item in the URL is \"Ultra Chewy Peanut Butter Flavored Double Treat Bone\"."
+Item name-img : "Double Treat Bones"
+Flavor-link: "The flavor name of the item in the URL is \"Peanut Butter Flavored\"."
+Flavor-img : "Ultra Double Chewy Treat Bones"
+Product Details: "The product is a bag of peanut butter flavored dog treats called \"Ultra Chewy Double Treat Bones.\" The bag contains eight treats, and each treat is made with real peanut butter and is designed to be chewy and flavorful for dogs. The treats are also made with natural ingredients and are free from artificial flavors, colors, and preservatives. The packaging is designed to be convenient and easy to open, making it a great option for dog owners looking for a healthy and delicious treat for their furry friends."
+Flavor: "The product details of the item in this page are as follows:\n\n* Product Name: Ultra Chewy Peanut Butter Flavored Double Treat Bone\n* Brand: Ultra\n* Package Type: Bag\n* Package Size: 8 oz\n* Package Quantity: 1\n* Item Type: Dog Treats\n* Ingredients: Peanut Butter, Wheat Flour, Rice Flour, Eggs, Salt, Baking Powder, Cinnamon, Ginger, Nutmeg, Cloves, Vanilla Extract, Cream Cheese, Butter, Milk, Eggs, Salt, Baking Powder, Cinnamon, Ginger, Nutmeg, Cloves, Vanilla Extract, Cream Cheese, Butter, Milk, Eggs, Salt, Baking Powder, Cinnamon, Ginger, Nutmeg, Cloves, Vanilla Extract, Cream Cheese, Butter, Milk, Eggs, Salt, Baking Powder, Cinnamon, Ginger, Nutmeg, Cloves, Vanilla Extract, Cream Cheese, Butter, Milk, Eggs, Salt, Baking Powder, Cinnamon, Ginger, Nutmeg, Cloves, Vanilla Extract, Cream Cheese, Butter, Milk, Eggs, Salt, Baking Powder, Cinnamon, Ginger, Nutmeg, Cloves, Vanilla Extract, Cream Cheese, Butter, Milk, Eggs, Salt, Baking Powder, Cinnamon, Ginger, Nutmeg, Cloves, Vanilla Extract, Cream Cheese, Butter, Milk, Eggs, Salt, Baking Powder, Cinnamon, Ginger, Nutmeg, Cloves, Vanilla Extract, Cream Cheese, Butter, Milk, Eggs, Salt, Baking Powder, Cinnamon, Ginger, Nutmeg, Cloves, Vanilla Extract, Cream Cheese, Butter, Milk, Eggs, Salt, Baking Powder, Cinnamon, Ginger, Nutmeg, Cloves, Van"
+
+20
+Item name-link: "The name of the item in this URL is \"Olly Glowing Skin Hyaluronic Acid Collagen Sea Buckthorn Gummies\"."
+Item name-img : "the name of the item in this image is Olly Vibrant Skin."
+Flavor-link: "The flavor name of the item in the URL is \"Vibrant Skin\"."
+Flavor-img : "Vibrant Skin"
+Product Details: "The product is a bottle of Olly Glowing Skin Hyaluronic Acid Collagen Sea Buckthorn Gummies. It contains 50 gummies and is a dietary supplement. The gummies are flavored with raspberries and are designed to support hydrated, youthful skin. The product is available at Kroger."
+Flavor: "The product details of the item in the image are as follows:\n\n1. Brand: Olly\n2. Product Name: Vibrant Skin Gummies\n3. Ingredients: Hyaluronic Acid, Collagen, Sea Buckthorn, Vitamin C, Vitamin E, Vitamin K, Vitamin B6, Vitamin B12, Folate, Biotin, Zinc, Selenium, Iodine, Manganese, Chromium, Molybdenum, Copper, Potassium, Magnesium, Iron, and Vitamin D3\n4. Dietary Supplement: Yes\n5. Flavor: Berry\n6. Packaging: Glass Jar\n7. Serving Size: 2 Gummies\n8. Servings Per Container: 50\n9. Price: $14.99\n10. Availability: In Stock"
+
+21
+Item name-link: "The name of the item in the URL is Nature Made Energy B12 Gummies."
+Item name-img : "Nature Made Energy B12 Gummies"
+Flavor-link: "The flavor name of the item in the URL is \"Cherry Mixed Berries\"."
+Flavor-img : "Energy B12 Gummies"
+Product Details: "The product details of the item in this page are as follows:\n\nBrand: Nature Made\n\nProduct Name: Energy B12 Gummies\n\nFlavor: Cherry Mixed Berries\n\nDosage Form: Gummies\n\nActive Ingredient: Vitamin B12\n\nStrength: 1000 mcg\n\nIngredients: Vitamin B12, Gelatin, Glycerol, Natural Cherry Flavor, Natural Mixed Berry Flavor, Citric Acid, Natural Red Raspberry Flavor, Natural Blueberry Flavor, Natural Blackberry Flavor, Natural Strawberry Flavor, Natural Grape Flavor, Natural Tangerine Flavor, Natural Orange Flavor, Natural Lemon Flavor, Natural Lime Flavor, Natural Grapefruit Flavor, Natural Peach Flavor, Natural Apricot Flavor, Natural Papaya Flavor, Natural Mango Flavor, Natural Pineapple Flavor, Natural Passion Fruit Flavor, Natural Watermelon Flavor, Natural Blue Raspberry Flavor, Natural Black Raspberry Flavor, Natural Red Raspberry Flavor, Natural Strawberry Flavor, Natural Blueberry Flavor, Natural Blackberry Flavor, Natural Grape Flavor, Natural Orange Flavor, Natural Lemon Flavor, Natural Lime Flavor, Natural Grapefruit Flavor, Natural Peach Flavor, Natural Apricot Flavor, Natural Papaya Flavor, Natural Mango Flavor, Natural Pineapple Flavor, Natural Passion Fruit Flavor, Natural Watermelon Flavor, Natural Blue Raspberry Flavor, Natural Black Raspberry Flavor, Natural Red Raspberry Flavor, Natural Strawberry Flavor, Natural Blueberry Flavor, Natural Blackberry Flavor, Natural Grape Flavor, Natural Orange Flavor, Natural Lemon Flavor, Natural Lime Flavor, Natural Grapefruit Flavor, Natural Peach Flavor, Natural Apricot Flavor, Natural Papaya Flavor, Natural Mango Flavor, Natural P"
+Flavor: "The product details of the item in this page are as follows:\n\nBrand: Nature Made\n\nProduct Name: Energy B12 Gummies\n\nFlavor: Cherry Mixed Berries\n\nSize: 90 Gummies\n\nDosage: 1000 mcg\n\nIngredients: Vitamin B12, Gelatin, Glycerol, Water, Natural Cherry Flavor, Natural Mixed Berry Flavor, Citric Acid, Natural Red Raspberry Flavor, Natural Blueberry Flavor, Natural Blackberry Flavor, Natural Strawberry Flavor, Natural Grape Flavor, Natural Tangerine Flavor, Natural Orange Flavor, Natural Lemon Flavor, Natural Lime Flavor, Natural Grapefruit Flavor, Natural Pineapple Flavor, Natural Peach Flavor, Natural Apricot Flavor, Natural Plum Flavor, Natural Apple Flavor, Natural Grape Flavor, Natural Cherry Flavor, Natural Blueberry Flavor, Natural Raspberry Flavor, Natural Strawberry Flavor, Natural Blackberry Flavor, Natural Orange Flavor, Natural Lemon Flavor, Natural Lime Flavor, Natural Grapefruit Flavor, Natural Pineapple Flavor, Natural Peach Flavor, Natural Apricot Flavor, Natural Plum Flavor, Natural Apple Flavor, Natural Grape Flavor, Natural Cherry Flavor, Natural Blueberry Flavor, Natural Raspberry Flavor, Natural Strawberry Flavor, Natural Blackberry Flavor, Natural Orange Flavor, Natural Lemon Flavor, Natural Lime Flavor, Natural Grapefruit Flavor, Natural Pineapple Flavor, Natural Peach Flavor, Natural Apricot Flavor, Natural Plum Flavor, Natural Apple Flavor, Natural Grape Flavor, Natural Cherry Flavor, Natural Blueberry Flavor, Natural Raspberry Flavor, Natural Strawberry Flavor, Natural Blackberry Flavor, Natural Orange Flavor, Natural Lemon Flavor, Natural Lime Flavor, Natural Gra"
+
+22
+Item name-link: "The name of the item in the URL is \"Cascadian Farm Organic Cinnamon Crunch Cereal\"."
+Item name-img : "Cascade Farm Organic Cinnamon Crunch Cereal"
+Flavor-link: "The flavor name of the item in the URL is \"Cinnamon Crunch\"."
+Flavor-img : "Cascade Farm Organic Cinnamon Crunch Cereal"
+Product Details: "The product details of the item in this page are as follows:\n\nBrand: Cascadian Farm\nProduct Name: Organic Cinnamon Crunch Cereal\nProduct Type: Cereal\nPackaging: Box\nNumber of Servings: 15\nServing Size: 1 cup (30 grams)\nIngredients: Organic Whole Grain Oat Flakes, Organic Cinnamon, Organic Brown Sugar, Organic Raisins, Organic Dried Apples, Organic Dried Cranberries, Organic Dried Blueberries, Organic Dried Cherries, Organic Dried Apricots, Organic Dried Pears, Organic Dried Peaches, Organic Dried Plums, Organic Dried Pineapple, Organic Dried Papaya, Organic Dried Mango, Organic Dried Pears, Organic Dried Peaches, Organic Dried Plums, Organic Dried Pineapple, Organic Dried Papaya, Organic Dried Mango, Organic Dried Cranberries, Organic Dried Blueberries, Organic Dried Cherries, Organic Dried Apricots, Organic Dried Pears, Organic Dried Peaches, Organic Dried Plums, Organic Dried Pineapple, Organic Dried Papaya, Organic Dried Mango, Organic Dried Cranberries, Organic Dried Blueberries, Organic Dried Cherries, Organic Dried Apricots, Organic Dried Pears, Organic Dried Peaches, Organic Dried Plums, Organic Dried Pineapple, Organic Dried Papaya, Organic Dried Mango, Organic Dried Cranberries, Organic Dried Blueberries, Organic Dried Cherries, Organic Dried Apricots, Organic Dried Pears, Organic Dried Peaches, Organic Dried Plums, Organic Dried Pineapple, Organic Dried Papaya, Organic Dried Mango, Organic Dried Cranberries, Organic Dried Blueberries, Organic Dried Cherries, Organic Dried Apricots, Organic Dried Pears, Organic Dried Peaches"
+Flavor: "The product details of the item in this page are as follows:\n\nBrand: Cascadian Farm\nProduct Name: Organic Cinnamon Crunch Cereal\nProduct Type: Cereal\nPackaging: Box\nIngredients: Organic Whole Grain Oats, Organic Cinnamon, Organic Brown Sugar, Organic Wheat Thins, Organic Raisins, Organic Cranberries, Organic Sunflower Seeds, Organic Pumpkin Seeds, Organic Sesame Seeds, Organic Cinnamon, Organic Brown Sugar, Organic Wheat Thins, Organic Raisins, Organic Cranberries, Organic Sunflower Seeds, Organic Pumpkin Seeds, Organic Sesame Seeds, Organic Cinnamon, Organic Brown Sugar, Organic Wheat Thins, Organic Raisins, Organic Cranberries, Organic Sunflower Seeds, Organic Pumpkin Seeds, Organic Sesame Seeds, Organic Cinnamon, Organic Brown Sugar, Organic Wheat Thins, Organic Raisins, Organic Cranberries, Organic Sunflower Seeds, Organic Pumpkin Seeds, Organic Sesame Seeds, Organic Cinnamon, Organic Brown Sugar, Organic Wheat Thins, Organic Raisins, Organic Cranberries, Organic Sunflower Seeds, Organic Pumpkin Seeds, Organic Sesame Seeds, Organic Cinnamon, Organic Brown Sugar, Organic Wheat Thins, Organic Raisins, Organic Cranberries, Organic Sunflower Seeds, Organic Pumpkin Seeds, Organic Sesame Seeds, Organic Cinnamon, Organic Brown Sugar, Organic Wheat Thins, Organic Raisins, Organic Cranberries, Organic Sunflower Seeds, Organic Pumpkin Seeds, Organic Sesame Seeds, Organic Cinnamon, Organic Brown Sugar, Organic Wheat Thins, Organic Raisins, Organic Cranberries, Organic Sunflower Seeds, Organic Pumpkin Seeds, Organic Sesame"
+
+23
+Item name-link: "The name of the item in the URL is Kettle Brand Jalapeno Kettle Potato Chips."
+Item name-img : "The name of the item in this image is Kettle Brand Potato Chips."
+Flavor-link: "The flavor name of the item in the URL is \"Kettle Brand Jalapeno Kettle Potato Chips\"."
+Flavor-img : "Jalapeno"
+Product Details: "The product details of the item in this page are as follows:\n\n* Brand: Kettle Brand\n* Product Name: Jalapeno Kettle Potato Chips\n* Package Type: Bag\n* Package Size: 7.5 oz\n* Flavor: Jalapeno\n* Allergens: Gluten, Milk, Soy, Wheat\n* Ingredients: Potatoes, Vegetable Oil (Sunflower, Canola, and/or Cottonseed Oil), Sea Salt, Jalapeno Peppers, Natural Flavors, and Yeast.\n* Nutritional Information:\n\t+ Calories: 160\n\t+ Fat: 8g\n\t+ Saturated Fat: 1g\n\t+ Trans Fat: 0g\n\t+ Cholesterol: 0mg\n\t+ Sodium: 180mg\n\t+ Carbohydrates: 18g\n\t+ Fiber: 1g\n\t+ Sugar: 0g\n\t+ Protein: 2g\n\t+ Vitamin D: 0%\n\t+ Calcium: 0%\n\t+ Iron: 0%\n\t+ Potassium: 0%\n\t+ Vitamin C: 0%\n\t+ Vitamin B6: 0%"
+Flavor: "The product details of the item in this page are:\n\n* Brand: Kettle Brand\n* Product Name: Jalapeno Kettle Potato Chips\n* Package Type: Bag\n* Package Size: 7.5 oz\n* Flavor: Jalapeno\n* Allergens: Gluten, Milk, Soy, Wheat\n* Ingredients: Potatoes, Vegetable Oil (Sunflower, Canola, and/or Cottonseed Oil), Salt, Jalapeno Peppers, Lime Juice, Natural Flavors, and Yeast Extract.\n* Nutritional Information:\n\t+ Calories: 160\n\t+ Fat: 8g\n\t+ Saturated Fat: 1g\n\t+ Trans Fat: 0g\n\t+ Cholesterol: 0mg\n\t+ Sodium: 190mg\n\t+ Carbohydrates: 18g\n\t+ Fiber: 1g\n\t+ Sugar: 0g\n\t+ Protein: 2g"
+
+24
+Item name-link: "The name of the item in the URL is \"Trident Original Flavor Sugar Free Gum 14 pcs 24 packs\"."
+Item name-img : "the name of the item in this image is trident gum."
+Flavor-link: "The flavor name of the item in the URL is \"Original Flavor.\""
+Flavor-img : "The flavor name of the item in this image is \"Original Flavor.\""
+Product Details: "The product details of the item in this page are:\n\n* Trident Original Flavor Sugar-Free Gum\n* 14 pieces per pack\n* 24 packs per case\n* Sugar-free\n* Original flavor\n* 0 calories per stick\n* Made in the USA\n* Packaging may vary"
+Flavor: "The product details of the item in this page are:\n\n* Trident Original Flavor Sugar-Free Gum, 14 pcs, 24 packs\n* The gum is sugar-free and comes in a blue packaging.\n* The packaging contains 24 packs of gum, each pack containing 14 pieces.\n* The gum is made by the Trident brand, which is known for its dental care products.\n* The gum is designed to freshen breath and promote oral health without the added sugar."
+
+25
+Item name-link: "The name of the item in the URL is \"Payday Peanut Caramel Bar King Size\"."
+Item name-img : "Payday Peanut Caramel Bar"
+Flavor-link: "The flavor name of the item in the URL is \"Payday Peanut Caramel Bar\"."
+Flavor-img : "The flavor name of the item in this image is \"Payday.\""
+Product Details: "The product details of the item in this page are as follows:\n\n* Brand: Payday\n* Type: Candy Bar\n* Flavor: Peanut Caramel\n* Size: King Size\n* Weight: 1.8 oz\n* Ingredients: Sugar, Peanuts, Caramel, Milk, Butter, Salt, and Artificial Flavor\n* Allergens: Peanuts, Milk\n* Manufacturer: The Hershey Company\n* Packaging: Wrapper\n* Price: $0.99\n* Availability: In stock\n* Store: Kroger"
+Flavor: "The product details of the item in this page are as follows:\n\n* Brand: Payday\n* Type: Candy Bar\n* Flavor: Peanut Caramel\n* Size: King Size\n* Ingredients: Sugar, Peanuts, Caramel, Palm Oil, Milk, Cocoa Butter, Lecithin, Vanilla, Salt, and Artificial Flavor\n* Nutrition Facts:\n\t+ Calories: 240\n\t+ Fat: 12g\n\t+ Saturated Fat: 8g\n\t+ Cholesterol: 20mg\n\t+ Carbohydrates: 30g\n\t+ Fiber: 2g\n\t+ Sugar: 24g\n\t+ Protein: 8g\n\t+ Vitamin D: 0%\n\t+ Calcium: 0%\n\t+ Iron: 0%\n\t+ Potassium: 0%\n\t+ Sodium: 10%"
+
+26
+Item name-link: "The name of the item in the URL is Tic Tac Freshmints."
+Item name-img : "the name of the item in this image is tic tac freshmint"
+Flavor-link: "The flavor name of the item in the URL is \"Freshmints\"."
+Flavor-img : "Freshmint"
+Product Details: "The product details of the item in the image are as follows:\n\n1. Brand: Tic Tac\n2. Product Name: Freshmints Breath Mints\n3. Package Type: Tray\n4. Package Size: 1.0 oz (28.4 g)\n5. Number of Mints: 25\n6. Flavor: Mint\n7. Ingredients: Sugar, Corn Syrup, Gum Base, Artificial Flavor, Artificial Sweetener (Aspartame), Color (Titanium Dioxide), Binder (Glycerol), and Preservative (Sorbic Acid).\n8. Allergens: Aspartame (an artificial sweetener)"
+Flavor: "The product details of the item in the image are as follows:\n\n1. Brand: Tic Tac\n2. Product Name: Freshmints Breath Mints\n3. Packaging: The mints are packaged in a clear plastic container with a green label.\n4. Flavor: Fresh mint\n5. Quantity: The container holds 100 mints.\n6. Ingredients: The mints contain sugar, corn syrup, and artificial flavors.\n7. Net Weight: 0.8 oz (227 g)"
+
+27
+Item name-link: "The name of the item in the URL is \"Lily's Assorted Sour Fruit Flavored Gummy Worms Bag\"."
+Item name-img : "The name of the item in this image is Lily's Sour Gummy Worms."
+Flavor-link: "The flavor name of the item in the URL is \"Lily's Assorted Sour Fruit Flavored Gummy Worms.\""
+Flavor-img : "The flavor name of the item in this image is Lily's Sour Gummy Worms."
+Product Details: "The product details of the item in this page are:\n\n* Lily's Assorted Sour Fruit Flavored Gummy Worms\n* 11g bag\n* No sugar added\n* Tart and tasty fruit flavor\n* New packaging\n* Contains 11g of gummy worms\n* No sugar added\n* Fruit flavored\n* Tart and tasty\n* New packaging\n* 11g bag"
+Flavor: "The product details of the item in this page are:\n\n* Lily's Assorted Sour Fruit Flavored Gummy Worms Bag\n* 11.5 oz bag\n* No sugar added\n* Tart and tasty fruit flavors\n* New packaging\n* No artificial colors or flavors\n* No high fructose corn syrup\n* No preservatives\n* No gluten\n* No dairy\n* No eggs\n* No fish\n* No shellfish\n* No tree nuts\n* No peanuts\n* No wheat\n* No soy\n* No yeast\n* No sodium\n* No artificial sweeteners\n* No artificial flavors\n* No artificial colors\n* No preservatives\n* No gluten\n* No dairy\n* No eggs\n* No fish\n* No shellfish\n* No tree nuts\n* No peanuts\n* No wheat\n* No soy\n* No yeast\n* No sodium\n* No artificial sweeteners\n* No artificial flavors\n* No artificial colors\n* No preservatives\n* No gluten\n* No dairy\n* No eggs\n* No fish\n* No shellfish\n* No tree nuts\n* No peanuts\n* No wheat\n* No soy\n* No yeast\n* No sodium\n* No artificial sweeteners\n* No artificial flavors\n* No artificial colors\n* No preservatives\n* No gluten\n* No dairy\n* No eggs\n* No fish\n* No shellfish\n* No tree nuts\n* No peanuts\n* No wheat\n* No soy\n* No yeast\n* No sodium\n* No artificial sweeteners\n* No artificial flavors\n* No artificial colors\n* No preservatives\n* No gluten\n* No dairy\n* No eggs\n* No fish\n* No shellfish\n* No tree nuts\n* No peanuts\n* No wheat\n* No soy\n* No yeast\n* No sodium\n* No artificial sweeteners\n* No artificial flavors\n* No artificial colors\n* No preservatives\n* No gluten\n* No dairy\n* No eggs\n* No fish\n* No shellfish\n* No tree"
+
+28
+Item name-link: "The name of the item in the URL is \"Kimberley's Bakeshoppe Pumpkin Spice Filled Gourmet Cupcakes\"."
+Item name-img : "The name of the item in this image is a box of pumpkin spice cupcakes."
+Flavor-link: "The flavor name of the item in the URL is \"Pumpkin Spice\"."
+Flavor-img : "The flavor name of the item in this image is Pumpkin Spice."
+Product Details: "The product details of the item in this page are:\n\n* Brand: Kimberley's Bakeshoppe\n* Product Name: Pumpkin Spice Filled Gourmet Cupcakes\n* Package Type: Plastic container\n* Package Quantity: 6\n* Package Dimensions: 6.5 x 6.5 x 6.5 inches\n* Item Weight: 1.5 pounds\n* Ingredients: Pumpkin puree, sugar, butter, eggs, flour, baking powder, salt, cinnamon, nutmeg, ginger, cloves, allspice, vanilla extract, cream cheese, powdered sugar, vanilla extract, cinnamon, nutmeg, ginger, cloves, allspice, vanilla extract, cream cheese, powdered sugar, vanilla extract, cinnamon, nutmeg, ginger, cloves, allspice, vanilla extract, cream cheese, powdered sugar, vanilla extract, cinnamon, nutmeg, ginger, cloves, allspice, vanilla extract, cream cheese, powdered sugar, vanilla extract, cinnamon, nutmeg, ginger, cloves, allspice, vanilla extract, cream cheese, powdered sugar, vanilla extract, cinnamon, nutmeg, ginger, cloves, allspice, vanilla extract, cream cheese, powdered sugar, vanilla extract, cinnamon, nutmeg, ginger, cloves, allspice, vanilla extract, cream cheese, powdered sugar, vanilla extract, cinnamon, nutmeg, ginger, cloves, allspice, vanilla extract, cream cheese, powdered sugar, vanilla extract, cinnamon, nutmeg, ginger, cloves, allspice, vanilla extract, cream cheese, powdered sugar, vanilla extract, cinnamon, nutmeg, ginger, cloves, allspice, vanilla extract, cream cheese, powdered sugar, vanilla extract, cinnamon, nutmeg, ginger, cloves, allspice, van"
+Flavor: "The product details of the item in this page are:\n\n* Kimberley's Bakeshoppe Pumpkin Spice Filled Gourmet Cupcakes\n* 12 count\n* 12 oz\n* UPC: 0077098131224\n* Price: $12.99\n* Ingredients: Enriched flour (wheat flour, niacin, reduced iron, thiamine mononitrate, riboflavin, folic acid), sugar, butter, eggs, pumpkin puree, cinnamon, ginger, nutmeg, cloves, allspice, salt, baking powder (baking powder (sodium acid pyrophosphate, sodium bicarbonate, cornstarch, monocalcium phosphate), baking powder (sodium acid pyrophosphate, sodium bicarbonate, cornstarch, monocalcium phosphate)), cocoa powder (processed with alkali), vanilla extract, baking soda, cream cheese, pumpkin puree, eggs, sugar, spices."
+
+29
+Item name-link: "The name of the item in the URL is \"Entenmann's Little Bites Party Cake Mini Muffin Pouches.\""
+Item name-img : "Little Bites Party Cake Muffins"
+Flavor-link: "The flavor name of the item in the URL is \"Party Cake Mini Muffins.\""
+Flavor-img : "Little Bites Party Cake Muffins"
+Product Details: "?"
+Flavor: "?"
+
+30
+Item name-link: "The name of the item in the URL is \"Bakery Fresh Goodness Yellow Cake with Chocolate Buttercreme Icing\"."
+Item name-img : "The name of the item in this image is a chocolate cake."
+Flavor-link: "The flavor name of the item in the URL is \"Yellow Cake with Chocolate Buttercreme Icing.\""
+Flavor-img : "The flavor name of the item in this image is chocolate."
+Product Details: "The product details of the item in this page are as follows:\n\n1. Product Name: Bakery Fresh Goodness Yellow Cake with Chocolate Buttercreme Icing\n2. Brand: Bakery Fresh Goodness\n3. Type: Cakes\n4. Flavor: Yellow Cake with Chocolate Buttercreme Icing\n5. Size: 12 oz\n6. Packaging: Plastic wrap\n7. Ingredients: Enriched flour, sugar, butter, eggs, milk, baking powder, salt, vanilla extract, chocolate buttercreme icing\n8. Allergens: Contains wheat, milk, eggs, and soy\n9. Dietary Restrictions: Not suitable for vegans or gluten-free diets\n10. Shelf Life: Refrigerate after opening and consume within 3 days."
+Flavor: "The product details of the item in the image are as follows:\n\n1. The cake is a chocolate cake with a yellow frosting.\n2. It is a square-shaped cake.\n3. The cake is placed in a plastic container.\n4. The cake is decorated with sprinkles.\n5. The cake is a freshly baked product from the bakery.\n6. The cake is available at Kroger stores."
+
+31
+Item name-link: "The name of the item in the URL is Takis Fuego Hot Chili Pepper Lime Rolled Tortilla Chips."
+Item name-img : "the name of the item in this image is a bag of tikis extreme frito."
+Flavor-link: "The flavor name of the item in the URL is \"Takis Fuego\"."
+Flavor-img : "Takis Fuego"
+Product Details: "The product details of the item in this page are:\n\n* Brand: Takis\n* Product Name: Takis Fuego Hot Chili Pepper Lime Rolled Tortilla Chips\n* Package Size: 9.9 oz\n* Flavor: Hot Chili Pepper and Lime\n* Ingredients: Tortilla Chips, Chili Pepper, Lime, and Salt.\n* Allergens: Wheat, Gluten, and Lime.\n* Nutritional Information: Calories 160, Fat 8g, Sodium 240mg, Carbohydrates 21g, Fiber 1g, Sugar 1g, Protein 3g."
+Flavor: "The product details of the item in this page are as follows:\n\n* Brand: Takis\n* Product Name: Takis Fuego Hot Chili Pepper Lime Rolled Tortilla Chips\n* Package Size: 9.9 oz\n* Flavor: Hot Chili Pepper and Lime\n* Ingredients: Tortilla Chips, Chili Pepper, Lime, and Salt.\n* Allergens: Wheat, Milk, and Soy.\n* Manufacturer: Grupo Bimbo\n* Country of Origin: Mexico."
+
+32
+Item name-link: "The name of the item in the URL is Goldfish Cheddar Cheese Crackers."
+Item name-img : "Goldfish Crackers"
+Flavor-link: "The flavor name of the item in the URL is \"Goldfish Cheddar Cheese Crackers\"."
+Flavor-img : "Goldfish Crackers Cheesier"
+Product Details: "The product details of the item in this page are as follows:\n\n* Brand: Goldfish\n* Type: Crackers\n* Flavor: Cheddar\n* Size: 6.6 oz\n* Ingredients: Cheese (Milk, Cheese Cultures, Salt, Enzymes), Wheat Thins, Wheat, Salt, Yeast, Natural Flavor, Natural Color, and Baking Soda.\n* Allergens: Wheat, Milk, and Yeast.\n* Nutritional Information:\n\t+ Calories: 160\n\t+ Fat: 6g\n\t+ Saturated Fat: 3g\n\t+ Cholesterol: 15mg\n\t+ Sodium: 220mg\n\t+ Carbohydrates: 19g\n\t+ Fiber: 1g\n\t+ Sugar: 1g\n\t+ Protein: 4g\n\t+ Vitamin D: 0%\n\t+ Calcium: 0%\n\t+ Iron: 0%\n\t+ Potassium: 0%"
+Flavor: "The product details of the item in this page are:\n\n* Brand: Goldfish\n* Type: Crackers\n* Flavor: Cheddar\n* Size: 6.6 oz\n* Ingredients: Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Ch"
+
+33
+Item name-link: "The name of the item in the URL is \"Milano Raspberry Chocolate Sandwich Cookies\"."
+Item name-img : "Milano Raspberry Chocolate Cookies"
+Flavor-link: "The flavor name of the item in the URL is \"Milano Raspberry Chocolate Sandwich Cookies\"."
+Flavor-img : "Milano"
+Product Details: "The product details of the item in this page are:\n\n* Brand: Pepperidge Farm\n* Name: Milano Raspberry Chocolate Sandwich Cookies\n* Type: Cookies\n* Flavor: Raspberry Chocolate\n* Package: 16.5 oz (1 lb)\n* Net weight: 16.5 oz (1 lb)\n* Ingredients: Enriched flour (wheat flour, niacin, reduced iron, thiamine mononitrate, riboflavin, folic acid), sugar, butter, chocolate, raspberry jam, eggs, cocoa powder, salt, vanilla extract.\n* Allergens: Wheat, eggs, milk, soy.\n* Manufacturer: Pepperidge Farm\n* Country of origin: United States\n* Product code: 0001410007481\n* Package dimensions: 7.5 x 7.5 x 16.5 inches\n* Package weight: 16.5 oz (1 lb)"
+Flavor: "The product details of the item in this page are:\n\n* Brand: Pepperidge Farm\n* Product Name: Milano Raspberry Chocolate Sandwich Cookies\n* Flavor: Raspberry Chocolate\n* Type: Cookies\n* Size: 16.5 oz\n* Packaging: Plastic container\n* Ingredients: Enriched flour (wheat flour, niacin, reduced iron, thiamine mononitrate, riboflavin, folic acid), sugar, butter, chocolate, raspberry jam, eggs, cocoa powder, baking powder, salt, vanilla extract.\n* Allergens: Wheat, milk, eggs, soy.\n* Nutritional Information:\n\t+ Calories: 170 per cookie\n\t+ Fat: 7g per cookie\n\t+ Saturated Fat: 4g per cookie\n\t+ Cholesterol: 20mg per cookie\n\t+ Sodium: 140mg per cookie\n\t+ Carbohydrates: 27g per cookie\n\t+ Fiber: 1g per cookie\n\t+ Sugar: 14g per cookie\n\t+ Protein: 3g per cookie"
+
+34
+Item name-link: "The name of the item in the URL is Orville Redenbacher's Movie Theater Butter Microwave Popcorn."
+Item name-img : "Orville Redenbacher's Movie Theater Butter Classic 6 Bags"
+Flavor-link: "The flavor name of the item in the URL is \"Movie Theater Butter\"."
+Flavor-img : "Movie Theater Butter"
+Product Details: "The product details of the item in this page are:\n\n* Brand: Orville Redenbacher's\n* Product Type: Popcorn\n* Flavor: Movie Theater Butter\n* Size: 6 bags\n* Package Type: Box"
+Flavor: "The product details of the item in this page are:\n\n* Brand: Orville Redenbacher's\n* Product Type: Popcorn\n* Flavor: Movie Theater Butter\n* Packaging: 6 bags\n* Size: 6 bags (6.5 oz each)\n* Ingredients: Popcorn, Butter, Salt\n* Cooking Method: Microwave\n* Allergens: Milk\n* Dietary Preferences: Dairy-free\n* Dietary Preferences: Lactose-free\n* Dietary Preferences: Casein-free\n* Dietary Preferences: Gluten-free\n* Dietary Preferences: Wheat-free\n* Dietary Preferences: Nut-free\n* Dietary Preferences: Soy-free\n* Dietary Preferences: Yeast-free\n* Dietary Preferences: Egg-free\n* Dietary Preferences: Corn-free\n* Dietary Preferences: Preservative-free\n* Dietary Preferences: Artificial flavor-free\n* Dietary Preferences: Artificial color-free\n* Dietary Preferences: Low sodium\n* Dietary Preferences: Low fat\n* Dietary Preferences: Low cholesterol\n* Dietary Preferences: Low calorie\n* Dietary Preferences: Low carbohydrate\n* Dietary Preferences: Low sugar\n* Dietary Preferences: Low sodium\n* Dietary Preferences: Low fat\n* Dietary Preferences: Low cholesterol\n* Dietary Preferences: Low calorie\n* Dietary Preferences: Low carbohydrate\n* Dietary Preferences: Low sugar\n* Dietary Preferences: Low sodium\n* Dietary Preferences: Low fat\n* Dietary Preferences: Low cholesterol\n* Dietary Preferences: Low calorie\n* Dietary Preferences: Low carbohydrate\n* Dietary Preferences: Low sugar\n* Dietary Preferences: Low sodium\n* Dietary Preferences: Low fat\n* Dietary Preferences: Low cholesterol\n* Dietary Preferences: Low calorie\n* Dietary Preferences: Low carbohydrate\n* Dietary Preferences: Low sugar\n* Dietary Preferences: Low sodium"
+
+
+(base) C:\Users\sophia.yue\AI>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1
+Item name-link: "The name of the item in the URL is \"Kroger Deluxe Mint Chocolate Chip Ice Cream\"."
+Item name-img : "The name of the item in this image is a container of mint chocolate chip ice cream."
+Flavor-link: "The flavor name of the item in the URL is \"Mint Chocolate Chip\"."
+Flavor-img : "mint chocolate chip"
+Product Details: "The product details of the item in this page are:\n\n* Brand: Kroger\n* Name: Deluxe Mint Chocolate Chip Ice Cream\n* Type: Ice Cream\n* Flavor: Mint Chocolate Chip\n* Size: 1.5 quart\n* Packaging: Plastic container\n* Ingredients: Cream, sugar, corn syrup, whey protein concentrate, cocoa, mint, and other natural flavors."
+Flavor: "The product details of the item in this page are as follows:\n\n* Brand: Kroger\n* Product Name: Deluxe Mint Chocolate Chip Ice Cream\n* Package Type: Container\n* Package Size: 1.5 quart\n* Flavor: Mint Chocolate Chip\n* Ice Cream Type: Ice Cream\n* Weight: 1.5 pounds\n* Ingredients: Cream, sugar, corn syrup, whey protein concentrate, cocoa, mint, and other natural flavors.\n* Allergens: Milk, eggs, and wheat.\n* Manufacturer: Kroger\n* UPC: 0001111050711\n* Item Number: 0001111050711\n* Product Image: A container of mint chocolate chip ice cream."
+
+2
+Item name-link: "The name of the item in the URL is \"Kroger Deluxe Triple Brownie Ice Cream Tub\"."
+Item name-img : "the name of the item in this image is a tub of ice cream"
+Flavor-link: "The flavor name of the item in the URL is \"Triple Brownie\"."
+Flavor-img : "The flavor name of the item in this image is Triple Brownie."
+Product Details: "The product details of the item in this page are as follows:\n\n* Brand: Kroger\n* Name: Deluxe Triple Brownie Ice Cream\n* Type: Ice Cream\n* Flavor: Triple Brownie\n* Size: 1.5 quart (1.66 liters)\n* Packaging: Plastic container\n* Ingredients: Cream, sugar, cocoa, butter, wheat flour, eggs, and vanilla\n* Nutritional Information: Calories per serving: 320, Fat: 18g, Saturated Fat: 10g, Cholesterol: 60mg, Carbohydrates: 36g, Fiber: 0g, Sugar: 30g, Protein: 8g, Vitamin A: 600 IU, Vitamin C: 0mg, Calcium: 200mg, Iron: 0mg\n* Allergens: Milk, eggs, wheat, and soy\n* Manufacturer: Kroger\n* Country of Origin: United States"
+Flavor: "The product details of the item in this page are as follows:\n\n* Brand: Kroger\n* Product Name: Deluxe Triple Brownie Ice Cream\n* Package Type: Tub\n* Flavor: Triple Brownie\n* Size: 1.5 quarts\n* Ingredients: Cream, sugar, skim milk, cocoa, wheat flour, butter, eggs, chocolate, and vanilla\n* Nutrition Facts: Calories 350, Fat 18g, Saturated Fat 10g, Cholesterol 55mg, Carbohydrates 28g, Fiber 0g, Sugar 26g, Protein 4g, Vitamin A 550IU, Vitamin C 0mg, Calcium 200mg, Iron 0mg\n* Allergens: Milk, eggs, wheat, and chocolate\n* Manufacturer: Kroger\n* Country of Origin: United States"
+
+3
+Item name-link: "The name of the item in the URL is \"Simple Truth Organic Dairy Free Strawberry Fruit Bars\"."
+Item name-img : "The name of the item in this image is a box of Simple Truth Organic Strawberry Fruit Bars."
+Flavor-link: "The flavor name of the item in the URL is \"Strawberry\"."
+Flavor-img : "The flavor name of the item in this image is \"Strawberry\"."
+Product Details: "The product details of the item in this page are:\n\n* Brand: Simple Truth\n* Product Name: Organic Dairy Free Strawberry Fruit Bars\n* Package Type: Box\n* Package Quantity: 6\n* Package Dimensions: 6.8 x 6.8 x 1.2 inches\n* Number of Servings: 80\n* Servings Per Container: 6\n* Calories Per Serving: 60\n* Fat Calories Per Serving: 0\n* Sugar Calories Per Serving: 15\n* Sodium Per Serving: 0\n* Ingredients: Organic Strawberries, Organic Cane Sugar, Organic Palm Kernel Oil, Organic Gellan Gum, Sea Salt."
+Flavor: "The product details of the item in the image are as follows:\n\n* Brand: Simple Truth\n* Product Name: Organic Strawberry Fruit Bars\n* Type: Fruit Bars\n* Flavor: Strawberry\n* Calories: 80 per bar\n* Weight: 6.8 oz\n* Packaging: Pink and white box\n* Ingredients: Organic strawberries, organic cane sugar, organic palm kernel oil, organic cocoa butter, organic soy protein, organic carrageenan, organic natural flavors, organic sunflower lecithin, organic sea salt."
+
+4
+Item name-link: "The name of the item in the URL is \"Dreyer's Edy's Grand Cookie Cobblestone Ice Cream Tub\"."
+Item name-img : "The name of the item in this image is a container of ice cream."
+Flavor-link: "The flavor name of the item in the URL is \"Eddy's Grand Cookie Cobblestone Ice Cream.\""
+Flavor-img : "Cookie Cobbler"
+Product Details: "The product details of the item in this page are as follows:\n\nBrand: Dreyer's\nProduct Name: Edy's Grand Cookie Cobblestone Ice Cream Tub\nProduct Type: Ice Cream\nFlavor: Cookie Cobblestone\nSize: 1.5 qt\nPackaging: Tub"
+Flavor: "The product details of the item in this page are as follows:\n\n* Brand: Dreyer's\n* Product Name: Edy's Grand Cookie Cobblestone Ice Cream Tub\n* Package Type: Tub\n* Size: 1.5 qt\n* Flavor: Cookie Cobblestone\n* Ingredients: Ice Cream, Cookie Pieces, Chocolate Chips\n* Dietary Restrictions: None\n* Allergens: None\n* Manufacturer: Dreyer's\n* UPC: 0004154877219\n* Weight: 1.5 lbs\n* Dimensions: 7.5 x 7.5 x 7.5 inches"
+
+5
+Item name-link: "The name of the item in the URL is \"Ben & Jerry's Americone Dream Vanilla Ice Cream\"."
+Item name-img : "The name of the item in this image is a Ben & Jerry's ice cream."
+Flavor-link: "The flavor name of the item in the URL is \"America's Favorite Vanilla Ice Cream.\""
+Flavor-img : "The flavor name of the item in this image is \"America's favorite flavor.\""
+Product Details: "The product details of the item in this page are as follows:\n\n* Brand: Ben & Jerry's\n* Product Name: Americone Dream Vanilla Ice Cream\n* Size: 16 oz\n* Flavor: Vanilla\n* Type: Ice Cream"
+Flavor: "The product details of the item in this page are:\n\n* Brand: Ben & Jerry's\n* Flavor: Americone Dream\n* Size: 16 oz\n* Type: Ice Cream"
+
+6
+Item name-link: "The name of the item in the URL is \"Blue Bunny Chocolate Cookie Crumble Mini Ice Cream Bars\"."
+Item name-img : "Blue Bunny Mini Bars Chocolate Cookie Crumbble"
+Flavor-link: "The flavor name of the item in the URL is \"Chocolate Cookie Crumbles\"."
+Flavor-img : "The flavor name of the item in this image is Chocolate Cookie Crumbble."
+Product Details: "The product details of the item in this page are as follows:\n\n* Brand: Blue Bunny\n* Type: Ice Cream\n* Flavor: Chocolate Cookie Crumbles\n* Size: Mini\n* Number of Bars: 6\n* Weight: 12.6 ounces\n* Ingredients: Milk, Cream, Sugar, Cocoa, Wheat Flour, Eggs, Butter, Chocolate Chips, Vanilla Extract, Salt, Baking Soda, Baking Powder, Cinnamon, Nutmeg, Cloves, Allspice, Vanilla Bean Extract, Natural Vanilla Flavor, Caramel Color, Annatto Color, Blue 1 Lake, Yellow 5 Lake, Yellow 6 Lake, Red 40 Lake, Blue 2 Lake, Titanium Dioxide, Carrageenan, Locust Bean Gum, Gellan Gum, Carrageenan, Sunflower Lecithin, Natural Flavors, Artificial Flavors, and Artificial Colors."
+Flavor: "The product details of the item in this page are as follows:\n\n* Brand: Blue Bunny\n* Product Name: Chocolate Cookie Crumbles Mini Ice Cream Bars\n* Package Quantity: 6\n* Package Type: Box\n* Number of Servings: 6\n* Servings Per Container: 1\n* Calories Per Serving: 120\n* Fat Per Serving: 6g\n* Saturated Fat Per Serving: 3g\n* Cholesterol Per Serving: 20mg\n* Sodium Per Serving: 70mg\n* Carbohydrates Per Serving: 18g\n* Sugars Per Serving: 16g\n* Protein Per Serving: 2g\n* Ingredients: Chocolate ice cream, chocolate chip cookies, sugar, cocoa butter, milk, cream, whey, eggs, vanilla extract, salt, natural flavor."
+
+7
+Item name-link: "The name of the item in the URL is \"Haagen-Dazs Vanilla Milk Chocolate Almond Ice Cream Bars\"."
+Item name-img : "the name of the item in this image is haagen-dazs vanilla milk chocolate almond ice cream bar."
+Flavor-link: "The flavor name of the item in the URL is \"Vanilla Milk Chocolate Almond Ice Cream Bars.\""
+Flavor-img : "The flavor name of the item in this image is Vanilla Milk Chocolate Almond Ice Cream Bar."
+Product Details: "The product details of the Haagen-Dazs Vanilla Milk Chocolate Almond ice cream bars are as follows:\n\n* Flavor: Vanilla Milk Chocolate Almond\n* Type: Ice Cream Bars\n* Size: 3-pack\n* Weight: 3.5 lbs (1.6 kg)\n* Ingredients: Vanilla ice cream, milk chocolate, almonds, and other natural flavors\n* Allergens: Milk, almonds, and soy\n* Dietary restrictions: Lactose intolerant, nut allergies\n* Manufacturer: Haagen-Dazs\n* Brand: Haagen-Dazs\n* Package: 3-pack of ice cream bars\n* Price: $6.99\n* Availability: Available at Kroger stores"
+Flavor: "The product details of the Haagen-Dazs Vanilla Milk Chocolate Almond Ice Cream Bars are as follows:\n\n* 3-pack of ice cream bars\n* Each bar contains 3 ounces of ice cream\n* Flavors include vanilla, milk chocolate, and almond\n* Made with real vanilla, milk chocolate, and almonds\n* Contains 360 calories per bar\n* Dairy and almond ingredients\n* Suitable for vegetarians\n* Contains no artificial flavors or colors\n* Gluten-free\n* Kosher\n* Made in the USA\n* Available in a 3-pack for convenience and sharing\n\nThese ice cream bars are a delicious and indulgent treat that can be enjoyed by those who love the combination of vanilla, milk chocolate, and almond flavors. The 3-pack offers a convenient way to share and enjoy these treats with friends and family."
+
+8
+Item name-link: "The name of the item in the URL is Blue Bell Dutch Chocolate and Homemade Vanilla Ice Cream Cups."
+Item name-img : "Blue Bell Dutch Chocolate and Homemade Vanilla Ice Cream"
+Flavor-link: "The flavor name of the item in the URL is Blue Bell Dutch Chocolate and Homemade Vanilla Ice Cream Cups."
+Flavor-img : "The flavor name of the item in this image is Blue Bell Dutch Chocolate and Homemade Vanilla ice cream."
+Product Details: "The product details of the item in this page are:\n\n* Brand: Blue Bell\n* Type: Ice Cream\n* Flavor: Dutch Chocolate and Homemade Vanilla\n* Size: 12 cups\n* Packaging: Plastic bag\n* Ingredients: Dutch chocolate ice cream and homemade vanilla ice cream\n* Nutritional Information:\n\t+ Calories: 260 per cup\n\t+ Fat: 16g per cup\n\t+ Saturated Fat: 9g per cup\n\t+ Cholesterol: 30mg per cup\n\t+ Carbohydrates: 20g per cup\n\t+ Sugar: 18g per cup\n\t+ Protein: 4g per cup\n\t+ Vitamin A: 5% per cup\n\t+ Vitamin C: 0% per cup\n\t+ Calcium: 10% per cup\n\t+ Iron: 0% per cup"
+Flavor: "The product details of the item in this page are:\n\n* Brand: Blue Bell\n* Product Name: Dutch Chocolate and Homemade Vanilla Ice Cream Cups\n* Package Type: Ice Cream Cups\n* Package Quantity: 12\n* Package Weight: 12.5 lbs\n* Package Dimensions: 10.5 x 7.5 x 7.5 inches\n* Ingredients: Ice Cream, Cream, Sugar, Milk, Cocoa, Vanilla, Carrageenan, Mono and Diglycerides, Artificial Flavor, Annatto (for color), Vitamin A Palmitate (for color)."
+
+9
+Item name-link: "The name of the item in the URL is \"Blue Bell Gold Rim Assorted Flavors Ice Cream Tub\"."
+Item name-img : "the name of the item in this image is blue bell ice cream"
+Flavor-link: "The flavor name of the item in the URL is \"Gold Rim Assorted Flavors Ice Cream Tub\"."
+Flavor-img : "The flavor name of the item in this image is Blue Bell Ice Cream."
+Product Details: "The product details of the item in this page are as follows:\n\n* Brand: Blue Bell\n* Product Name: Gold Rim Assorted Flavors Ice Cream Tub\n* Flavors: Blue Bell Ice Cream in four different flavors\n* Packaging: Gold rimmed tubs\n* Size: 1.5 quarts\n* Price: $5.99\n* Availability: Available at Kroger stores\n* Product Image: A stack of four tubs of Blue Bell ice cream in different flavors."
+Flavor: "The product details of the item in this page are as follows:\n\n* Brand: Blue Bell\n* Type: Ice Cream\n* Flavor: Assorted\n* Packaging: Tub\n* Size: 1.5 quarts\n* Price: $4.99\n* Availability: In-store\n* Store: Kroger"
+
+10
+Item name-link: "The name of the item in the URL is \"Kroger Blueberry Mini Muffins Big Deal\"."
+Item name-img : "the name of the item in this image is a box of mini muffins."
+Flavor-link: "The flavor name of the item in the URL is \"Blueberry\"."
+Flavor-img : "The flavor name of the item in this image is Mini Blueberry Muffins."
+Product Details: "The product details of the item in the image are as follows:\n\n1. Brand: Kroger\n2. Product Name: Mini Muffins Blueberry\n3. Type: Muffins\n4. Flavor: Blueberry\n5. Size: Mini\n6. Packaging: Box\n7. Number of Muffins: 20\n8. Ingredients: Real Blueberries\n9. Allergens: Wheat, Milk, Eggs, Soy, and Nuts (in the facility)\n10. Nutritional Information: Per 1 muffin, there are 100 calories, 2.5 grams of fat, 15 grams of carbohydrates, and 2 grams of protein."
+Flavor: "The product details of the item in this page are as follows:\n\n* Brand: Kroger\n* Product Name: Mini Muffins Blueberry\n* Type: Muffins\n* Flavor: Blueberry\n* Size: Mini\n* Packaging: Box\n* Number of Muffins: 80\n* Net Weight: 16.9 oz\n* Ingredients: Real Blueberries\n* Allergens: Wheat, Milk, Eggs, Soy, Blueberries\n* Manufacturer: Kroger\n* Country of Origin: United States"
+
+11
+Item name-link: "The name of the item in the URL is \"Smucker's Uncrustables Peanut Butter & Strawberry Jam Sandwiches\"."
+Item name-img : "The name of the item in this image is Smugglers' Uncrustables."
+Flavor-link: "The flavor name of the item in the URL is \"Peanut Butter & Strawberry Jam Sandwiches\"."
+Flavor-img : "The flavor name of the item in this image is \"Peanut Butter & Strawberry Jam Sandwich.\""
+Product Details: "The product details of the item in this page are as follows:\n\n* Brand: Smucker's\n* Product Name: Uncrustables Peanut Butter & Strawberry Jam Sandwiches\n* Package Type: Box\n* Package Quantity: 10\n* Package Weight: 20.0 ounces\n* Package Dimensions: 6.5 x 6.5 x 0.8 inches\n* Ingredients: Uncrustables Peanut Butter & Strawberry Jam Sandwiches contain peanut butter, strawberry jam, and a flaky, buttery crust. They are made with whole grain bread and contain no high fructose corn syrup.\n* Nutritional Information: Each sandwich contains 10 grams of protein, 10 grams of fiber, and 10 grams of sugar. They are also a good source of vitamins and minerals, including vitamin C, vitamin E, and iron.\n* Allergens: The sandwiches contain peanuts and wheat, so they are not suitable for individuals with peanut or wheat allergies.\n* Storage: Uncrustables Peanut Butter & Strawberry Jam Sandwiches should be stored in a cool, dry place, and they can be refrigerated for up to 7 days or frozen for up to 3 months.\n* Preparation: The sandwiches are ready to eat and do not require any additional preparation. Simply open the package and enjoy."
+Flavor: "The product details of the item in this page are:\n\n* Brand: Smucker's\n* Product Name: Uncrustables Peanut Butter & Strawberry Jam Sandwiches\n* Package Type: Box\n* Package Quantity: 10\n* Package Dimensions: 6.75 x 6.75 x 0.75 inches\n* Item Weight: 20.5 pounds\n* Ingredients: Peanut Butter, Strawberry Jam, Unbaked Pie Crusts\n* Nutrition Facts:\n\t+ Calories: 200 per sandwich\n\t+ Fat: 10g per sandwich\n\t+ Sodium: 200mg per sandwich\n\t+ Sugar: 12g per sandwich\n\t+ Protein: 4g per sandwich\n\t+ Carbohydrates: 30g per sandwich\n* Allergens: Peanuts, Wheat, Milk\n* Dietary Preferences: No High Fructose Corn Syrup, No Artificial Flavors, No Artificial Colors, No Preservatives\n* Manufacturer: The J.M. Smucker Company\n* Country of Origin: United States"
+
+12
+Item name-link: "The name of the item in the URL is Yoplait Original Low Fat Mountain Blueberry Yogurt Cup."
+Item name-img : "the name of the item in this image is yoplait yogurt."
+Flavor-link: "The flavor name of the item in the URL is \"Mountain Blueberry.\""
+Flavor-img : "The flavor name of the item in this image is Mountain Blueberry."
+Product Details: "The product details of the item in this page are:\n\n* Yoplait Original Low Fat Mountain Blueberry Yogurt Cup\n* 6 oz\n* Made with real fruit\n* Low fat\n* 6 oz\n* Mountain blueberry flavor\n* Yoplait brand\n* Packaging: Cup\n* Product type: Yogurt"
+Flavor: "The product details of the item in this page are:\n\n* Yoplait Original Low Fat Mountain Blueberry Yogurt Cup\n* 6 oz\n* Made with real fruit\n* Low fat\n* 6 oz\n* Mountain blueberry flavor\n* Yoplait brand\n* Packaging: Cup\n* Product type: Yogurt"
+
+13
+Item name-link: "The name of the item in the URL is Gatorade Thirst Quencher Mini Yellow Lemon Lime Electrolyte Enhanced Sports Drink."
+Item name-img : "the name of the item in this image is gatorade."
+Flavor-link: "The flavor name of the item in the URL is Lemon Lime."
+Flavor-img : "Lemon Lime"
+Product Details: "The product details of the item on the Kroger website are as follows:\n\n* Brand: Gatorade\n* Product Name: Thirst Quencher Mini Yellow Lemon Lime Electrolyte Enhanced Sports Drink\n* Size: 12 fl oz\n* Flavor: Lemon Lime\n* Packaging: 12-pack\n* Ingredients: Water, Lemon Juice Concentrate, Lime Juice Concentrate, Natural Flavors, Sodium Citrate, Citric Acid, Monopotassium Phosphate, Potassium Chloride, Sodium Chloride, Magnesium Chloride, Calcium Chloride\n* Nutrition Facts:\n\t+ Calories: 100\n\t+ Sugar: 0 g\n\t+ Sodium: 350 mg\n\t+ Potassium: 300 mg\n\t+ Vitamin C: 100 mg\n\t+ Vitamin B6: 0 mg\n\t+ Vitamin B12: 0 mg\n\t+ Magnesium: 0 mg\n\t+ Calcium: 0 mg\n\t+ Iron: 0 mg\n\t+ Thiamine: 0 mg\n\t+ Riboflavin: 0 mg\n\t+ Niacin: 0 mg\n\t+ Vitamin A: 0 mg\n\t+ Vitamin E: 0 mg\n\t+ Vitamin K: 0 mg\n\t+ Folate: 0 mcg\n\t+ Choline: 0 mg\n\t+ Inositol: 0 mg\n\t+ Carnitine: 0 mg\n\t+ Taurine: 0 mg\n\t+ Tyrosine: 0 mg\n\t+ Cysteine: 0 mg\n\t+ Methionine: 0 mg\n\t+ Phenylalanine: 0 mg\n\t+ Tryptophan: 0 mg\n\t+ Histidine: 0 mg\n\t+ Arginine: 0 mg\n\t+ Glutamine: 0 mg\n\t+ Aspartic Acid: 0 mg"
+Flavor: "The product details of the item on the Kroger website are as follows:\n\n* Brand: Gatorade\n* Product Name: Thirst Quencher Mini Yellow Lemon Lime Electrolyte Enhanced Sports Drink\n* Size: 12 oz\n* Flavor: Lemon Lime\n* Packaging: 12-pack\n* Ingredients: Water, Lemon Juice, Lime Juice, Sucralose, Citric Acid, Natural Flavors, Potassium Chloride, Sodium Chloride, Calcium Chloride, Magnesium Chloride, Vitamin C (Ascorbic Acid)\n* Nutrition Facts:\n\t+ Calories: 100\n\t+ Sugar: 0 g\n\t+ Sodium: 350 mg\n\t+ Potassium: 300 mg\n\t+ Vitamin C: 100 mg\n\t+ Vitamin B6: 0 mg\n\t+ Vitamin B12: 0 mg\n\t+ Calcium: 200 mg\n\t+ Iron: 0 mg\n\t+ Magnesium: 0 mg\n\t+ Phosphorus: 0 mg\n\t+ Zinc: 0 mg"
+
+14
+Item name-link: "The name of the item in the URL is \"Campbell's Creamy Parmesan Sauce\"."
+Item name-img : "Campbell's Creamy Parmesan Sauce"
+Flavor-link: "The flavor name of the item in the URL is \"Creamy Parmesan\"."
+Flavor-img : "Creamy Parmesan"
+Product Details: "The product details of the item in this page are as follows:\n\nBrand: Campbell's\n\nProduct Name: Creamy Parmesan Sauce\n\nProduct Type: Cooking Sauces\n\nSize: 30.25 oz\n\nNumber of Servings: 4\n\nIngredients: Chicken Broth, Parmesan Cheese (Milk, Cheese Cultures, Salt, Enzymes), Modified Food Starch, Salt, Onion Powder, Garlic Powder, Black Pepper."
+Flavor: "The product details of the item in this page are:\n\n* Brand: Campbell's\n* Product Name: Creamy Parmesan Sauce\n* Package Type: Box\n* Package Quantity: 1\n* Package Weight: 11.0 ounces\n* Package Dimensions: 5.5 x 5.5 x 1.0 inches\n* Item Weight: 11.0 ounces\n* Item Dimensions: 5.5 x 5.5 x 1.0 inches\n* Item Weight: 11.0 ounces\n* Item Dimensions: 5.5 x 5.5 x 1.0 inches\n* Item Weight: 11.0 ounces\n* Item Dimensions: 5.5 x 5.5 x 1.0 inches\n* Item Weight: 11.0 ounces\n* Item Dimensions: 5.5 x 5.5 x 1.0 inches\n* Item Weight: 11.0 ounces\n* Item Dimensions: 5.5 x 5.5 x 1.0 inches\n* Item Weight: 11.0 ounces\n* Item Dimensions: 5.5 x 5.5 x 1.0 inches\n* Item Weight: 11.0 ounces\n* Item Dimensions: 5.5 x 5.5 x 1.0 inches\n* Item Weight: 11.0 ounces\n* Item Dimensions: 5.5 x 5.5 x 1.0 inches\n* Item Weight: 11.0 ounces\n* Item Dimensions: 5.5 x 5.5 x 1.0 inches\n* Item Weight: 11.0 ounces\n* Item Dimensions: 5.5 x 5.5 x 1.0 inches\n* Item Weight: 11.0 ounces\n* Item Dimensions: 5.5 x 5.5 x 1.0 inches\n* Item Weight: 11.0 ounces\n* Item Dimensions: 5.5 x 5.5 x 1.0 inches\n* Item Weight: 11"
+
+15
+Item name-link: "The name of the item in the URL is \"Thomas' Cinnamon Swirl Bread\"."
+Item name-img : "Thomas' Swirl Bread"
+Flavor-link: "The flavor name of the item in the URL is \"Cinnamon Swirl.\""
+Flavor-img : "The flavor name of the item in this image is \"Cinnamon.\""
+Product Details: "The product details of the item in the image are as follows:\n\n1. Brand: Thomas'\n2. Product Name: Cinnamon Swirl Bread\n3. Packaging: Plastic bag\n4. Ingredients: Enriched flour (wheat flour, maltodextrin, niacin, iron, thiamine mononitrate, riboflavin, folic acid), sugar, cinnamon, salt, yeast.\n5. Nutritional Information:\n* Calories: 190\n* Fat: 1g\n* Sodium: 190mg\n* Carbohydrates: 39g\n* Fiber: 1g\n* Sugar: 12g\n* Protein: 4g\n6. Allergens: Wheat, yeast.\n7. Dietary Preferences: Suitable for vegetarians.\n8. Storage: Keep the bread in a closed plastic bag at room temperature.\n9. Best if used by date: See the bottom of the bag for the best if used by date."
+Flavor: "The product details of the item in this page are as follows:\n\n* Brand: Thomas'\n* Product Name: Cinnamon Swirl Bread\n* Package Type: Plastic Bag\n* Package Size: 16.0 oz\n* Number of Servings: 16\n* Ingredients: Unbleached Enriched Wheat Flour, Water, Sugar, Yeast, Cinnamon, Salt, and Oil.\n* Allergens: Wheat, Yeast, and Cinnamon.\n* Dietary Restrictions: Contains Wheat and Yeast.\n* Manufacturer: Thomas'\n* Country of Origin: United States\n* Product Description: Thomas' Cinnamon Swirl Bread is a delicious and easy-to-make bread that is perfect for breakfast or snacking. The bread is made with a swirl of cinnamon and sugar, which adds a sweet and spicy flavor to the bread. It is made with unbleached enriched wheat flour, water, sugar, yeast, cinnamon, salt, and oil. This bread is perfect for toasting or eating as is, and it is a great addition to any breakfast or snack spread."
+
+16
+Item name-link: "The name of the item in the URL is \"Burt's Bees Red Dahlia Tinted Lip Balm\"."
+Item name-img : "the name of the item in this image is burts bees lip balm."
+Flavor-link: "The flavor name of the item in the URL is \"Red Dahlia\"."
+Flavor-img : "The flavor name of the item in this image is \"Red Bees.\""
+Product Details: "The product details of the item in this page are as follows:\n\n* Brand: Burt's Bees\n* Product Name: Red Dahlia Tinted Lip Balm\n* Product Type: Lip Balm\n* Color: Red\n* Size: 0.17 oz\n* Ingredients: Beeswax, Camellia Oil, Coconut Oil, Shea Butter, Vitamin E, Flavor (Natural Flavor, Natural Vanilla Flavor)\n* Packaging: Tube\n* Packaging Material: Plastic\n* Packaging Color: Red\n* Packaging Type: Tube\n* Packaging Shape: Round\n* Packaging Size: 0.17 oz\n* Packaging Weight: 0.17 oz\n* Ingredients Origin: Natural\n* Ingredients Source: Beeswax, Camellia Oil, Coconut Oil, Shea Butter, Vitamin E, Flavor (Natural Flavor, Natural Vanilla Flavor)\n* Ingredients Source Country: United States\n* Ingredients Source State: California\n* Ingredients Source City: San Francisco\n* Ingredients Source Zip Code: 94105\n* Ingredients Source Country Code: US\n* Ingredients Source State Code: CA\n* Ingredients Source City Code: 94105\n* Ingredients Source Zip Code Code: 94105\n* Ingredients Source Country Code: US\n* Ingredients Source State Code: CA\n* Ingredients Source City Code: 94105\n* Ingredients Source Zip Code Code: 94105\n* Ingredients Source Country Code: US\n* Ingredients Source State Code: CA\n* Ingredients Source City Code: 94105\n* Ingredients Source Zip Code Code: 94105\n* Ingredients Source Country Code: US\n* Ingredients Source State Code: CA\n* Ingredients Source City Code: 94105\n* Ingredients Source Zip Code Code: 94105\n* Ingredients Source Country Code: US\n* Ingredients Source State Code: CA\n*"
+Flavor: "The product details of the item in this page are as follows:\n\n* Brand: Burt's Bees\n* Product Name: Red Dahlia Tinted Lip Balm\n* Product Type: Lip Balm\n* Color: Red\n* Size: 0.15 oz\n* Ingredients: Beeswax, Camellia Oil, Coconut Oil, Shea Butter, Vitamin E\n* Packaging: Tube\n* Packaging Material: Plastic\n* Packaging Color: Red\n* Packaging Type: Tube\n* Packaging Shape: Round\n* Packaging Size: 0.15 oz\n* Packaging Weight: 0.15 oz\n* Ingredients: Beeswax, Camellia Oil, Coconut Oil, Shea Butter, Vitamin E\n* Ingredients Type: Natural\n* Ingredients Source: Beeswax, Camellia Oil, Coconut Oil, Shea Butter, Vitamin E\n* Ingredients Origin: Beeswax, Camellia Oil, Coconut Oil, Shea Butter, Vitamin E\n* Ingredients Quality: Natural\n* Ingredients Purity: Natural\n* Ingredients Content: Beeswax, Camellia Oil, Coconut Oil, Shea Butter, Vitamin E\n* Ingredients Source: Beeswax, Camellia Oil, Coconut Oil, Shea Butter, Vitamin E\n* Ingredients Quality: Natural\n* Ingredients Purity: Natural\n* Ingredients Content: Beeswax, Camellia Oil, Coconut Oil, Shea Butter, Vitamin E\n* Ingredients Source: Beeswax, Camellia Oil, Coconut Oil, Shea Butter, Vitamin E\n* Ingredients Quality: Natural\n* Ingredients Purity: Natural\n* Ingredients Content: Beeswax, Camellia Oil, Coconut Oil, Shea Butter, Vitamin E\n* Ingredients Source: Beeswax, Camellia Oil, Coconut Oil, Shea Butter, Vitamin E\n*"
+
+17
+Item name-link: "The name of the item in the URL is \"Safetec Lip Balm\"."
+Item name-img : "the name of the item in this image is lip balm"
+Flavor-link: "The flavor name of the item in the URL is \"Lip Balm\"."
+Flavor-img : "Lip Balm"
+Product Details: "The product details of the item in this page are:\n\n* Brand: Safetec\n* Product Name: Lip Balm\n* Package Quantity: 144\n* Package Type: Individual Packet\n* Package Size: 0.5 gram\n* Item Type: Health & Beauty\n* UPC: 0077219508692\n* Weight: 0.53123 ounces\n* Dimensions: 0.53123 x 0.53123 x 0.53123 inches"
+Flavor: "The product details of the item in this page are:\n\n* Brand: Safetec\n* Product Name: Lip Balm\n* Package Type: Individual Packet\n* Package Quantity: 144 Count\n* Package Dimensions: 2.5 x 2.5 x 0.5 inches\n* Item Weight: 0.5 grams\n* Ingredients: Pomegranate Raspberry Flavored with Vitamin E, Beeswax, and Other Natural Ingredients\n* Product Description: Safetec Lip Balm is a lip balm that is flavored with pomegranate raspberry and contains vitamin E, beeswax, and other natural ingredients. It is available in individual packets, making it a convenient and portable option for those who want to keep their lips moisturized and protected."
+
+18
+Item name-link: "The name of the item in the URL is \"It's Delish 100% Natural Cocoa Butter\"."
+Item name-img : "The item in this image is a piece of butter."
+Flavor-link: "The flavor name of the item in the URL is \"100% natural cocoa butter\"."
+Flavor-img : "The item in the image is butter."
+Product Details: "The product details of the item in the image are as follows:\n\n1. It is a 100% natural cocoa butter.\n2. The cocoa butter is made from cocoa beans.\n3. It is a versatile ingredient that can be used in various recipes, such as baking, cooking, and skincare.\n4. The cocoa butter is creamy and has a mild chocolate flavor.\n5. It is a great alternative to butter or shortening in recipes.\n6. The cocoa butter is available in a 1-pound package."
+Flavor: "The product details of the item in the image are as follows:\n\n1. The product is a 100% natural cocoa butter.\n2. It is a white, creamy substance.\n3. The cocoa butter is cut into small pieces.\n4. The image shows the cocoa butter in a close-up view.\n5. The cocoa butter is displayed on a white background."
+
+19
+Item name-link: "The name of the item in the URL is \"Ultra Chewy Peanut Butter Flavored Double Treat Bone\"."
+Item name-img : "Double Treat Bones"
+Flavor-link: "The flavor name of the item in the URL is \"Peanut Butter Flavored\"."
+Flavor-img : "Ultra Double Chewy Treat Bones"
+Product Details: "The product is a bag of peanut butter flavored dog treats called \"Ultra Chewy Double Treat Bones.\" The bag contains eight treats, and each treat is made with real peanut butter and is designed to be chewy and flavorful for dogs. The treats are also made with natural ingredients and are free from artificial flavors, colors, and preservatives. The packaging is designed to be convenient and easy to open, making it a great option for dog owners looking for a healthy and delicious treat for their furry friends."
+Flavor: "The product details of the item in this page are as follows:\n\n* Product Name: Ultra Chewy Peanut Butter Flavored Double Treat Bone\n* Brand: Ultra\n* Package Type: Bag\n* Package Size: 8 oz\n* Package Quantity: 1\n* Item Type: Dog Treats\n* Ingredients: Peanut Butter, Wheat Flour, Rice Flour, Eggs, Salt, Baking Powder, Cinnamon, Ginger, Nutmeg, Cloves, Vanilla Extract, Cream Cheese, Butter, Milk, Eggs, Salt, Baking Powder, Cinnamon, Ginger, Nutmeg, Cloves, Vanilla Extract, Cream Cheese, Butter, Milk, Eggs, Salt, Baking Powder, Cinnamon, Ginger, Nutmeg, Cloves, Vanilla Extract, Cream Cheese, Butter, Milk, Eggs, Salt, Baking Powder, Cinnamon, Ginger, Nutmeg, Cloves, Vanilla Extract, Cream Cheese, Butter, Milk, Eggs, Salt, Baking Powder, Cinnamon, Ginger, Nutmeg, Cloves, Vanilla Extract, Cream Cheese, Butter, Milk, Eggs, Salt, Baking Powder, Cinnamon, Ginger, Nutmeg, Cloves, Vanilla Extract, Cream Cheese, Butter, Milk, Eggs, Salt, Baking Powder, Cinnamon, Ginger, Nutmeg, Cloves, Vanilla Extract, Cream Cheese, Butter, Milk, Eggs, Salt, Baking Powder, Cinnamon, Ginger, Nutmeg, Cloves, Vanilla Extract, Cream Cheese, Butter, Milk, Eggs, Salt, Baking Powder, Cinnamon, Ginger, Nutmeg, Cloves, Vanilla Extract, Cream Cheese, Butter, Milk, Eggs, Salt, Baking Powder, Cinnamon, Ginger, Nutmeg, Cloves, Van"
+
+20
+Item name-link: "The name of the item in this URL is \"Olly Glowing Skin Hyaluronic Acid Collagen Sea Buckthorn Gummies\"."
+Item name-img : "the name of the item in this image is Olly Vibrant Skin."
+Flavor-link: "The flavor name of the item in the URL is \"Vibrant Skin\"."
+Flavor-img : "Vibrant Skin"
+Product Details: "The product is a bottle of Olly Glowing Skin Hyaluronic Acid Collagen Sea Buckthorn Gummies. It contains 50 gummies and is a dietary supplement. The gummies are flavored with raspberries and are designed to support hydrated, youthful skin. The product is available at Kroger."
+Flavor: "The product details of the item in the image are as follows:\n\n1. Brand: Olly\n2. Product Name: Vibrant Skin Gummies\n3. Ingredients: Hyaluronic Acid, Collagen, Sea Buckthorn, Vitamin C, Vitamin E, Vitamin K, Vitamin B6, Vitamin B12, Folate, Biotin, Zinc, Selenium, Iodine, Manganese, Chromium, Molybdenum, Copper, Potassium, Magnesium, Iron, and Vitamin D3\n4. Dietary Supplement: Yes\n5. Flavor: Berry\n6. Packaging: Glass Jar\n7. Serving Size: 2 Gummies\n8. Servings Per Container: 50\n9. Price: $14.99\n10. Availability: In Stock"
+
+21
+Item name-link: "The name of the item in the URL is Nature Made Energy B12 Gummies."
+Item name-img : "Nature Made Energy B12 Gummies"
+Flavor-link: "The flavor name of the item in the URL is \"Cherry Mixed Berries\"."
+Flavor-img : "Energy B12 Gummies"
+Product Details: "The product details of the item in this page are as follows:\n\nBrand: Nature Made\n\nProduct Name: Energy B12 Gummies\n\nFlavor: Cherry Mixed Berries\n\nDosage Form: Gummies\n\nActive Ingredient: Vitamin B12\n\nStrength: 1000 mcg\n\nIngredients: Vitamin B12, Gelatin, Glycerol, Natural Cherry Flavor, Natural Mixed Berry Flavor, Citric Acid, Natural Red Raspberry Flavor, Natural Blueberry Flavor, Natural Blackberry Flavor, Natural Strawberry Flavor, Natural Grape Flavor, Natural Tangerine Flavor, Natural Orange Flavor, Natural Lemon Flavor, Natural Lime Flavor, Natural Grapefruit Flavor, Natural Peach Flavor, Natural Apricot Flavor, Natural Papaya Flavor, Natural Mango Flavor, Natural Pineapple Flavor, Natural Passion Fruit Flavor, Natural Watermelon Flavor, Natural Blue Raspberry Flavor, Natural Black Raspberry Flavor, Natural Red Raspberry Flavor, Natural Strawberry Flavor, Natural Blueberry Flavor, Natural Blackberry Flavor, Natural Grape Flavor, Natural Orange Flavor, Natural Lemon Flavor, Natural Lime Flavor, Natural Grapefruit Flavor, Natural Peach Flavor, Natural Apricot Flavor, Natural Papaya Flavor, Natural Mango Flavor, Natural Pineapple Flavor, Natural Passion Fruit Flavor, Natural Watermelon Flavor, Natural Blue Raspberry Flavor, Natural Black Raspberry Flavor, Natural Red Raspberry Flavor, Natural Strawberry Flavor, Natural Blueberry Flavor, Natural Blackberry Flavor, Natural Grape Flavor, Natural Orange Flavor, Natural Lemon Flavor, Natural Lime Flavor, Natural Grapefruit Flavor, Natural Peach Flavor, Natural Apricot Flavor, Natural Papaya Flavor, Natural Mango Flavor, Natural P"
+Flavor: "The product details of the item in this page are as follows:\n\nBrand: Nature Made\n\nProduct Name: Energy B12 Gummies\n\nFlavor: Cherry Mixed Berries\n\nSize: 90 Gummies\n\nDosage: 1000 mcg\n\nIngredients: Vitamin B12, Gelatin, Glycerol, Water, Natural Cherry Flavor, Natural Mixed Berry Flavor, Citric Acid, Natural Red Raspberry Flavor, Natural Blueberry Flavor, Natural Blackberry Flavor, Natural Strawberry Flavor, Natural Grape Flavor, Natural Tangerine Flavor, Natural Orange Flavor, Natural Lemon Flavor, Natural Lime Flavor, Natural Grapefruit Flavor, Natural Pineapple Flavor, Natural Peach Flavor, Natural Apricot Flavor, Natural Plum Flavor, Natural Apple Flavor, Natural Grape Flavor, Natural Cherry Flavor, Natural Blueberry Flavor, Natural Raspberry Flavor, Natural Strawberry Flavor, Natural Blackberry Flavor, Natural Orange Flavor, Natural Lemon Flavor, Natural Lime Flavor, Natural Grapefruit Flavor, Natural Pineapple Flavor, Natural Peach Flavor, Natural Apricot Flavor, Natural Plum Flavor, Natural Apple Flavor, Natural Grape Flavor, Natural Cherry Flavor, Natural Blueberry Flavor, Natural Raspberry Flavor, Natural Strawberry Flavor, Natural Blackberry Flavor, Natural Orange Flavor, Natural Lemon Flavor, Natural Lime Flavor, Natural Grapefruit Flavor, Natural Pineapple Flavor, Natural Peach Flavor, Natural Apricot Flavor, Natural Plum Flavor, Natural Apple Flavor, Natural Grape Flavor, Natural Cherry Flavor, Natural Blueberry Flavor, Natural Raspberry Flavor, Natural Strawberry Flavor, Natural Blackberry Flavor, Natural Orange Flavor, Natural Lemon Flavor, Natural Lime Flavor, Natural Gra"
+
+22
+Item name-link: "The name of the item in the URL is \"Cascadian Farm Organic Cinnamon Crunch Cereal\"."
+Item name-img : "Cascade Farm Organic Cinnamon Crunch Cereal"
+Flavor-link: "The flavor name of the item in the URL is \"Cinnamon Crunch\"."
+Flavor-img : "Cascade Farm Organic Cinnamon Crunch Cereal"
+Product Details: "The product details of the item in this page are as follows:\n\nBrand: Cascadian Farm\nProduct Name: Organic Cinnamon Crunch Cereal\nProduct Type: Cereal\nPackaging: Box\nNumber of Servings: 15\nServing Size: 1 cup (30 grams)\nIngredients: Organic Whole Grain Oat Flakes, Organic Cinnamon, Organic Brown Sugar, Organic Raisins, Organic Dried Apples, Organic Dried Cranberries, Organic Dried Blueberries, Organic Dried Cherries, Organic Dried Apricots, Organic Dried Pears, Organic Dried Peaches, Organic Dried Plums, Organic Dried Pineapple, Organic Dried Papaya, Organic Dried Mango, Organic Dried Pears, Organic Dried Peaches, Organic Dried Plums, Organic Dried Pineapple, Organic Dried Papaya, Organic Dried Mango, Organic Dried Cranberries, Organic Dried Blueberries, Organic Dried Cherries, Organic Dried Apricots, Organic Dried Pears, Organic Dried Peaches, Organic Dried Plums, Organic Dried Pineapple, Organic Dried Papaya, Organic Dried Mango, Organic Dried Cranberries, Organic Dried Blueberries, Organic Dried Cherries, Organic Dried Apricots, Organic Dried Pears, Organic Dried Peaches, Organic Dried Plums, Organic Dried Pineapple, Organic Dried Papaya, Organic Dried Mango, Organic Dried Cranberries, Organic Dried Blueberries, Organic Dried Cherries, Organic Dried Apricots, Organic Dried Pears, Organic Dried Peaches, Organic Dried Plums, Organic Dried Pineapple, Organic Dried Papaya, Organic Dried Mango, Organic Dried Cranberries, Organic Dried Blueberries, Organic Dried Cherries, Organic Dried Apricots, Organic Dried Pears, Organic Dried Peaches"
+Flavor: "The product details of the item in this page are as follows:\n\nBrand: Cascadian Farm\nProduct Name: Organic Cinnamon Crunch Cereal\nProduct Type: Cereal\nPackaging: Box\nIngredients: Organic Whole Grain Oats, Organic Cinnamon, Organic Brown Sugar, Organic Wheat Thins, Organic Raisins, Organic Cranberries, Organic Sunflower Seeds, Organic Pumpkin Seeds, Organic Sesame Seeds, Organic Cinnamon, Organic Brown Sugar, Organic Wheat Thins, Organic Raisins, Organic Cranberries, Organic Sunflower Seeds, Organic Pumpkin Seeds, Organic Sesame Seeds, Organic Cinnamon, Organic Brown Sugar, Organic Wheat Thins, Organic Raisins, Organic Cranberries, Organic Sunflower Seeds, Organic Pumpkin Seeds, Organic Sesame Seeds, Organic Cinnamon, Organic Brown Sugar, Organic Wheat Thins, Organic Raisins, Organic Cranberries, Organic Sunflower Seeds, Organic Pumpkin Seeds, Organic Sesame Seeds, Organic Cinnamon, Organic Brown Sugar, Organic Wheat Thins, Organic Raisins, Organic Cranberries, Organic Sunflower Seeds, Organic Pumpkin Seeds, Organic Sesame Seeds, Organic Cinnamon, Organic Brown Sugar, Organic Wheat Thins, Organic Raisins, Organic Cranberries, Organic Sunflower Seeds, Organic Pumpkin Seeds, Organic Sesame Seeds, Organic Cinnamon, Organic Brown Sugar, Organic Wheat Thins, Organic Raisins, Organic Cranberries, Organic Sunflower Seeds, Organic Pumpkin Seeds, Organic Sesame Seeds, Organic Cinnamon, Organic Brown Sugar, Organic Wheat Thins, Organic Raisins, Organic Cranberries, Organic Sunflower Seeds, Organic Pumpkin Seeds, Organic Sesame"
+
+23
+Item name-link: "The name of the item in the URL is Kettle Brand Jalapeno Kettle Potato Chips."
+Item name-img : "The name of the item in this image is Kettle Brand Potato Chips."
+Flavor-link: "The flavor name of the item in the URL is \"Kettle Brand Jalapeno Kettle Potato Chips\"."
+Flavor-img : "Jalapeno"
+Product Details: "The product details of the item in this page are as follows:\n\n* Brand: Kettle Brand\n* Product Name: Jalapeno Kettle Potato Chips\n* Package Type: Bag\n* Package Size: 7.5 oz\n* Flavor: Jalapeno\n* Allergens: Gluten, Milk, Soy, Wheat\n* Ingredients: Potatoes, Vegetable Oil (Sunflower, Canola, and/or Cottonseed Oil), Sea Salt, Jalapeno Peppers, Natural Flavors, and Yeast.\n* Nutritional Information:\n\t+ Calories: 160\n\t+ Fat: 8g\n\t+ Saturated Fat: 1g\n\t+ Trans Fat: 0g\n\t+ Cholesterol: 0mg\n\t+ Sodium: 180mg\n\t+ Carbohydrates: 18g\n\t+ Fiber: 1g\n\t+ Sugar: 0g\n\t+ Protein: 2g\n\t+ Vitamin D: 0%\n\t+ Calcium: 0%\n\t+ Iron: 0%\n\t+ Potassium: 0%\n\t+ Vitamin C: 0%\n\t+ Vitamin B6: 0%"
+Flavor: "The product details of the item in this page are:\n\n* Brand: Kettle Brand\n* Product Name: Jalapeno Kettle Potato Chips\n* Package Type: Bag\n* Package Size: 7.5 oz\n* Flavor: Jalapeno\n* Allergens: Gluten, Milk, Soy, Wheat\n* Ingredients: Potatoes, Vegetable Oil (Sunflower, Canola, and/or Cottonseed Oil), Salt, Jalapeno Peppers, Lime Juice, Natural Flavors, and Yeast Extract.\n* Nutritional Information:\n\t+ Calories: 160\n\t+ Fat: 8g\n\t+ Saturated Fat: 1g\n\t+ Trans Fat: 0g\n\t+ Cholesterol: 0mg\n\t+ Sodium: 190mg\n\t+ Carbohydrates: 18g\n\t+ Fiber: 1g\n\t+ Sugar: 0g\n\t+ Protein: 2g"
+
+24
+Item name-link: "The name of the item in the URL is \"Trident Original Flavor Sugar Free Gum 14 pcs 24 packs\"."
+Item name-img : "the name of the item in this image is trident gum."
+Flavor-link: "The flavor name of the item in the URL is \"Original Flavor.\""
+Flavor-img : "The flavor name of the item in this image is \"Original Flavor.\""
+Product Details: "The product details of the item in this page are:\n\n* Trident Original Flavor Sugar-Free Gum\n* 14 pieces per pack\n* 24 packs per case\n* Sugar-free\n* Original flavor\n* 0 calories per stick\n* Made in the USA\n* Packaging may vary"
+Flavor: "The product details of the item in this page are:\n\n* Trident Original Flavor Sugar-Free Gum, 14 pcs, 24 packs\n* The gum is sugar-free and comes in a blue packaging.\n* The packaging contains 24 packs of gum, each pack containing 14 pieces.\n* The gum is made by the Trident brand, which is known for its dental care products.\n* The gum is designed to freshen breath and promote oral health without the added sugar."
+
+25
+Item name-link: "The name of the item in the URL is \"Payday Peanut Caramel Bar King Size\"."
+Item name-img : "Payday Peanut Caramel Bar"
+Flavor-link: "The flavor name of the item in the URL is \"Payday Peanut Caramel Bar\"."
+Flavor-img : "The flavor name of the item in this image is \"Payday.\""
+Product Details: "The product details of the item in this page are as follows:\n\n* Brand: Payday\n* Type: Candy Bar\n* Flavor: Peanut Caramel\n* Size: King Size\n* Weight: 1.8 oz\n* Ingredients: Sugar, Peanuts, Caramel, Milk, Butter, Salt, and Artificial Flavor\n* Allergens: Peanuts, Milk\n* Manufacturer: The Hershey Company\n* Packaging: Wrapper\n* Price: $0.99\n* Availability: In stock\n* Store: Kroger"
+Flavor: "The product details of the item in this page are as follows:\n\n* Brand: Payday\n* Type: Candy Bar\n* Flavor: Peanut Caramel\n* Size: King Size\n* Ingredients: Sugar, Peanuts, Caramel, Palm Oil, Milk, Cocoa Butter, Lecithin, Vanilla, Salt, and Artificial Flavor\n* Nutrition Facts:\n\t+ Calories: 240\n\t+ Fat: 12g\n\t+ Saturated Fat: 8g\n\t+ Cholesterol: 20mg\n\t+ Carbohydrates: 30g\n\t+ Fiber: 2g\n\t+ Sugar: 24g\n\t+ Protein: 8g\n\t+ Vitamin D: 0%\n\t+ Calcium: 0%\n\t+ Iron: 0%\n\t+ Potassium: 0%\n\t+ Sodium: 10%"
+
+26
+Item name-link: "The name of the item in the URL is Tic Tac Freshmints."
+Item name-img : "the name of the item in this image is tic tac freshmint"
+Flavor-link: "The flavor name of the item in the URL is \"Freshmints\"."
+Flavor-img : "Freshmint"
+Product Details: "The product details of the item in the image are as follows:\n\n1. Brand: Tic Tac\n2. Product Name: Freshmints Breath Mints\n3. Package Type: Tray\n4. Package Size: 1.0 oz (28.4 g)\n5. Number of Mints: 25\n6. Flavor: Mint\n7. Ingredients: Sugar, Corn Syrup, Gum Base, Artificial Flavor, Artificial Sweetener (Aspartame), Color (Titanium Dioxide), Binder (Glycerol), and Preservative (Sorbic Acid).\n8. Allergens: Aspartame (an artificial sweetener)"
+Flavor: "The product details of the item in the image are as follows:\n\n1. Brand: Tic Tac\n2. Product Name: Freshmints Breath Mints\n3. Packaging: The mints are packaged in a clear plastic container with a green label.\n4. Flavor: Fresh mint\n5. Quantity: The container holds 100 mints.\n6. Ingredients: The mints contain sugar, corn syrup, and artificial flavors.\n7. Net Weight: 0.8 oz (227 g)"
+
+27
+Item name-link: "The name of the item in the URL is \"Lily's Assorted Sour Fruit Flavored Gummy Worms Bag\"."
+Item name-img : "The name of the item in this image is Lily's Sour Gummy Worms."
+Flavor-link: "The flavor name of the item in the URL is \"Lily's Assorted Sour Fruit Flavored Gummy Worms.\""
+Flavor-img : "The flavor name of the item in this image is Lily's Sour Gummy Worms."
+Product Details: "The product details of the item in this page are:\n\n* Lily's Assorted Sour Fruit Flavored Gummy Worms\n* 11g bag\n* No sugar added\n* Tart and tasty fruit flavor\n* New packaging\n* Contains 11g of gummy worms\n* No sugar added\n* Fruit flavored\n* Tart and tasty\n* New packaging\n* 11g bag"
+Flavor: "The product details of the item in this page are:\n\n* Lily's Assorted Sour Fruit Flavored Gummy Worms Bag\n* 11.5 oz bag\n* No sugar added\n* Tart and tasty fruit flavors\n* New packaging\n* No artificial colors or flavors\n* No high fructose corn syrup\n* No preservatives\n* No gluten\n* No dairy\n* No eggs\n* No fish\n* No shellfish\n* No tree nuts\n* No peanuts\n* No wheat\n* No soy\n* No yeast\n* No sodium\n* No artificial sweeteners\n* No artificial flavors\n* No artificial colors\n* No preservatives\n* No gluten\n* No dairy\n* No eggs\n* No fish\n* No shellfish\n* No tree nuts\n* No peanuts\n* No wheat\n* No soy\n* No yeast\n* No sodium\n* No artificial sweeteners\n* No artificial flavors\n* No artificial colors\n* No preservatives\n* No gluten\n* No dairy\n* No eggs\n* No fish\n* No shellfish\n* No tree nuts\n* No peanuts\n* No wheat\n* No soy\n* No yeast\n* No sodium\n* No artificial sweeteners\n* No artificial flavors\n* No artificial colors\n* No preservatives\n* No gluten\n* No dairy\n* No eggs\n* No fish\n* No shellfish\n* No tree nuts\n* No peanuts\n* No wheat\n* No soy\n* No yeast\n* No sodium\n* No artificial sweeteners\n* No artificial flavors\n* No artificial colors\n* No preservatives\n* No gluten\n* No dairy\n* No eggs\n* No fish\n* No shellfish\n* No tree nuts\n* No peanuts\n* No wheat\n* No soy\n* No yeast\n* No sodium\n* No artificial sweeteners\n* No artificial flavors\n* No artificial colors\n* No preservatives\n* No gluten\n* No dairy\n* No eggs\n* No fish\n* No shellfish\n* No tree"
+
+28
+Item name-link: "The name of the item in the URL is \"Kimberley's Bakeshoppe Pumpkin Spice Filled Gourmet Cupcakes\"."
+Item name-img : "The name of the item in this image is a box of pumpkin spice cupcakes."
+Flavor-link: "The flavor name of the item in the URL is \"Pumpkin Spice\"."
+Flavor-img : "The flavor name of the item in this image is Pumpkin Spice."
+Product Details: "The product details of the item in this page are:\n\n* Brand: Kimberley's Bakeshoppe\n* Product Name: Pumpkin Spice Filled Gourmet Cupcakes\n* Package Type: Plastic container\n* Package Quantity: 6\n* Package Dimensions: 6.5 x 6.5 x 6.5 inches\n* Item Weight: 1.5 pounds\n* Ingredients: Pumpkin puree, sugar, butter, eggs, flour, baking powder, salt, cinnamon, nutmeg, ginger, cloves, allspice, vanilla extract, cream cheese, powdered sugar, vanilla extract, cinnamon, nutmeg, ginger, cloves, allspice, vanilla extract, cream cheese, powdered sugar, vanilla extract, cinnamon, nutmeg, ginger, cloves, allspice, vanilla extract, cream cheese, powdered sugar, vanilla extract, cinnamon, nutmeg, ginger, cloves, allspice, vanilla extract, cream cheese, powdered sugar, vanilla extract, cinnamon, nutmeg, ginger, cloves, allspice, vanilla extract, cream cheese, powdered sugar, vanilla extract, cinnamon, nutmeg, ginger, cloves, allspice, vanilla extract, cream cheese, powdered sugar, vanilla extract, cinnamon, nutmeg, ginger, cloves, allspice, vanilla extract, cream cheese, powdered sugar, vanilla extract, cinnamon, nutmeg, ginger, cloves, allspice, vanilla extract, cream cheese, powdered sugar, vanilla extract, cinnamon, nutmeg, ginger, cloves, allspice, vanilla extract, cream cheese, powdered sugar, vanilla extract, cinnamon, nutmeg, ginger, cloves, allspice, vanilla extract, cream cheese, powdered sugar, vanilla extract, cinnamon, nutmeg, ginger, cloves, allspice, van"
+Flavor: "The product details of the item in this page are:\n\n* Kimberley's Bakeshoppe Pumpkin Spice Filled Gourmet Cupcakes\n* 12 count\n* 12 oz\n* UPC: 0077098131224\n* Price: $12.99\n* Ingredients: Enriched flour (wheat flour, niacin, reduced iron, thiamine mononitrate, riboflavin, folic acid), sugar, butter, eggs, pumpkin puree, cinnamon, ginger, nutmeg, cloves, allspice, salt, baking powder (baking powder (sodium acid pyrophosphate, sodium bicarbonate, cornstarch, monocalcium phosphate), baking powder (sodium acid pyrophosphate, sodium bicarbonate, cornstarch, monocalcium phosphate)), cocoa powder (processed with alkali), vanilla extract, baking soda, cream cheese, pumpkin puree, eggs, sugar, spices."
+
+29
+Item name-link: "The name of the item in the URL is \"Entenmann's Little Bites Party Cake Mini Muffin Pouches.\""
+Item name-img : "Little Bites Party Cake Muffins"
+Flavor-link: "The flavor name of the item in the URL is \"Party Cake Mini Muffins.\""
+Flavor-img : "Little Bites Party Cake Muffins"
+Product Details: "?"
+Flavor: "?"
+
+30
+Item name-link: "The name of the item in the URL is \"Bakery Fresh Goodness Yellow Cake with Chocolate Buttercreme Icing\"."
+Item name-img : "The name of the item in this image is a chocolate cake."
+Flavor-link: "The flavor name of the item in the URL is \"Yellow Cake with Chocolate Buttercreme Icing.\""
+Flavor-img : "The flavor name of the item in this image is chocolate."
+Product Details: "The product details of the item in this page are as follows:\n\n1. Product Name: Bakery Fresh Goodness Yellow Cake with Chocolate Buttercreme Icing\n2. Brand: Bakery Fresh Goodness\n3. Type: Cakes\n4. Flavor: Yellow Cake with Chocolate Buttercreme Icing\n5. Size: 12 oz\n6. Packaging: Plastic wrap\n7. Ingredients: Enriched flour, sugar, butter, eggs, milk, baking powder, salt, vanilla extract, chocolate buttercreme icing\n8. Allergens: Contains wheat, milk, eggs, and soy\n9. Dietary Restrictions: Not suitable for vegans or gluten-free diets\n10. Shelf Life: Refrigerate after opening and consume within 3 days."
+Flavor: "The product details of the item in the image are as follows:\n\n1. The cake is a chocolate cake with a yellow frosting.\n2. It is a square-shaped cake.\n3. The cake is placed in a plastic container.\n4. The cake is decorated with sprinkles.\n5. The cake is a freshly baked product from the bakery.\n6. The cake is available at Kroger stores."
+
+31
+Item name-link: "The name of the item in the URL is Takis Fuego Hot Chili Pepper Lime Rolled Tortilla Chips."
+Item name-img : "the name of the item in this image is a bag of tikis extreme frito."
+Flavor-link: "The flavor name of the item in the URL is \"Takis Fuego\"."
+Flavor-img : "Takis Fuego"
+Product Details: "The product details of the item in this page are:\n\n* Brand: Takis\n* Product Name: Takis Fuego Hot Chili Pepper Lime Rolled Tortilla Chips\n* Package Size: 9.9 oz\n* Flavor: Hot Chili Pepper and Lime\n* Ingredients: Tortilla Chips, Chili Pepper, Lime, and Salt.\n* Allergens: Wheat, Gluten, and Lime.\n* Nutritional Information: Calories 160, Fat 8g, Sodium 240mg, Carbohydrates 21g, Fiber 1g, Sugar 1g, Protein 3g."
+Flavor: "The product details of the item in this page are as follows:\n\n* Brand: Takis\n* Product Name: Takis Fuego Hot Chili Pepper Lime Rolled Tortilla Chips\n* Package Size: 9.9 oz\n* Flavor: Hot Chili Pepper and Lime\n* Ingredients: Tortilla Chips, Chili Pepper, Lime, and Salt.\n* Allergens: Wheat, Milk, and Soy.\n* Manufacturer: Grupo Bimbo\n* Country of Origin: Mexico."
+
+32
+Item name-link: "The name of the item in the URL is Goldfish Cheddar Cheese Crackers."
+Item name-img : "Goldfish Crackers"
+Flavor-link: "The flavor name of the item in the URL is \"Goldfish Cheddar Cheese Crackers\"."
+Flavor-img : "Goldfish Crackers Cheesier"
+Product Details: "The product details of the item in this page are as follows:\n\n* Brand: Goldfish\n* Type: Crackers\n* Flavor: Cheddar\n* Size: 6.6 oz\n* Ingredients: Cheese (Milk, Cheese Cultures, Salt, Enzymes), Wheat Thins, Wheat, Salt, Yeast, Natural Flavor, Natural Color, and Baking Soda.\n* Allergens: Wheat, Milk, and Yeast.\n* Nutritional Information:\n\t+ Calories: 160\n\t+ Fat: 6g\n\t+ Saturated Fat: 3g\n\t+ Cholesterol: 15mg\n\t+ Sodium: 220mg\n\t+ Carbohydrates: 19g\n\t+ Fiber: 1g\n\t+ Sugar: 1g\n\t+ Protein: 4g\n\t+ Vitamin D: 0%\n\t+ Calcium: 0%\n\t+ Iron: 0%\n\t+ Potassium: 0%"
+Flavor: "The product details of the item in this page are:\n\n* Brand: Goldfish\n* Type: Crackers\n* Flavor: Cheddar\n* Size: 6.6 oz\n* Ingredients: Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Cheddar Cheese, Wheat Thins, Ch"
+
+33
+Item name-link: "The name of the item in the URL is \"Milano Raspberry Chocolate Sandwich Cookies\"."
+Item name-img : "Milano Raspberry Chocolate Cookies"
+Flavor-link: "The flavor name of the item in the URL is \"Milano Raspberry Chocolate Sandwich Cookies\"."
+Flavor-img : "Milano"
+Product Details: "The product details of the item in this page are:\n\n* Brand: Pepperidge Farm\n* Name: Milano Raspberry Chocolate Sandwich Cookies\n* Type: Cookies\n* Flavor: Raspberry Chocolate\n* Package: 16.5 oz (1 lb)\n* Net weight: 16.5 oz (1 lb)\n* Ingredients: Enriched flour (wheat flour, niacin, reduced iron, thiamine mononitrate, riboflavin, folic acid), sugar, butter, chocolate, raspberry jam, eggs, cocoa powder, salt, vanilla extract.\n* Allergens: Wheat, eggs, milk, soy.\n* Manufacturer: Pepperidge Farm\n* Country of origin: United States\n* Product code: 0001410007481\n* Package dimensions: 7.5 x 7.5 x 16.5 inches\n* Package weight: 16.5 oz (1 lb)"
+Flavor: "The product details of the item in this page are:\n\n* Brand: Pepperidge Farm\n* Product Name: Milano Raspberry Chocolate Sandwich Cookies\n* Flavor: Raspberry Chocolate\n* Type: Cookies\n* Size: 16.5 oz\n* Packaging: Plastic container\n* Ingredients: Enriched flour (wheat flour, niacin, reduced iron, thiamine mononitrate, riboflavin, folic acid), sugar, butter, chocolate, raspberry jam, eggs, cocoa powder, baking powder, salt, vanilla extract.\n* Allergens: Wheat, milk, eggs, soy.\n* Nutritional Information:\n\t+ Calories: 170 per cookie\n\t+ Fat: 7g per cookie\n\t+ Saturated Fat: 4g per cookie\n\t+ Cholesterol: 20mg per cookie\n\t+ Sodium: 140mg per cookie\n\t+ Carbohydrates: 27g per cookie\n\t+ Fiber: 1g per cookie\n\t+ Sugar: 14g per cookie\n\t+ Protein: 3g per cookie"
+
+34
+Item name-link: "The name of the item in the URL is Orville Redenbacher's Movie Theater Butter Microwave Popcorn."
+Item name-img : "Orville Redenbacher's Movie Theater Butter Classic 6 Bags"
+Flavor-link: "The flavor name of the item in the URL is \"Movie Theater Butter\"."
+Flavor-img : "Movie Theater Butter"
+Product Details: "The product details of the item in this page are:\n\n* Brand: Orville Redenbacher's\n* Product Type: Popcorn\n* Flavor: Movie Theater Butter\n* Size: 6 bags\n* Package Type: Box"
+Flavor: "The product details of the item in this page are:\n\n* Brand: Orville Redenbacher's\n* Product Type: Popcorn\n* Flavor: Movie Theater Butter\n* Packaging: 6 bags\n* Size: 6 bags (6.5 oz each)\n* Ingredients: Popcorn, Butter, Salt\n* Cooking Method: Microwave\n* Allergens: Milk\n* Dietary Preferences: Dairy-free\n* Dietary Preferences: Lactose-free\n* Dietary Preferences: Casein-free\n* Dietary Preferences: Gluten-free\n* Dietary Preferences: Wheat-free\n* Dietary Preferences: Nut-free\n* Dietary Preferences: Soy-free\n* Dietary Preferences: Yeast-free\n* Dietary Preferences: Egg-free\n* Dietary Preferences: Corn-free\n* Dietary Preferences: Preservative-free\n* Dietary Preferences: Artificial flavor-free\n* Dietary Preferences: Artificial color-free\n* Dietary Preferences: Low sodium\n* Dietary Preferences: Low fat\n* Dietary Preferences: Low cholesterol\n* Dietary Preferences: Low calorie\n* Dietary Preferences: Low carbohydrate\n* Dietary Preferences: Low sugar\n* Dietary Preferences: Low sodium\n* Dietary Preferences: Low fat\n* Dietary Preferences: Low cholesterol\n* Dietary Preferences: Low calorie\n* Dietary Preferences: Low carbohydrate\n* Dietary Preferences: Low sugar\n* Dietary Preferences: Low sodium\n* Dietary Preferences: Low fat\n* Dietary Preferences: Low cholesterol\n* Dietary Preferences: Low calorie\n* Dietary Preferences: Low carbohydrate\n* Dietary Preferences: Low sugar\n* Dietary Preferences: Low sodium\n* Dietary Preferences: Low fat\n* Dietary Preferences: Low cholesterol\n* Dietary Preferences: Low calorie\n* Dietary Preferences: Low carbohydrate\n* Dietary Preferences: Low sugar\n* Dietary Preferences: Low sodium"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
