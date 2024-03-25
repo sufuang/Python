@@ -1,0 +1,294 @@
+(base) C:\Users\sophia.yue\AI>python LLaMa_txt.py
+Total URLs:  35
+
+Traceback (most recent call last):
+  File "C:\Users\sophia.yue\AppData\Local\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\sophia.yue\AppData\Local\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "C:\Users\sophia.yue\AppData\Local\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\sophia.yue\AppData\Local\anaconda3\lib\http\client.py", line 1374, in getresponse
+    response.begin()
+  File "C:\Users\sophia.yue\AppData\Local\anaconda3\lib\http\client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\sophia.yue\AppData\Local\anaconda3\lib\http\client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sophia.yue\AppData\Local\anaconda3\lib\site-packages\requests\adapters.py", line 489, in send
+    resp = conn.urlopen(
+  File "C:\Users\sophia.yue\AppData\Local\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "C:\Users\sophia.yue\AppData\Local\anaconda3\lib\site-packages\urllib3\util\retry.py", line 550, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\Users\sophia.yue\AppData\Local\anaconda3\lib\site-packages\urllib3\packages\six.py", line 769, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\sophia.yue\AppData\Local\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\sophia.yue\AppData\Local\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "C:\Users\sophia.yue\AppData\Local\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\sophia.yue\AppData\Local\anaconda3\lib\http\client.py", line 1374, in getresponse
+    response.begin()
+  File "C:\Users\sophia.yue\AppData\Local\anaconda3\lib\http\client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\sophia.yue\AppData\Local\anaconda3\lib\http\client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sophia.yue\AI\LLaMa_txt.py", line 31, in <module>
+    item_name_link = TXT_ONLY_API_CALL("what is the name of the item in this link " + url[i]).strip()
+  File "C:\Users\sophia.yue\AI\LLaMa_txt.py", line 12, in TXT_ONLY_API_CALL
+    return eval(requests.post(remote_api_text_prompt,
+  File "C:\Users\sophia.yue\AppData\Local\anaconda3\lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\sophia.yue\AppData\Local\anaconda3\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\sophia.yue\AppData\Local\anaconda3\lib\site-packages\requests\sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\sophia.yue\AppData\Local\anaconda3\lib\site-packages\requests\sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\sophia.yue\AppData\Local\anaconda3\lib\site-packages\requests\adapters.py", line 547, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+(base) C:\Users\sophia.yue\AI>python LLaMa_txt.py
+Total URLs:  35
+
+0 == https://www.kroger.com/p/drumstick-vanilla-frozen-dairy-dessert-cones/0007255400154?searchType=default_search == Vanilla ==   Vanilla
+
+1 == https://www.kroger.com/p/kroger-deluxe-mint-chocolate-chip-ice-cream/0001111050711?searchType=default_search == Mint Chocolate Chip ==   Mint Chocolate Chip
+
+2 == https://www.kroger.com/p/kroger-deluxe-triple-brownie-ice-cream-tub/0001111009909?searchType=default_search == Triple Brownie ==
+
+1. Triple Chocolate
+2. Fudge Brownie
+3. Chocolate Chip
+
+3 == https://www.kroger.com/p/simple-truth-organic-dairy-free-strawberry-fruit-bars/0001111078985?searchType=default_search == Strawberry ==   Strawberry
+
+4 == https://www.kroger.com/p/dreyer-s-edy-s-grand-cookie-cobblestone-ice-cream-tub/0004154877219?searchType=default_search == Cobblestone ==
+
+* Chocolate Chip Cookie Dough
+* Cinnamon
+* Sugar
+* Vanilla
+
+5 == https://www.kroger.com/p/ben-jerry-s-americone-dream-vanilla-ice-cream/0007684010207?searchType=default_search == Americone Dream ==   Vanilla
+
+6 == https://www.kroger.com/p/blue-bunny-chocolate-cookie-crumble-mini-ice-cream-bars/0007064002352?searchType=default_search == Chocolate Cookie Crumble ==
+
+1. Chocolate Cookie Crumble
+2. Mint Chocolate Chip
+3. Peanut Butter Cookie Dough
+4. Strawberry Cheesecake
+5. Cookies and Cream
+
+I hope that helps!
+
+7 == https://www.kroger.com/p/haagen-dazs-vanilla-milk-chocolate-almond-ice-cream-bars/0007457003310?searchType=default_search == Vanilla Milk Chocolate Almond ==
+
+* Vanilla
+* Milk Chocolate
+* Almond
+
+8 == https://www.kroger.com/p/blue-bell-dutch-chocolate-and-homemade-vanilla-ice-cream-cups/0007189962427?searchType=default_search == Sure! The flavor name for the item in the link you provided is "Dutch Chocolate and Homemade Vanilla." ==
+
+1. Dutch Chocolate
+2. Homemade Vanilla
+
+9 == https://www.kroger.com/p/blue-bell-gold-rim-assorted-flavors-ice-cream-tub/0007189903720?searchType=mktg+attribute == Sure! The flavor name for the item in the link you provided is "Gold Rim Assorted Flavors." ==
+
+1. Cookies 'n Cream
+2. Moo-llennium Crunch
+3. Peanut Butter 'n Chocolate
+4. Strawberry
+5. Vanilla
+6. Chocolate
+7. Caramel
+8. Butter Pecan
+9. Neapolitan
+10. Coffee
+
+
+
+10 == https://www.kroger.com/p/kroger-blueberry-mini-muffins-big-deal-/0001111009208?searchType=default_search == Blueberry ==   Blueberry
+
+11 == https://www.kroger.com/p/smucker-s-uncrustables-peanut-butter-strawberry-jam-sandwiches/0005150004818?searchType=default_search == Sure! The flavor name of the item in the link you provided is "Peanut Butter Strawberry Jam". ==
+
+1. Peanut Butter
+2. Strawberry Jam
+
+12 == https://www.kroger.com/p/yoplait-original-low-fat-mountain-blueberry-yogurt-cup/0007047000302?searchType=default_search == Mountain Blueberry ==   Mountain Blueberry
+
+13 == https://www.kroger.com/p/gatorade-thirst-quencher-mini-yellow-lemon-lime-electrolyte-enhanced-sports-drink/0005200012178?searchType=default_search == Sure! The flavor name of the item in the link you provided is "Yellow Lemon Lime". ==
+
+1. Yellow
+2. Lemon
+3. Lime
+
+14 == https://www.kroger.com/p/campbell-s-cooking-sauces-creamy-parmesan-sauce/0005100021908?searchType=default_search == Creamy Parmesan Sauce ==
+
+1. Creamy Parmesan Sauce
+
+15 == https://www.kroger.com/p/thomas-cinnamon-swirl-bread/0004812122905?searchType=default_search == Cinnamon Swirl ==
+
+1. Cinnamon
+2. Swirl
+
+16 == https://www.kroger.com/p/burt-s-bees-red-dahlia-tinted-lip-balm/0079285089464?searchType=default_search == Red Dahlia ==
+
+* Red Dahlia
+
+17 == https://www.kroger.com/p/safetec-lip-balm-0-5-gram-individual-packet-53123-144-ct/0077219508692?searchType=default_search == Sure! The flavor name of the lip balm in the link you provided is "Aloe Vera". ==
+
+1. Mint
+2. Strawberry
+3. Lemon
+4. Orange
+5. Grape
+6. Cherry
+7. Vanilla
+8. Coconut
+9. Peppermint
+10. Lemon Drop
+
+I hope that helps! Let me know if you have any other questions.
+
+18 == https://www.kroger.com/p/its-delish-100-natural-cocoa-butter/0371194410233?searchType=default_search == Sure! The name of the item in the link you provided is "100% Natural Cocoa Butter." ==
+
+1. 100% Natural Cocoa Butter
+
+19 == https://www.kroger.com/p/ultra-chewy-peanut-butter-flavored-double-treat-bone/0087786900802?searchType=default_search == Peanut Butter ==   Peanut Butter
+Chocolate
+
+20 == https://www.kroger.com/p/olly-glowing-skin-hyaluronic-acid-collagen-sea-buckthorn-gummies/0085815800542?searchType=default_search == Glowing Skin Hyaluronic Acid Collagen Sea Buckthorn Gummies ==
+
+1. Himalayan Pink Salt
+2. Lychee Blossom
+3. Mango Peach
+
+21 == https://www.kroger.com/p/nature-made-energy-b12-cherry-mixed-berries-gummies-1000-mcg/0003160402953?searchType=default_search == Cherry Mixed Berries ==
+
+1. Cherry
+2. Mixed Berries
+
+22 == https://www.kroger.com/p/cascadian-farm-organic-cinnamon-crunch-cereal/1002190845556?searchType=no_suggestions == Cinnamon Crunch ==
+
+1. Cinnamon Crunch
+
+23 == https://www.kroger.com/p/kettle-brand-jalapeno-kettle-potato-chips/0008411490204?searchType=default_search == Jalapeno ==   Jalapeno
+
+24 == https://www.kroger.com/p/trident-original-flavor-sugar-free-gum-14-pcs-24-packs/0371193411299?searchType=no_suggestions == Sure! The flavor name of the item in the link you provided is "Original Flavor." ==
+
+1. Original
+2. Spearmint
+3. Peppermint
+4. Winterfresh
+5. Tropical Twist
+6. Berry Blast
+7. Citrus Blast
+8. Fruit Fusion
+9. Sweet Peach
+10. Very Berry
+
+I hope that helps!
+
+25 == https://www.kroger.com/p/payday-peanut-caramel-king-size-candy-bar/0001070080727?searchType=default_search == Payday Peanut Caramel ==   Peanut
+Caramel
+
+26 == https://www.kroger.com/p/tic-tac-freshmints-breath-mints/0000980000761?searchType=default_search == Freshmints ==
+
+* Fresh Mint
+* Spearmint
+* Peppermint
+* Wintergreen
+* Cinnamon
+* Fruit Punch
+* Orange
+* Lemon
+* Lime
+* Grape
+* Minty Fusion
+
+27 == https://www.kroger.com/p/lily-s-assorted-sour-fruit-flavored-gummy-worms-bag/0081000346208?searchType=no_suggestions == Assorted Sour Fruit Flavored Gummy Worms ==
+
+1. Blue Raspberry
+2. Watermelon
+3. Green Apple
+4. Orange
+5. Lemon
+6. Lime
+
+28 == https://www.kroger.com/p/kimberley-s-bakeshoppe-pumpkin-spice-filled-gourmet-cupcakes/0077098131224?searchType=no_suggestions == Pumpkin Spice ==
+
+1. Pumpkin Spice
+
+29 == https://www.kroger.com/p/entenmann-s-little-bites-party-cake-mini-muffin-pouches/0007203002209?searchType=default_search == Party Cake ==
+
+1. Chocolate Chip
+2. Blueberry
+3. Party Cake
+4. Confetti Cake
+5. Brownie
+6. Cinnamon Swirl
+7. Apple Cinnamon
+8. Raspberry
+9. Lemon Poppyseed
+10. Orange
+
+
+30 == https://www.kroger.com/p/bakery-fresh-goodness-yellow-cake-with-chocolate-buttercreme-icing/0001111018620?searchType=default_search == Sure! The name of the item in the link you provided is "Yellow Cake with Chocolate Buttercreme Icing." ==
+
+1. Yellow Cake
+2. Chocolate Buttercreme
+
+31 == https://www.kroger.com/p/takis-fuego-hot-chili-pepper-lime-rolled-tortilla-chips/0075752800868?searchType=no_suggestions == Fuego ==
+
+* Fuego
+* Hot Chili Pepper
+* Lime
+
+32 == https://www.kroger.com/p/goldfish-cheddar-cheese-crackers/0001410008547?searchType=no_suggestions == Cheddar Cheese ==
+
+1. Cheddar Cheese
+2. Original
+3. Whole Grain
+4. Whole Grain Cheddar Cheese
+5. Whole Grain Original
+6. Cheddar Jack
+7. White Cheddar
+8. S'mores
+9. Pizza
+10. Buffalo Wing
+
+I hope that helps!
+
+33 == https://www.kroger.com/p/pepperidge-farm-milano-raspberry-chocolate-sandwich-cookies/0001410007481?searchType=no_suggestions == Raspberry Chocolate ==
+
+* Raspberry
+* Chocolate
+
+34 == https://www.kroger.com/p/orville-redenbacher-s-movie-theater-butter-microwave-popcorn/0002700037242?searchType=no_suggestions == Sure! The flavor name of the item in the link you provided is "Movie Theater Butter". ==
+
+* Movie Theater Butter
+* Butter & Salt
+* Kettle Corn
+* Extra Butter & Salt
+* Sweet & Salty Kettle Corn
+* Classic Butter & Salt
+
+EXPORTING TO CSV...
+DONE
+
+(base) C:\Users\sophia.yue\AI>li
