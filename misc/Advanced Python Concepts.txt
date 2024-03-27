@@ -1,0 +1,4505 @@
+Advanced Python Concepts
+------------------------
+Day 1
+------
+Python was designed by Guido von rossum in the year 1991.
+Python is an interpreter language.
+
+Features of python
+-------------------
+-> open source programming language 
+-> easy to learn 
+-> dynamically typed 
+ int a;
+ a = 20.56; --> not accepted 
+
+ a = 24.90  -> float
+ a = 56 -> int
+ a = 'python' -> string 
+
+-> platform independent 
+-> supports oops 
+-> supports database connectivity 
+-> extensibility 
+
+
+
+Shopping cart 
+--------------
+Ex 1 
+----
+purchase a mobile -> discount 
+
+if brand == "samsung"
+discount = 10%
+else 
+dicount = 30%
+
+
+we use functions to implement the logic 
+
+def mobile():
+    brand = input("enter a brand")
+    if brand == "samsung":
+        price = 15000
+        final_price = price - (price * 0.1)
+    else: 
+         price = 20000
+         final_price = price - (price * 0.3)
+    return final_price
+print(mobile())
+
+
+Ex 2
+-----
+if we need to deal multiple brands
+
+def mobile():
+     brand = input("enter brand")
+     if brand == "samsung":
+     price = 15000
+        final_price = price - (price * 0.1)
+     elif brand == "apple":
+         pass 
+     elif brand == "vivo"
+         pass
+     elif brand == "redmi"
+         pass
+     else:
+         price = 20000
+         final_price = price - (price * 0.3)
+    return final_price
+print(mobile()) 
+
+
+
+Ex 3 
+----
+if we need to deal with multiple product 
+
+if the brand = apple -> 10%
+else -> 5%
+if bag -> 3%
+
+def purchase_product(product_type, price, mobile_brand = None):
+    if product_type == "mobile":
+        if mobile_brand == "apple":
+            discount = 10
+        else:
+            discount = 5
+        total_price = price - (price * discount)/100
+    else:
+        discount = 3
+        total_price = price - (price * discount)/ 100
+    print("total price of" +product_type+ "is" +str(total_price))
+purchase_product("mobile", 20000, "apple")
+purchase_product("mobile", 30000, "vivo")
+purchase_product("bag", 400, None)
+
+
+Note : as the no of requirements are increasing the lines of the codes gets complex and might fail at some point.
+
+create template --> multiple copy 
+
+class --> objects
+structure any scenario.
+
+syntax --> class
+-------
+class classname:
+     pass
+
+syntax --> object
+------
+objectname = classname()
+
+What does class contain?
+
+properties/attributes and operation/behavior
+
+Mobile class --> brand, price, color, features, ram, ..................
+
+
+class mobile:
+     pass
+m1 = mobile() --> m1 is obj
+m2 = mobile() --> m2 is obj
+m1.brand = "apple"
+m1.price = 34000
+m1.color = "blue"
+m2.brand = "vivo"
+m2.price = 45000
+m2.color = "black"
+
+Ex
+---
+class mobile:
+    pass
+m1 = mobile()
+m2 = mobile()
+m3 = mobile()
+m1.brand = "apple"
+m1.cost = 50000
+m2.brand = "vivo"
+m2.cost = 20000
+m3.brand = "redmi"
+m3.cost = 45000
+print("price of redmi", m3.cost)
+print("brand of obj m1", m1.brand)
+
+if we want print multiple obj/attributes
+
+10 objects 10 attributes = 100 lines 
+
+constructor
+-----------
+constructor is special method --> __init__()
+
+class mobile:
+    def __init__(self, brand, price, color):
+        self.brand = brand
+        self.price = price
+        self.color = color
+m1 = mobile("apple", 50000, "black")
+m2 = mobile("vivo", 20000, "grey")
+m3 = mobile("redmi", 15000, "blue")
+print("the details of mobile1 are", m1.brand, m1.price, m1.color)
+print("the details of mobile1 are", m2.brand, m2.price, m2.color)
+print("the details of mobile1 are", m3.brand, m3.price, m3.color)
+
+how to access the attributes 
+------------------------------
+class mobile:
+    def __init__(self, brand, price, color):
+        self.brand = brand
+        self.price = price
+        self.color = color
+    def purchase(self):
+        print("purchasing a mobile")
+        print("the mobile has ", self.brand, "with", self.price)
+m1 = mobile("apple", 50000, "black")
+m1.purchase()
+m2 = mobile("vivo", 20000, "grey")
+m2.purchase()
+m3 = mobile("redmi", 15000, "blue")
+m3.purchase()
+
+destructor
+----------
+when we want remove object we can use destructor 
+deallocate the memory 
+__del__
+
+class mobile:
+    def __init__(self, brand, color, price):
+        self.brand = brand
+        self.color = color
+        self.price = price
+    """def __del__(self):
+        print(" delete the object ")"""
+class abc: 
+      pass --> null statement
+m1 = mobile("samsung", "black", 45000)
+m2 = mobile("nokia", "grey", 34000)
+m3 = mobile("oppo", "white", 32500)
+#del m1
+m4 = abc()
+print("the mobile is", m1.brand, "with", m1.color)
+print("the mobile is", m2.brand, "with", m2.color, "and", m2.price)
+
+method invocation
+-----------------
+inbound invocation -->implicitly 
+outbound invocation --> explicitly (class reference)
+
+
+class mobile:
+    def __init__(self):
+        print("inside constructor")
+    def purchase(self):
+        print("purchasing a mobile")
+m1 = mobile()
+m1.purchase() #inbound
+mobile.purchase(m1) #outbound
+----------------------------------------------------------------------------------------------------------------------------Day 2 
+-----
+
+Encapsulation 
+--------------
+lock --> hidding the data 
+
+
+will not allow us to acccess the values outside of thre class
+attributes will be represented as private by using "__".
+
+Ex
+--
+update the balance of the person based on the amount
+class customer:
+    def __init__(self, cust_id, name, age, balance):
+        self.cust_id = cust_id
+        self.name = name
+        self.age = age
+        self.balance = balance
+    def update_balance(self, amount):
+        if amount < 1000 and amount > 0:
+            self.balance += amount
+    def show_balance(self):
+        print("the balance is", self.balance)
+c1 = customer(101, "sri", 30, 1000)
+c1.update_balance(500)
+c1.show_balance()
+
+
+
+Ex -> private attributes
+---
+class customer:
+    def __init__(self, cust_id, name, age, balance):
+        self.cust_id = cust_id
+        self.name = name
+        self.age = age
+        self.__balance = balance
+    def update_balance(self, amount):
+        if amount < 1000 and amount > 0:
+            self.__balance += amount
+    def show_balance(self):
+        print("the balance is", self.__balance)
+c1 = customer(101, "sri", 30, 1000)
+c1.update_balance(800)
+#c1.balance = 10000
+c1.show_balance()
+
+Note: __balance is the private attribute.
+
+getter/ setter 
+--------------
+access the private attributes 
+
+class Customer:
+    def __init__(self, id, name, age, wallet_balance):
+        self.id = id
+        self.name = name
+        self.age = age
+        self.__wallet_balance = wallet_balance
+    def set_wallet_balance(self, amount):
+        if amount < 1000 and amount>  0:
+            self.__wallet_balance = amount
+    def get_wallet_balance(self):
+        return self.__wallet_balance
+c1=Customer(100, "Gopal", 24, 1000)
+c1.set_wallet_balance(120)
+print(c1.get_wallet_balance())
+
+
+if you are trying to purchase a product --> discount 
+do we discount round the clock? -> no 
+
+do we have same discount all the time -> no 
+
+static methods 
+--------------
+
+
+class mobile:
+    def __init__(self, price, brand):
+        self.price = price
+        self.brand = brand
+        self.discount = 0
+    def purchase(self):
+        total = self.price - self.price * self.discount / 100
+        print("total", total)
+    def enable_discount(list):
+        for mobile in list:
+            mobile.discount = 20
+    def disable_discount(list):
+        for mobile in list:
+            mobile.discount = 0
+m1 = mobile(20000, 'oopo')
+m2 = mobile(15000, 'redmi')
+list = [m1,m2]
+m1.purchase()
+mobile.enable_discount(list)
+m1.purchase()
+mobile.disable_discount([m1])
+m2.purchase()
+mobile.disable_discount(list)
+m2.purchase()
+
+
+@static method
+
+class mobile:
+    __discount = 20
+    def __init__(self, price, brand):
+        self.price = price
+        self.brand = brand
+    def purchase(self):
+        total = self.price - self.price * mobile.__discount / 100
+        print("total", total)
+    @staticmethod
+    def get_discount():
+        return mobile.__discount
+    @staticmethod
+    def set_discount(discount):
+        mobile.__discount = discount
+    @staticmethod
+    def enable_discount():
+        mobile.set_discount(30)
+    @staticmethod
+    def disable_discount():
+        mobile.set_discount(0)
+print(mobile.get_discount())
+m1 = mobile(30000, "nokia")
+m2 = mobile(40000, "realme")
+mobile.enable_discount()
+m1.purchase()
+mobile.disable_discount()
+m1.purchase()
+m2.purchase()
+
+
+Relationoships
+--------------
+customer has an address
+
+class customer: 
+      (id, name, age, address)
+       self.
+	...
+	.....
+	.....
+class address:
+       door_no, street_no, city, pincode
+
+
+
+college has many departments 
+organization has many units 
+
+
+
+class customer:
+    def __init__(self, id, name, age, address):
+        self.id = id
+        self.name = name
+        self.age = age
+        self.address = address
+    def view_details(self):
+        print(self.id, self.name, self.age)
+        print(self.address.dno, self.address.street, self.address.city )
+class address:
+    def __init__(self, dno, street, city):
+        self.dno = dno
+        self.street = street
+        self.city = city
+a1 = address(1001, 'abcd', 'hyd')
+c1 = customer(1, 'sri', 35, a1)
+c1.view_details()
+
+a1 = address(102, 7, iaaa, 56666)
+c1 = customer(1010, annn, 20, a1)
+
+
+----------------------------------------------------------------------------------------------------------------------------
+Day 3 
+------
+Inheritance 
+------------
+acquires the properties of class to the another.
+
+parent --> child 
+
+inherting the constructor 
+-------------------------------
+class phone:
+    def __init__(self, price, brand, color):
+        print("inside the constructor")
+        self.price = price
+        self.brand = brand
+        self.color = color
+    def purchase(self):
+        print("purchasing the mobile")
+class featurephone(phone):
+    pass
+class smartphone(phone):
+    pass
+s1 = featurephone(20000, "oppo", "black")
+s1.purchase()
+
+Private attributes are not accessed by the child
+
+
+class phone:
+    def __init__(self, price, brand, color):
+        print("inside the constructor")
+        self.__price = price
+        self.brand = brand
+        self.color = color
+    def purchase(self):
+        print("purchasing the mobile")
+class featurephone(phone):
+    pass
+class smartphone(phone):
+    def know(self):
+        print(self.brand)
+        print(self.__price)
+        print(self.color)
+s1 = smartphone(20000, "oppo", "black")
+s1.purchase()
+s1.know()
+
+
+
+Accessing private attributes(inherit) 
+---------------------------
+
+class phone:
+    def __init__(self, price, brand, color):
+        print("inside the constructor")
+        self.__price = price
+        self.brand = brand
+        self.color = color
+    def purchase(self):
+        print("purchasing the mobile")
+    def get_price(self):
+        return self.__price
+    def set_price(self, price):
+        self.__price = price
+        return self.__price
+class featurephone(phone):
+    pass
+class smartphone(phone):
+    def know(self):
+        print(self.brand)
+        print(self.color)
+        print(self.get_price())
+        print(self.set_price(10000))
+s1 = smartphone(20000, "oppo", "black")
+s1.purchase()
+s1.know()
+
+
+Metod overriding 
+---------------
+What happens if the method name in parent and child are same 
+
+Ex
+--
+class phone:
+    def __init__(self, price, brand, color):
+        print("inside the constructor")
+        self.__price = price
+        self.brand = brand
+        self.color = color
+    def purchase(self):
+        print("purchasing the mobile")
+class featurephone(phone):
+    pass
+class smartphone(phone):
+    def purchase(self):
+        print("purchasing the smart phone")
+s1 = smartphone(20000, "oppo", "black")
+s1.purchase()
+
+super() ->invoke parent method 
+------
+class phone:
+    def __init__(self, price, brand, color):
+        print("inside the constructor")
+        self.__price = price
+        self.brand = brand
+        self.color = color
+    def purchase(self):
+        print("purchasing the mobile")
+class featurephone(phone):
+    pass
+class smartphone(phone):
+    def __init__(self):
+        print("from child class")
+    def purchase(self):
+        print("purchasing the smart phone")
+        super().purchase()
+s1 = smartphone()
+s1.purchase()
+
+Ex
+---
+class phone:
+    def __init__(self, price, brand, color):
+        print("inside the constructor")
+        self.__price = price
+        self.brand = brand
+        self.color = color
+    def purchase(self):
+        print("purchasing the mobile")
+class featurephone(phone):
+    pass
+class smartphone(phone):
+    def __init__(self):
+        print("from child class")
+    def purchase(self):
+        print("purchasing the smart phone")
+s1 = smartphone()
+s1.purchase()
+
+Types of inheritance 
+---------------------
+Single inheritance 
+
+class parent:
+      pass
+class child(parent):
+      pass
+
+
+Ex
+--
+class father:
+     def money(self):
+          pass
+class child(father):
+      pass
+
+Ex
+---
+class phone:
+    def __init__(self, price, color, brand):
+        self.price = price
+        self.color = color
+        self.brand = brand
+        print("inside the constructor")
+    def purchase(self):
+        print("im purchasing mobile")
+class smartphone(phone):
+    pass
+smartphone(15000, 'black', 'apple').purchase()
+
+multiple inheritance
+
+Ex
+---
+
+Syntax
+------
+class parent1:
+      pass
+class parent2:
+      pass
+class child(parent1, parent2):
+      pass
+
+
+Ex
+--
+class product:
+      pass
+class mobile:
+      pass
+class tv(product, mobile):
+      pass
+
+
+Ex
+---
+
+class phone:
+    def __init__(self, price, color, brand):
+        self.price = price
+        self.color = color
+        self.brand = brand
+        print("inside the phone class")
+    def purchase(self):
+        print("im purchasing mobile from phone")
+class product:
+    def purchase(self):
+        print("purchasing a mobile from product class")
+class smartphone(phone, product):
+    pass
+s1 = smartphone(15000, 'black', 'apple')
+s1.purchase()
+
+
+Note: from the above code both the parents has the same methods so when we call child class the method from the first parent will be invoked.
+
+To avoid the above conflict call the class using outbound invocation
+
+class phone:
+    def __init__(self, price, color, brand):
+        self.price = price
+        self.color = color
+        self.brand = brand
+        print("inside the phone class")
+    def purchase(self):
+        print("im purchasing mobile from phone")
+class product:
+    def purchase(self):
+        print("purchasing a mobile from product class")
+class smartphone(phone, product):
+    pass
+s1 = smartphone(15000, 'black', 'apple')
+product.purchase(s1) 
+
+Ex
+---
+with different method names.
+
+class phone:
+    def __init__(self, price, color, brand):
+        self.price = price
+        self.color = color
+        self.brand = brand
+        print("inside the phone class")
+    def purchase(self):
+        print("im purchasing mobile from phone")
+class product:
+    def buy(self):
+        print("purchasing a mobile from product class")
+class smartphone(phone, product):
+    pass
+s1 = smartphone(15000, 'black', 'apple')
+s1.purchase()
+s1.buy()
+
+
+multilevel inheritance 
+----------------------
+syntax
+-------
+class base1:
+      pass
+class base2(base1):
+      pass
+class base3(base2)
+      pass
+
+
+class product:
+    def __init__(self, price, color, brand):
+        self.price = price
+        self.color = color
+        self.brand = brand
+        print("inside the constructor")
+    def purchase(self):
+        print("im purchasing mobile")
+class mobile(product):
+    print("hai from mobile")
+class smartphone(mobile):
+    print("hai from smartphone")
+mobile(12000, 'grey', 'oppo').purchase()
+smartphone(15000, 'black', 'apple').purchase()
+
+
+heirarichal inheritance 
+------------------------
+parent --> multiple child 
+
+
+
+class parent:
+     pass
+class child1(parent)
+     pass 
+class child2(parent)
+     pass
+
+
+different attributes with classes 
+----------------------------------
+class phone:
+    def __init__(self, price, brand):
+        self.price = price
+        self.brand = brand
+        print("inside the constructor")
+        print(self.price, self.brand)
+    def purchase(self):
+        print("im purchasing mobile")
+class normalphone(phone):
+    def __init__(self, color):
+        self.color = color
+        print(self.color)
+    def buy(self):
+        print("buy")
+class mobile(phone):
+    def buy(self):
+        print("buy smart phone")
+normalphone('grey').buy()
+mobile(15000,'apple').buy()
+
+
+Special methods
+---------------
+add method --> used only on object
+
+Ex
+--
+class product:
+    def __init__(self, price, brand):
+        self.price = price
+        self.brand = brand
+    def __add__(self, other): #self -> p1, other -> p2
+        return self.brand + other.brand
+p1 = product(40000, "apple")
+p2 = product(50000, "oppo")
+print(p1+ p2)
+
+Note : it will concat the string 
+
+
+Ex
+--
+class product:
+    def __init__(self, price, brand):
+        self.price = price
+        self.brand = brand
+    def __add__(self, other): #self -> p1, other -> p2
+        return self.price + other.price
+p1 = product(40000, "apple")
+p2 = product(50000, "oppo")
+print(p1+ p2)
+
+
+str method --> return string data
+
+class product:
+    def __init__(self, price, brand):
+        self.price = price
+        self.brand = brand
+    def __str__(self):
+        return "the brand is" +self.brand+ ' ' +"and price is" +str(self.price)
+p1 = product(40000, "apple")
+print(p1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Advanced Python Concepts
+------------------------
+Day 1
+------
+Python was designed by Guido von rossum in the year 1991.
+Python is an interpreter language.
+
+Features of python
+-------------------
+-> open source programming language 
+-> easy to learn 
+-> dynamically typed 
+ int a;
+ a = 20.56; --> not accepted 
+
+ a = 24.90  -> float
+ a = 56 -> int
+ a = 'python' -> string 
+
+-> platform independent 
+-> supports oops 
+-> supports database connectivity 
+-> extensibility 
+
+
+
+Shopping cart 
+--------------
+Ex 1 
+----
+purchase a mobile -> discount 
+
+if brand == "samsung"
+discount = 10%
+else 
+dicount = 30%
+
+
+we use functions to implement the logic 
+
+def mobile():
+    brand = input("enter a brand")
+    if brand == "samsung":
+        price = 15000
+        final_price = price - (price * 0.1)
+    else: 
+         price = 20000
+         final_price = price - (price * 0.3)
+    return final_price
+print(mobile())
+
+
+Ex 2
+-----
+if we need to deal multiple brands
+
+def mobile():
+     brand = input("enter brand")
+     if brand == "samsung":
+     price = 15000
+        final_price = price - (price * 0.1)
+     elif brand == "apple":
+         pass 
+     elif brand == "vivo"
+         pass
+     elif brand == "redmi"
+         pass
+     else:
+         price = 20000
+         final_price = price - (price * 0.3)
+    return final_price
+print(mobile()) 
+
+
+
+Ex 3 
+----
+if we need to deal with multiple product 
+
+if the brand = apple -> 10%
+else -> 5%
+if bag -> 3%
+
+def purchase_product(product_type, price, mobile_brand = None):
+    if product_type == "mobile":
+        if mobile_brand == "apple":
+            discount = 10
+        else:
+            discount = 5
+        total_price = price - (price * discount)/100
+    else:
+        discount = 3
+        total_price = price - (price * discount)/ 100
+    print("total price of" +product_type+ "is" +str(total_price))
+purchase_product("mobile", 20000, "apple")
+purchase_product("mobile", 30000, "vivo")
+purchase_product("bag", 400, None)
+
+
+Note : as the no of requirements are increasing the lines of the codes gets complex and might fail at some point.
+
+create template --> multiple copy 
+
+class --> objects
+structure any scenario.
+
+syntax --> class
+-------
+class classname:
+     pass
+
+syntax --> object
+------
+objectname = classname()
+
+What does class contain?
+
+properties/attributes and operation/behavior
+
+Mobile class --> brand, price, color, features, ram, ..................
+
+
+class mobile:
+     pass
+m1 = mobile() --> m1 is obj
+m2 = mobile() --> m2 is obj
+m1.brand = "apple"
+m1.price = 34000
+m1.color = "blue"
+m2.brand = "vivo"
+m2.price = 45000
+m2.color = "black"
+
+Ex
+---
+class mobile:
+    pass
+m1 = mobile()
+m2 = mobile()
+m3 = mobile()
+m1.brand = "apple"
+m1.cost = 50000
+m2.brand = "vivo"
+m2.cost = 20000
+m3.brand = "redmi"
+m3.cost = 45000
+print("price of redmi", m3.cost)
+print("brand of obj m1", m1.brand)
+
+if we want print multiple obj/attributes
+
+10 objects 10 attributes = 100 lines 
+
+constructor
+-----------
+constructor is special method --> __init__()
+
+class mobile:
+    def __init__(self, brand, price, color):
+        self.brand = brand
+        self.price = price
+        self.color = color
+m1 = mobile("apple", 50000, "black")
+m2 = mobile("vivo", 20000, "grey")
+m3 = mobile("redmi", 15000, "blue")
+print("the details of mobile1 are", m1.brand, m1.price, m1.color)
+print("the details of mobile1 are", m2.brand, m2.price, m2.color)
+print("the details of mobile1 are", m3.brand, m3.price, m3.color)
+
+how to access the attributes 
+------------------------------
+class mobile:
+    def __init__(self, brand, price, color):
+        self.brand = brand
+        self.price = price
+        self.color = color
+    def purchase(self):
+        print("purchasing a mobile")
+        print("the mobile has ", self.brand, "with", self.price)
+m1 = mobile("apple", 50000, "black")
+m1.purchase()
+m2 = mobile("vivo", 20000, "grey")
+m2.purchase()
+m3 = mobile("redmi", 15000, "blue")
+m3.purchase()
+
+destructor
+----------
+when we want remove object we can use destructor 
+deallocate the memory 
+__del__
+
+class mobile:
+    def __init__(self, brand, color, price):
+        self.brand = brand
+        self.color = color
+        self.price = price
+    """def __del__(self):
+        print(" delete the object ")"""
+class abc: 
+      pass --> null statement
+m1 = mobile("samsung", "black", 45000)
+m2 = mobile("nokia", "grey", 34000)
+m3 = mobile("oppo", "white", 32500)
+#del m1
+m4 = abc()
+print("the mobile is", m1.brand, "with", m1.color)
+print("the mobile is", m2.brand, "with", m2.color, "and", m2.price)
+
+method invocation
+-----------------
+inbound invocation -->implicitly 
+outbound invocation --> explicitly (class reference)
+
+
+class mobile:
+    def __init__(self):
+        print("inside constructor")
+    def purchase(self):
+        print("purchasing a mobile")
+m1 = mobile()
+m1.purchase() #inbound
+mobile.purchase(m1) #outbound
+----------------------------------------------------------------------------------------------------------------------------Day 2 
+-----
+
+Encapsulation 
+--------------
+lock --> hidding the data 
+
+
+will not allow us to acccess the values outside of thre class
+attributes will be represented as private by using "__".
+
+Ex
+--
+update the balance of the person based on the amount
+class customer:
+    def __init__(self, cust_id, name, age, balance):
+        self.cust_id = cust_id
+        self.name = name
+        self.age = age
+        self.balance = balance
+    def update_balance(self, amount):
+        if amount < 1000 and amount > 0:
+            self.balance += amount
+    def show_balance(self):
+        print("the balance is", self.balance)
+c1 = customer(101, "sri", 30, 1000)
+c1.update_balance(500)
+c1.show_balance()
+
+
+
+Ex -> private attributes
+---
+class customer:
+    def __init__(self, cust_id, name, age, balance):
+        self.cust_id = cust_id
+        self.name = name
+        self.age = age
+        self.__balance = balance
+    def update_balance(self, amount):
+        if amount < 1000 and amount > 0:
+            self.__balance += amount
+    def show_balance(self):
+        print("the balance is", self.__balance)
+c1 = customer(101, "sri", 30, 1000)
+c1.update_balance(800)
+#c1.balance = 10000
+c1.show_balance()
+
+Note: __balance is the private attribute.
+
+getter/ setter 
+--------------
+access the private attributes 
+
+class Customer:
+    def __init__(self, id, name, age, wallet_balance):
+        self.id = id
+        self.name = name
+        self.age = age
+        self.__wallet_balance = wallet_balance
+    def set_wallet_balance(self, amount):
+        if amount < 1000 and amount>  0:
+            self.__wallet_balance = amount
+    def get_wallet_balance(self):
+        return self.__wallet_balance
+c1=Customer(100, "Gopal", 24, 1000)
+c1.set_wallet_balance(120)
+print(c1.get_wallet_balance())
+
+
+if you are trying to purchase a product --> discount 
+do we discount round the clock? -> no 
+
+do we have same discount all the time -> no 
+
+static methods 
+--------------
+
+
+class mobile:
+    def __init__(self, price, brand):
+        self.price = price
+        self.brand = brand
+        self.discount = 0
+    def purchase(self):
+        total = self.price - self.price * self.discount / 100
+        print("total", total)
+    def enable_discount(list):
+        for mobile in list:
+            mobile.discount = 20
+    def disable_discount(list):
+        for mobile in list:
+            mobile.discount = 0
+m1 = mobile(20000, 'oopo')
+m2 = mobile(15000, 'redmi')
+list = [m1,m2]
+m1.purchase()
+mobile.enable_discount(list)
+m1.purchase()
+mobile.disable_discount([m1])
+m2.purchase()
+mobile.disable_discount(list)
+m2.purchase()
+
+
+@static method
+
+class mobile:
+    __discount = 20
+    def __init__(self, price, brand):
+        self.price = price
+        self.brand = brand
+    def purchase(self):
+        total = self.price - self.price * mobile.__discount / 100
+        print("total", total)
+    @staticmethod
+    def get_discount():
+        return mobile.__discount
+    @staticmethod
+    def set_discount(discount):
+        mobile.__discount = discount
+    @staticmethod
+    def enable_discount():
+        mobile.set_discount(30)
+    @staticmethod
+    def disable_discount():
+        mobile.set_discount(0)
+print(mobile.get_discount())
+m1 = mobile(30000, "nokia")
+m2 = mobile(40000, "realme")
+mobile.enable_discount()
+m1.purchase()
+mobile.disable_discount()
+m1.purchase()
+m2.purchase()
+
+
+Relationoships
+--------------
+customer has an address
+
+class customer: 
+      (id, name, age, address)
+       self.
+	...
+	.....
+	.....
+class address:
+       door_no, street_no, city, pincode
+
+
+
+college has many departments 
+organization has many units 
+
+
+
+class customer:
+    def __init__(self, id, name, age, address):
+        self.id = id
+        self.name = name
+        self.age = age
+        self.address = address
+    def view_details(self):
+        print(self.id, self.name, self.age)
+        print(self.address.dno, self.address.street, self.address.city )
+class address:
+    def __init__(self, dno, street, city):
+        self.dno = dno
+        self.street = street
+        self.city = city
+a1 = address(1001, 'abcd', 'hyd')
+c1 = customer(1, 'sri', 35, a1)
+c1.view_details()
+
+a1 = address(102, 7, iaaa, 56666)
+c1 = customer(1010, annn, 20, a1)
+
+
+----------------------------------------------------------------------------------------------------------------------------
+Day 3 
+------
+Inheritance 
+------------
+acquires the properties of class to the another.
+
+parent --> child 
+
+inherting the constructor 
+-------------------------------
+class phone:
+    def __init__(self, price, brand, color):
+        print("inside the constructor")
+        self.price = price
+        self.brand = brand
+        self.color = color
+    def purchase(self):
+        print("purchasing the mobile")
+class featurephone(phone):
+    pass
+class smartphone(phone):
+    pass
+s1 = featurephone(20000, "oppo", "black")
+s1.purchase()
+
+Private attributes are not accessed by the child
+
+
+class phone:
+    def __init__(self, price, brand, color):
+        print("inside the constructor")
+        self.__price = price
+        self.brand = brand
+        self.color = color
+    def purchase(self):
+        print("purchasing the mobile")
+class featurephone(phone):
+    pass
+class smartphone(phone):
+    def know(self):
+        print(self.brand)
+        print(self.__price)
+        print(self.color)
+s1 = smartphone(20000, "oppo", "black")
+s1.purchase()
+s1.know()
+
+
+
+Accessing private attributes(inherit) 
+---------------------------
+
+class phone:
+    def __init__(self, price, brand, color):
+        print("inside the constructor")
+        self.__price = price
+        self.brand = brand
+        self.color = color
+    def purchase(self):
+        print("purchasing the mobile")
+    def get_price(self):
+        return self.__price
+    def set_price(self, price):
+        self.__price = price
+        return self.__price
+class featurephone(phone):
+    pass
+class smartphone(phone):
+    def know(self):
+        print(self.brand)
+        print(self.color)
+        print(self.get_price())
+        print(self.set_price(10000))
+s1 = smartphone(20000, "oppo", "black")
+s1.purchase()
+s1.know()
+
+
+Metod overriding 
+---------------
+What happens if the method name in parent and child are same 
+
+Ex
+--
+class phone:
+    def __init__(self, price, brand, color):
+        print("inside the constructor")
+        self.__price = price
+        self.brand = brand
+        self.color = color
+    def purchase(self):
+        print("purchasing the mobile")
+class featurephone(phone):
+    pass
+class smartphone(phone):
+    def purchase(self):
+        print("purchasing the smart phone")
+s1 = smartphone(20000, "oppo", "black")
+s1.purchase()
+
+super() ->invoke parent method 
+------
+class phone:
+    def __init__(self, price, brand, color):
+        print("inside the constructor")
+        self.__price = price
+        self.brand = brand
+        self.color = color
+    def purchase(self):
+        print("purchasing the mobile")
+class featurephone(phone):
+    pass
+class smartphone(phone):
+    def __init__(self):
+        print("from child class")
+    def purchase(self):
+        print("purchasing the smart phone")
+        super().purchase()
+s1 = smartphone()
+s1.purchase()
+
+Ex
+---
+class phone:
+    def __init__(self, price, brand, color):
+        print("inside the constructor")
+        self.__price = price
+        self.brand = brand
+        self.color = color
+    def purchase(self):
+        print("purchasing the mobile")
+class featurephone(phone):
+    pass
+class smartphone(phone):
+    def __init__(self):
+        print("from child class")
+    def purchase(self):
+        print("purchasing the smart phone")
+s1 = smartphone()
+s1.purchase()
+
+Types of inheritance 
+---------------------
+Single inheritance 
+
+class parent:
+      pass
+class child(parent):
+      pass
+
+
+Ex
+--
+class father:
+     def money(self):
+          pass
+class child(father):
+      pass
+
+Ex
+---
+class phone:
+    def __init__(self, price, color, brand):
+        self.price = price
+        self.color = color
+        self.brand = brand
+        print("inside the constructor")
+    def purchase(self):
+        print("im purchasing mobile")
+class smartphone(phone):
+    pass
+smartphone(15000, 'black', 'apple').purchase()
+
+multiple inheritance
+
+Ex
+---
+
+Syntax
+------
+class parent1:
+      pass
+class parent2:
+      pass
+class child(parent1, parent2):
+      pass
+
+
+Ex
+--
+class product:
+      pass
+class mobile:
+      pass
+class tv(product, mobile):
+      pass
+
+
+Ex
+---
+
+class phone:
+    def __init__(self, price, color, brand):
+        self.price = price
+        self.color = color
+        self.brand = brand
+        print("inside the phone class")
+    def purchase(self):
+        print("im purchasing mobile from phone")
+class product:
+    def purchase(self):
+        print("purchasing a mobile from product class")
+class smartphone(phone, product):
+    pass
+s1 = smartphone(15000, 'black', 'apple')
+s1.purchase()
+
+
+Note: from the above code both the parents has the same methods so when we call child class the method from the first parent will be invoked.
+
+To avoid the above conflict call the class using outbound invocation
+
+class phone:
+    def __init__(self, price, color, brand):
+        self.price = price
+        self.color = color
+        self.brand = brand
+        print("inside the phone class")
+    def purchase(self):
+        print("im purchasing mobile from phone")
+class product:
+    def purchase(self):
+        print("purchasing a mobile from product class")
+class smartphone(phone, product):
+    pass
+s1 = smartphone(15000, 'black', 'apple')
+product.purchase(s1) 
+
+Ex
+---
+with different method names.
+
+class phone:
+    def __init__(self, price, color, brand):
+        self.price = price
+        self.color = color
+        self.brand = brand
+        print("inside the phone class")
+    def purchase(self):
+        print("im purchasing mobile from phone")
+class product:
+    def buy(self):
+        print("purchasing a mobile from product class")
+class smartphone(phone, product):
+    pass
+s1 = smartphone(15000, 'black', 'apple')
+s1.purchase()
+s1.buy()
+
+
+multilevel inheritance 
+----------------------
+syntax
+-------
+class base1:
+      pass
+class base2(base1):
+      pass
+class base3(base2)
+      pass
+
+
+class product:
+    def __init__(self, price, color, brand):
+        self.price = price
+        self.color = color
+        self.brand = brand
+        print("inside the constructor")
+    def purchase(self):
+        print("im purchasing mobile")
+class mobile(product):
+    print("hai from mobile")
+class smartphone(mobile):
+    print("hai from smartphone")
+mobile(12000, 'grey', 'oppo').purchase()
+smartphone(15000, 'black', 'apple').purchase()
+
+
+heirarichal inheritance 
+------------------------
+parent --> multiple child 
+
+
+
+class parent:
+     pass
+class child1(parent)
+     pass 
+class child2(parent)
+     pass
+
+
+different attributes with classes 
+----------------------------------
+class phone:
+    def __init__(self, price, brand):
+        self.price = price
+        self.brand = brand
+        print("inside the constructor")
+        print(self.price, self.brand)
+    def purchase(self):
+        print("im purchasing mobile")
+class normalphone(phone):
+    def __init__(self, color):
+        self.color = color
+        print(self.color)
+    def buy(self):
+        print("buy")
+class mobile(phone):
+    def buy(self):
+        print("buy smart phone")
+normalphone('grey').buy()
+mobile(15000,'apple').buy()
+
+
+Special methods
+---------------
+add method --> used only on object
+
+Ex
+--
+class product:
+    def __init__(self, price, brand):
+        self.price = price
+        self.brand = brand
+    def __add__(self, other): #self -> p1, other -> p2
+        return self.brand + other.brand
+p1 = product(40000, "apple")
+p2 = product(50000, "oppo")
+print(p1+ p2)
+
+Note : it will concat the string 
+
+
+Ex
+--
+class product:
+    def __init__(self, price, brand):
+        self.price = price
+        self.brand = brand
+    def __add__(self, other): #self -> p1, other -> p2
+        return self.price + other.price
+p1 = product(40000, "apple")
+p2 = product(50000, "oppo")
+print(p1+ p2)
+
+
+str method --> return string data
+
+class product:
+    def __init__(self, price, brand):
+        self.price = price
+        self.brand = brand
+    def __str__(self):
+        return "the brand is" +self.brand+ ' ' +"and price is" +str(self.price)
+p1 = product(40000, "apple")
+print(p1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Advanced Python Concepts
+------------------------
+Day 1
+------
+Python was designed by Guido von rossum in the year 1991.
+Python is an interpreter language.
+
+Features of python
+-------------------
+-> open source programming language 
+-> easy to learn 
+-> dynamically typed 
+ int a;
+ a = 20.56; --> not accepted 
+
+ a = 24.90  -> float
+ a = 56 -> int
+ a = 'python' -> string 
+
+-> platform independent 
+-> supports oops 
+-> supports database connectivity 
+-> extensibility 
+
+
+
+Shopping cart 
+--------------
+Ex 1 
+----
+purchase a mobile -> discount 
+
+if brand == "samsung"
+discount = 10%
+else 
+dicount = 30%
+
+
+we use functions to implement the logic 
+
+def mobile():
+    brand = input("enter a brand")
+    if brand == "samsung":
+        price = 15000
+        final_price = price - (price * 0.1)
+    else: 
+         price = 20000
+         final_price = price - (price * 0.3)
+    return final_price
+print(mobile())
+
+
+Ex 2
+-----
+if we need to deal multiple brands
+
+def mobile():
+     brand = input("enter brand")
+     if brand == "samsung":
+     price = 15000
+        final_price = price - (price * 0.1)
+     elif brand == "apple":
+         pass 
+     elif brand == "vivo"
+         pass
+     elif brand == "redmi"
+         pass
+     else:
+         price = 20000
+         final_price = price - (price * 0.3)
+    return final_price
+print(mobile()) 
+
+
+
+Ex 3 
+----
+if we need to deal with multiple product 
+
+if the brand = apple -> 10%
+else -> 5%
+if bag -> 3%
+
+def purchase_product(product_type, price, mobile_brand = None):
+    if product_type == "mobile":
+        if mobile_brand == "apple":
+            discount = 10
+        else:
+            discount = 5
+        total_price = price - (price * discount)/100
+    else:
+        discount = 3
+        total_price = price - (price * discount)/ 100
+    print("total price of" +product_type+ "is" +str(total_price))
+purchase_product("mobile", 20000, "apple")
+purchase_product("mobile", 30000, "vivo")
+purchase_product("bag", 400, None)
+
+
+Note : as the no of requirements are increasing the lines of the codes gets complex and might fail at some point.
+
+create template --> multiple copy 
+
+class --> objects
+structure any scenario.
+
+syntax --> class
+-------
+class classname:
+     pass
+
+syntax --> object
+------
+objectname = classname()
+
+What does class contain?
+
+properties/attributes and operation/behavior
+
+Mobile class --> brand, price, color, features, ram, ..................
+
+
+class mobile:
+     pass
+m1 = mobile() --> m1 is obj
+m2 = mobile() --> m2 is obj
+m1.brand = "apple"
+m1.price = 34000
+m1.color = "blue"
+m2.brand = "vivo"
+m2.price = 45000
+m2.color = "black"
+
+Ex
+---
+class mobile:
+    pass
+m1 = mobile()
+m2 = mobile()
+m3 = mobile()
+m1.brand = "apple"
+m1.cost = 50000
+m2.brand = "vivo"
+m2.cost = 20000
+m3.brand = "redmi"
+m3.cost = 45000
+print("price of redmi", m3.cost)
+print("brand of obj m1", m1.brand)
+
+if we want print multiple obj/attributes
+
+10 objects 10 attributes = 100 lines 
+
+constructor
+-----------
+constructor is special method --> __init__()
+
+class mobile:
+    def __init__(self, brand, price, color):
+        self.brand = brand
+        self.price = price
+        self.color = color
+m1 = mobile("apple", 50000, "black")
+m2 = mobile("vivo", 20000, "grey")
+m3 = mobile("redmi", 15000, "blue")
+print("the details of mobile1 are", m1.brand, m1.price, m1.color)
+print("the details of mobile1 are", m2.brand, m2.price, m2.color)
+print("the details of mobile1 are", m3.brand, m3.price, m3.color)
+
+how to access the attributes 
+------------------------------
+class mobile:
+    def __init__(self, brand, price, color):
+        self.brand = brand
+        self.price = price
+        self.color = color
+    def purchase(self):
+        print("purchasing a mobile")
+        print("the mobile has ", self.brand, "with", self.price)
+m1 = mobile("apple", 50000, "black")
+m1.purchase()
+m2 = mobile("vivo", 20000, "grey")
+m2.purchase()
+m3 = mobile("redmi", 15000, "blue")
+m3.purchase()
+
+destructor
+----------
+when we want remove object we can use destructor 
+deallocate the memory 
+__del__
+
+class mobile:
+    def __init__(self, brand, color, price):
+        self.brand = brand
+        self.color = color
+        self.price = price
+    """def __del__(self):
+        print(" delete the object ")"""
+class abc: 
+      pass --> null statement
+m1 = mobile("samsung", "black", 45000)
+m2 = mobile("nokia", "grey", 34000)
+m3 = mobile("oppo", "white", 32500)
+#del m1
+m4 = abc()
+print("the mobile is", m1.brand, "with", m1.color)
+print("the mobile is", m2.brand, "with", m2.color, "and", m2.price)
+
+method invocation
+-----------------
+inbound invocation -->implicitly 
+outbound invocation --> explicitly (class reference)
+
+
+class mobile:
+    def __init__(self):
+        print("inside constructor")
+    def purchase(self):
+        print("purchasing a mobile")
+m1 = mobile()
+m1.purchase() #inbound
+mobile.purchase(m1) #outbound
+----------------------------------------------------------------------------------------------------------------------------Day 2 
+-----
+
+Encapsulation 
+--------------
+lock --> hidding the data 
+
+
+will not allow us to acccess the values outside of thre class
+attributes will be represented as private by using "__".
+
+Ex
+--
+update the balance of the person based on the amount
+class customer:
+    def __init__(self, cust_id, name, age, balance):
+        self.cust_id = cust_id
+        self.name = name
+        self.age = age
+        self.balance = balance
+    def update_balance(self, amount):
+        if amount < 1000 and amount > 0:
+            self.balance += amount
+    def show_balance(self):
+        print("the balance is", self.balance)
+c1 = customer(101, "sri", 30, 1000)
+c1.update_balance(500)
+c1.show_balance()
+
+
+
+Ex -> private attributes
+---
+class customer:
+    def __init__(self, cust_id, name, age, balance):
+        self.cust_id = cust_id
+        self.name = name
+        self.age = age
+        self.__balance = balance
+    def update_balance(self, amount):
+        if amount < 1000 and amount > 0:
+            self.__balance += amount
+    def show_balance(self):
+        print("the balance is", self.__balance)
+c1 = customer(101, "sri", 30, 1000)
+c1.update_balance(800)
+#c1.balance = 10000
+c1.show_balance()
+
+Note: __balance is the private attribute.
+
+getter/ setter 
+--------------
+access the private attributes 
+
+class Customer:
+    def __init__(self, id, name, age, wallet_balance):
+        self.id = id
+        self.name = name
+        self.age = age
+        self.__wallet_balance = wallet_balance
+    def set_wallet_balance(self, amount):
+        if amount < 1000 and amount>  0:
+            self.__wallet_balance = amount
+    def get_wallet_balance(self):
+        return self.__wallet_balance
+c1=Customer(100, "Gopal", 24, 1000)
+c1.set_wallet_balance(120)
+print(c1.get_wallet_balance())
+
+
+if you are trying to purchase a product --> discount 
+do we discount round the clock? -> no 
+
+do we have same discount all the time -> no 
+
+static methods 
+--------------
+
+
+class mobile:
+    def __init__(self, price, brand):
+        self.price = price
+        self.brand = brand
+        self.discount = 0
+    def purchase(self):
+        total = self.price - self.price * self.discount / 100
+        print("total", total)
+    def enable_discount(list):
+        for mobile in list:
+            mobile.discount = 20
+    def disable_discount(list):
+        for mobile in list:
+            mobile.discount = 0
+m1 = mobile(20000, 'oopo')
+m2 = mobile(15000, 'redmi')
+list = [m1,m2]
+m1.purchase()
+mobile.enable_discount(list)
+m1.purchase()
+mobile.disable_discount([m1])
+m2.purchase()
+mobile.disable_discount(list)
+m2.purchase()
+
+
+@static method
+
+class mobile:
+    __discount = 20
+    def __init__(self, price, brand):
+        self.price = price
+        self.brand = brand
+    def purchase(self):
+        total = self.price - self.price * mobile.__discount / 100
+        print("total", total)
+    @staticmethod
+    def get_discount():
+        return mobile.__discount
+    @staticmethod
+    def set_discount(discount):
+        mobile.__discount = discount
+    @staticmethod
+    def enable_discount():
+        mobile.set_discount(30)
+    @staticmethod
+    def disable_discount():
+        mobile.set_discount(0)
+print(mobile.get_discount())
+m1 = mobile(30000, "nokia")
+m2 = mobile(40000, "realme")
+mobile.enable_discount()
+m1.purchase()
+mobile.disable_discount()
+m1.purchase()
+m2.purchase()
+
+
+Relationoships
+--------------
+customer has an address
+
+class customer: 
+      (id, name, age, address)
+       self.
+	...
+	.....
+	.....
+class address:
+       door_no, street_no, city, pincode
+
+
+
+college has many departments 
+organization has many units 
+
+
+
+class customer:
+    def __init__(self, id, name, age, address):
+        self.id = id
+        self.name = name
+        self.age = age
+        self.address = address
+    def view_details(self):
+        print(self.id, self.name, self.age)
+        print(self.address.dno, self.address.street, self.address.city )
+class address:
+    def __init__(self, dno, street, city):
+        self.dno = dno
+        self.street = street
+        self.city = city
+a1 = address(1001, 'abcd', 'hyd')
+c1 = customer(1, 'sri', 35, a1)
+c1.view_details()
+
+a1 = address(102, 7, iaaa, 56666)
+c1 = customer(1010, annn, 20, a1)
+
+
+----------------------------------------------------------------------------------------------------------------------------
+Day 3 
+------
+Inheritance 
+------------
+acquires the properties of class to the another.
+
+parent --> child 
+
+inherting the constructor 
+-------------------------------
+class phone:
+    def __init__(self, price, brand, color):
+        print("inside the constructor")
+        self.price = price
+        self.brand = brand
+        self.color = color
+    def purchase(self):
+        print("purchasing the mobile")
+class featurephone(phone):
+    pass
+class smartphone(phone):
+    pass
+s1 = featurephone(20000, "oppo", "black")
+s1.purchase()
+
+Private attributes are not accessed by the child
+
+
+class phone:
+    def __init__(self, price, brand, color):
+        print("inside the constructor")
+        self.__price = price
+        self.brand = brand
+        self.color = color
+    def purchase(self):
+        print("purchasing the mobile")
+class featurephone(phone):
+    pass
+class smartphone(phone):
+    def know(self):
+        print(self.brand)
+        print(self.__price)
+        print(self.color)
+s1 = smartphone(20000, "oppo", "black")
+s1.purchase()
+s1.know()
+
+
+
+Accessing private attributes(inherit) 
+---------------------------
+
+class phone:
+    def __init__(self, price, brand, color):
+        print("inside the constructor")
+        self.__price = price
+        self.brand = brand
+        self.color = color
+    def purchase(self):
+        print("purchasing the mobile")
+    def get_price(self):
+        return self.__price
+    def set_price(self, price):
+        self.__price = price
+        return self.__price
+class featurephone(phone):
+    pass
+class smartphone(phone):
+    def know(self):
+        print(self.brand)
+        print(self.color)
+        print(self.get_price())
+        print(self.set_price(10000))
+s1 = smartphone(20000, "oppo", "black")
+s1.purchase()
+s1.know()
+
+
+Metod overriding 
+---------------
+What happens if the method name in parent and child are same 
+
+Ex
+--
+class phone:
+    def __init__(self, price, brand, color):
+        print("inside the constructor")
+        self.__price = price
+        self.brand = brand
+        self.color = color
+    def purchase(self):
+        print("purchasing the mobile")
+class featurephone(phone):
+    pass
+class smartphone(phone):
+    def purchase(self):
+        print("purchasing the smart phone")
+s1 = smartphone(20000, "oppo", "black")
+s1.purchase()
+
+super() ->invoke parent method 
+------
+class phone:
+    def __init__(self, price, brand, color):
+        print("inside the constructor")
+        self.__price = price
+        self.brand = brand
+        self.color = color
+    def purchase(self):
+        print("purchasing the mobile")
+class featurephone(phone):
+    pass
+class smartphone(phone):
+    def __init__(self):
+        print("from child class")
+    def purchase(self):
+        print("purchasing the smart phone")
+        super().purchase()
+s1 = smartphone()
+s1.purchase()
+
+Ex
+---
+class phone:
+    def __init__(self, price, brand, color):
+        print("inside the constructor")
+        self.__price = price
+        self.brand = brand
+        self.color = color
+    def purchase(self):
+        print("purchasing the mobile")
+class featurephone(phone):
+    pass
+class smartphone(phone):
+    def __init__(self):
+        print("from child class")
+    def purchase(self):
+        print("purchasing the smart phone")
+s1 = smartphone()
+s1.purchase()
+
+Types of inheritance 
+---------------------
+Single inheritance 
+
+class parent:
+      pass
+class child(parent):
+      pass
+
+
+Ex
+--
+class father:
+     def money(self):
+          pass
+class child(father):
+      pass
+
+Ex
+---
+class phone:
+    def __init__(self, price, color, brand):
+        self.price = price
+        self.color = color
+        self.brand = brand
+        print("inside the constructor")
+    def purchase(self):
+        print("im purchasing mobile")
+class smartphone(phone):
+    pass
+smartphone(15000, 'black', 'apple').purchase()
+
+multiple inheritance
+
+Ex
+---
+
+Syntax
+------
+class parent1:
+      pass
+class parent2:
+      pass
+class child(parent1, parent2):
+      pass
+
+
+Ex
+--
+class product:
+      pass
+class mobile:
+      pass
+class tv(product, mobile):
+      pass
+
+
+Ex
+---
+
+class phone:
+    def __init__(self, price, color, brand):
+        self.price = price
+        self.color = color
+        self.brand = brand
+        print("inside the phone class")
+    def purchase(self):
+        print("im purchasing mobile from phone")
+class product:
+    def purchase(self):
+        print("purchasing a mobile from product class")
+class smartphone(phone, product):
+    pass
+s1 = smartphone(15000, 'black', 'apple')
+s1.purchase()
+
+
+Note: from the above code both the parents has the same methods so when we call child class the method from the first parent will be invoked.
+
+To avoid the above conflict call the class using outbound invocation
+
+class phone:
+    def __init__(self, price, color, brand):
+        self.price = price
+        self.color = color
+        self.brand = brand
+        print("inside the phone class")
+    def purchase(self):
+        print("im purchasing mobile from phone")
+class product:
+    def purchase(self):
+        print("purchasing a mobile from product class")
+class smartphone(phone, product):
+    pass
+s1 = smartphone(15000, 'black', 'apple')
+product.purchase(s1) 
+
+Ex
+---
+with different method names.
+
+class phone:
+    def __init__(self, price, color, brand):
+        self.price = price
+        self.color = color
+        self.brand = brand
+        print("inside the phone class")
+    def purchase(self):
+        print("im purchasing mobile from phone")
+class product:
+    def buy(self):
+        print("purchasing a mobile from product class")
+class smartphone(phone, product):
+    pass
+s1 = smartphone(15000, 'black', 'apple')
+s1.purchase()
+s1.buy()
+
+
+multilevel inheritance 
+----------------------
+syntax
+-------
+class base1:
+      pass
+class base2(base1):
+      pass
+class base3(base2)
+      pass
+
+
+class product:
+    def __init__(self, price, color, brand):
+        self.price = price
+        self.color = color
+        self.brand = brand
+        print("inside the constructor")
+    def purchase(self):
+        print("im purchasing mobile")
+class mobile(product):
+    print("hai from mobile")
+class smartphone(mobile):
+    print("hai from smartphone")
+mobile(12000, 'grey', 'oppo').purchase()
+smartphone(15000, 'black', 'apple').purchase()
+
+
+heirarichal inheritance 
+------------------------
+parent --> multiple child 
+
+
+
+class parent:
+     pass
+class child1(parent)
+     pass 
+class child2(parent)
+     pass
+
+
+different attributes with classes 
+----------------------------------
+class phone:
+    def __init__(self, price, brand):
+        self.price = price
+        self.brand = brand
+        print("inside the constructor")
+        print(self.price, self.brand)
+    def purchase(self):
+        print("im purchasing mobile")
+class normalphone(phone):
+    def __init__(self, color):
+        self.color = color
+        print(self.color)
+    def buy(self):
+        print("buy")
+class mobile(phone):
+    def buy(self):
+        print("buy smart phone")
+normalphone('grey').buy()
+mobile(15000,'apple').buy()
+
+
+Special methods
+---------------
+add method --> used only on object
+
+Ex
+--
+class product:
+    def __init__(self, price, brand):
+        self.price = price
+        self.brand = brand
+    def __add__(self, other): #self -> p1, other -> p2
+        return self.brand + other.brand
+p1 = product(40000, "apple")
+p2 = product(50000, "oppo")
+print(p1+ p2)
+
+Note : it will concat the string 
+
+
+Ex
+--
+class product:
+    def __init__(self, price, brand):
+        self.price = price
+        self.brand = brand
+    def __add__(self, other): #self -> p1, other -> p2
+        return self.price + other.price
+p1 = product(40000, "apple")
+p2 = product(50000, "oppo")
+print(p1+ p2)
+
+
+str method --> return string data
+
+class product:
+    def __init__(self, price, brand):
+        self.price = price
+        self.brand = brand
+    def __str__(self):
+        return "the brand is" +self.brand+ ' ' +"and price is" +str(self.price)
+p1 = product(40000, "apple")
+print(p1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Advanced Python Concepts
+------------------------
+Day 1
+------
+Python was designed by Guido von rossum in the year 1991.
+Python is an interpreter language.
+
+Features of python
+-------------------
+-> open source programming language 
+-> easy to learn 
+-> dynamically typed 
+ int a;
+ a = 20.56; --> not accepted 
+
+ a = 24.90  -> float
+ a = 56 -> int
+ a = 'python' -> string 
+
+-> platform independent 
+-> supports oops 
+-> supports database connectivity 
+-> extensibility 
+
+
+
+Shopping cart 
+--------------
+Ex 1 
+----
+purchase a mobile -> discount 
+
+if brand == "samsung"
+discount = 10%
+else 
+dicount = 30%
+
+
+we use functions to implement the logic 
+
+def mobile():
+    brand = input("enter a brand")
+    if brand == "samsung":
+        price = 15000
+        final_price = price - (price * 0.1)
+    else: 
+         price = 20000
+         final_price = price - (price * 0.3)
+    return final_price
+print(mobile())
+
+
+Ex 2
+-----
+if we need to deal multiple brands
+
+def mobile():
+     brand = input("enter brand")
+     if brand == "samsung":
+     price = 15000
+        final_price = price - (price * 0.1)
+     elif brand == "apple":
+         pass 
+     elif brand == "vivo"
+         pass
+     elif brand == "redmi"
+         pass
+     else:
+         price = 20000
+         final_price = price - (price * 0.3)
+    return final_price
+print(mobile()) 
+
+
+
+Ex 3 
+----
+if we need to deal with multiple product 
+
+if the brand = apple -> 10%
+else -> 5%
+if bag -> 3%
+
+def purchase_product(product_type, price, mobile_brand = None):
+    if product_type == "mobile":
+        if mobile_brand == "apple":
+            discount = 10
+        else:
+            discount = 5
+        total_price = price - (price * discount)/100
+    else:
+        discount = 3
+        total_price = price - (price * discount)/ 100
+    print("total price of" +product_type+ "is" +str(total_price))
+purchase_product("mobile", 20000, "apple")
+purchase_product("mobile", 30000, "vivo")
+purchase_product("bag", 400, None)
+
+
+Note : as the no of requirements are increasing the lines of the codes gets complex and might fail at some point.
+
+create template --> multiple copy 
+
+class --> objects
+structure any scenario.
+
+syntax --> class
+-------
+class classname:
+     pass
+
+syntax --> object
+------
+objectname = classname()
+
+What does class contain?
+
+properties/attributes and operation/behavior
+
+Mobile class --> brand, price, color, features, ram, ..................
+
+
+class mobile:
+     pass
+m1 = mobile() --> m1 is obj
+m2 = mobile() --> m2 is obj
+m1.brand = "apple"
+m1.price = 34000
+m1.color = "blue"
+m2.brand = "vivo"
+m2.price = 45000
+m2.color = "black"
+
+Ex
+---
+class mobile:
+    pass
+m1 = mobile()
+m2 = mobile()
+m3 = mobile()
+m1.brand = "apple"
+m1.cost = 50000
+m2.brand = "vivo"
+m2.cost = 20000
+m3.brand = "redmi"
+m3.cost = 45000
+print("price of redmi", m3.cost)
+print("brand of obj m1", m1.brand)
+
+if we want print multiple obj/attributes
+
+10 objects 10 attributes = 100 lines 
+
+constructor
+-----------
+constructor is special method --> __init__()
+
+class mobile:
+    def __init__(self, brand, price, color):
+        self.brand = brand
+        self.price = price
+        self.color = color
+m1 = mobile("apple", 50000, "black")
+m2 = mobile("vivo", 20000, "grey")
+m3 = mobile("redmi", 15000, "blue")
+print("the details of mobile1 are", m1.brand, m1.price, m1.color)
+print("the details of mobile1 are", m2.brand, m2.price, m2.color)
+print("the details of mobile1 are", m3.brand, m3.price, m3.color)
+
+how to access the attributes 
+------------------------------
+class mobile:
+    def __init__(self, brand, price, color):
+        self.brand = brand
+        self.price = price
+        self.color = color
+    def purchase(self):
+        print("purchasing a mobile")
+        print("the mobile has ", self.brand, "with", self.price)
+m1 = mobile("apple", 50000, "black")
+m1.purchase()
+m2 = mobile("vivo", 20000, "grey")
+m2.purchase()
+m3 = mobile("redmi", 15000, "blue")
+m3.purchase()
+
+destructor
+----------
+when we want remove object we can use destructor 
+deallocate the memory 
+__del__
+
+class mobile:
+    def __init__(self, brand, color, price):
+        self.brand = brand
+        self.color = color
+        self.price = price
+    """def __del__(self):
+        print(" delete the object ")"""
+class abc: 
+      pass --> null statement
+m1 = mobile("samsung", "black", 45000)
+m2 = mobile("nokia", "grey", 34000)
+m3 = mobile("oppo", "white", 32500)
+#del m1
+m4 = abc()
+print("the mobile is", m1.brand, "with", m1.color)
+print("the mobile is", m2.brand, "with", m2.color, "and", m2.price)
+
+method invocation
+-----------------
+inbound invocation -->implicitly 
+outbound invocation --> explicitly (class reference)
+
+
+class mobile:
+    def __init__(self):
+        print("inside constructor")
+    def purchase(self):
+        print("purchasing a mobile")
+m1 = mobile()
+m1.purchase() #inbound
+mobile.purchase(m1) #outbound
+----------------------------------------------------------------------------------------------------------------------------Day 2 
+-----
+
+Encapsulation 
+--------------
+lock --> hidding the data 
+
+
+will not allow us to acccess the values outside of thre class
+attributes will be represented as private by using "__".
+
+Ex
+--
+update the balance of the person based on the amount
+class customer:
+    def __init__(self, cust_id, name, age, balance):
+        self.cust_id = cust_id
+        self.name = name
+        self.age = age
+        self.balance = balance
+    def update_balance(self, amount):
+        if amount < 1000 and amount > 0:
+            self.balance += amount
+    def show_balance(self):
+        print("the balance is", self.balance)
+c1 = customer(101, "sri", 30, 1000)
+c1.update_balance(500)
+c1.show_balance()
+
+
+
+Ex -> private attributes
+---
+class customer:
+    def __init__(self, cust_id, name, age, balance):
+        self.cust_id = cust_id
+        self.name = name
+        self.age = age
+        self.__balance = balance
+    def update_balance(self, amount):
+        if amount < 1000 and amount > 0:
+            self.__balance += amount
+    def show_balance(self):
+        print("the balance is", self.__balance)
+c1 = customer(101, "sri", 30, 1000)
+c1.update_balance(800)
+#c1.balance = 10000
+c1.show_balance()
+
+Note: __balance is the private attribute.
+
+getter/ setter 
+--------------
+access the private attributes 
+
+class Customer:
+    def __init__(self, id, name, age, wallet_balance):
+        self.id = id
+        self.name = name
+        self.age = age
+        self.__wallet_balance = wallet_balance
+    def set_wallet_balance(self, amount):
+        if amount < 1000 and amount>  0:
+            self.__wallet_balance = amount
+    def get_wallet_balance(self):
+        return self.__wallet_balance
+c1=Customer(100, "Gopal", 24, 1000)
+c1.set_wallet_balance(120)
+print(c1.get_wallet_balance())
+
+
+if you are trying to purchase a product --> discount 
+do we discount round the clock? -> no 
+
+do we have same discount all the time -> no 
+
+static methods 
+--------------
+
+
+class mobile:
+    def __init__(self, price, brand):
+        self.price = price
+        self.brand = brand
+        self.discount = 0
+    def purchase(self):
+        total = self.price - self.price * self.discount / 100
+        print("total", total)
+    def enable_discount(list):
+        for mobile in list:
+            mobile.discount = 20
+    def disable_discount(list):
+        for mobile in list:
+            mobile.discount = 0
+m1 = mobile(20000, 'oopo')
+m2 = mobile(15000, 'redmi')
+list = [m1,m2]
+m1.purchase()
+mobile.enable_discount(list)
+m1.purchase()
+mobile.disable_discount([m1])
+m2.purchase()
+mobile.disable_discount(list)
+m2.purchase()
+
+
+@static method
+
+class mobile:
+    __discount = 20
+    def __init__(self, price, brand):
+        self.price = price
+        self.brand = brand
+    def purchase(self):
+        total = self.price - self.price * mobile.__discount / 100
+        print("total", total)
+    @staticmethod
+    def get_discount():
+        return mobile.__discount
+    @staticmethod
+    def set_discount(discount):
+        mobile.__discount = discount
+    @staticmethod
+    def enable_discount():
+        mobile.set_discount(30)
+    @staticmethod
+    def disable_discount():
+        mobile.set_discount(0)
+print(mobile.get_discount())
+m1 = mobile(30000, "nokia")
+m2 = mobile(40000, "realme")
+mobile.enable_discount()
+m1.purchase()
+mobile.disable_discount()
+m1.purchase()
+m2.purchase()
+
+
+Relationoships
+--------------
+customer has an address
+
+class customer: 
+      (id, name, age, address)
+       self.
+	...
+	.....
+	.....
+class address:
+       door_no, street_no, city, pincode
+
+
+
+college has many departments 
+organization has many units 
+
+
+
+class customer:
+    def __init__(self, id, name, age, address):
+        self.id = id
+        self.name = name
+        self.age = age
+        self.address = address
+    def view_details(self):
+        print(self.id, self.name, self.age)
+        print(self.address.dno, self.address.street, self.address.city )
+class address:
+    def __init__(self, dno, street, city):
+        self.dno = dno
+        self.street = street
+        self.city = city
+a1 = address(1001, 'abcd', 'hyd')
+c1 = customer(1, 'sri', 35, a1)
+c1.view_details()
+
+a1 = address(102, 7, iaaa, 56666)
+c1 = customer(1010, annn, 20, a1)
+
+
+----------------------------------------------------------------------------------------------------------------------------
+Day 3 
+------
+Inheritance 
+------------
+acquires the properties of class to the another.
+
+parent --> child 
+
+inherting the constructor 
+-------------------------------
+class phone:
+    def __init__(self, price, brand, color):
+        print("inside the constructor")
+        self.price = price
+        self.brand = brand
+        self.color = color
+    def purchase(self):
+        print("purchasing the mobile")
+class featurephone(phone):
+    pass
+class smartphone(phone):
+    pass
+s1 = featurephone(20000, "oppo", "black")
+s1.purchase()
+
+Private attributes are not accessed by the child
+
+
+class phone:
+    def __init__(self, price, brand, color):
+        print("inside the constructor")
+        self.__price = price
+        self.brand = brand
+        self.color = color
+    def purchase(self):
+        print("purchasing the mobile")
+class featurephone(phone):
+    pass
+class smartphone(phone):
+    def know(self):
+        print(self.brand)
+        print(self.__price)
+        print(self.color)
+s1 = smartphone(20000, "oppo", "black")
+s1.purchase()
+s1.know()
+
+
+
+Accessing private attributes(inherit) 
+---------------------------
+
+class phone:
+    def __init__(self, price, brand, color):
+        print("inside the constructor")
+        self.__price = price
+        self.brand = brand
+        self.color = color
+    def purchase(self):
+        print("purchasing the mobile")
+    def get_price(self):
+        return self.__price
+    def set_price(self, price):
+        self.__price = price
+        return self.__price
+class featurephone(phone):
+    pass
+class smartphone(phone):
+    def know(self):
+        print(self.brand)
+        print(self.color)
+        print(self.get_price())
+        print(self.set_price(10000))
+s1 = smartphone(20000, "oppo", "black")
+s1.purchase()
+s1.know()
+
+
+Metod overriding 
+---------------
+What happens if the method name in parent and child are same 
+
+Ex
+--
+class phone:
+    def __init__(self, price, brand, color):
+        print("inside the constructor")
+        self.__price = price
+        self.brand = brand
+        self.color = color
+    def purchase(self):
+        print("purchasing the mobile")
+class featurephone(phone):
+    pass
+class smartphone(phone):
+    def purchase(self):
+        print("purchasing the smart phone")
+s1 = smartphone(20000, "oppo", "black")
+s1.purchase()
+
+super() ->invoke parent method 
+------
+class phone:
+    def __init__(self, price, brand, color):
+        print("inside the constructor")
+        self.__price = price
+        self.brand = brand
+        self.color = color
+    def purchase(self):
+        print("purchasing the mobile")
+class featurephone(phone):
+    pass
+class smartphone(phone):
+    def __init__(self):
+        print("from child class")
+    def purchase(self):
+        print("purchasing the smart phone")
+        super().purchase()
+s1 = smartphone()
+s1.purchase()
+
+Ex
+---
+class phone:
+    def __init__(self, price, brand, color):
+        print("inside the constructor")
+        self.__price = price
+        self.brand = brand
+        self.color = color
+    def purchase(self):
+        print("purchasing the mobile")
+class featurephone(phone):
+    pass
+class smartphone(phone):
+    def __init__(self):
+        print("from child class")
+    def purchase(self):
+        print("purchasing the smart phone")
+s1 = smartphone()
+s1.purchase()
+
+Types of inheritance 
+---------------------
+Single inheritance 
+
+class parent:
+      pass
+class child(parent):
+      pass
+
+
+Ex
+--
+class father:
+     def money(self):
+          pass
+class child(father):
+      pass
+
+Ex
+---
+class phone:
+    def __init__(self, price, color, brand):
+        self.price = price
+        self.color = color
+        self.brand = brand
+        print("inside the constructor")
+    def purchase(self):
+        print("im purchasing mobile")
+class smartphone(phone):
+    pass
+smartphone(15000, 'black', 'apple').purchase()
+
+multiple inheritance
+
+Ex
+---
+
+Syntax
+------
+class parent1:
+      pass
+class parent2:
+      pass
+class child(parent1, parent2):
+      pass
+
+
+Ex
+--
+class product:
+      pass
+class mobile:
+      pass
+class tv(product, mobile):
+      pass
+
+
+Ex
+---
+
+class phone:
+    def __init__(self, price, color, brand):
+        self.price = price
+        self.color = color
+        self.brand = brand
+        print("inside the phone class")
+    def purchase(self):
+        print("im purchasing mobile from phone")
+class product:
+    def purchase(self):
+        print("purchasing a mobile from product class")
+class smartphone(phone, product):
+    pass
+s1 = smartphone(15000, 'black', 'apple')
+s1.purchase()
+
+
+Note: from the above code both the parents has the same methods so when we call child class the method from the first parent will be invoked.
+
+To avoid the above conflict call the class using outbound invocation
+
+class phone:
+    def __init__(self, price, color, brand):
+        self.price = price
+        self.color = color
+        self.brand = brand
+        print("inside the phone class")
+    def purchase(self):
+        print("im purchasing mobile from phone")
+class product:
+    def purchase(self):
+        print("purchasing a mobile from product class")
+class smartphone(phone, product):
+    pass
+s1 = smartphone(15000, 'black', 'apple')
+product.purchase(s1) 
+
+Ex
+---
+with different method names.
+
+class phone:
+    def __init__(self, price, color, brand):
+        self.price = price
+        self.color = color
+        self.brand = brand
+        print("inside the phone class")
+    def purchase(self):
+        print("im purchasing mobile from phone")
+class product:
+    def buy(self):
+        print("purchasing a mobile from product class")
+class smartphone(phone, product):
+    pass
+s1 = smartphone(15000, 'black', 'apple')
+s1.purchase()
+s1.buy()
+
+
+multilevel inheritance 
+----------------------
+syntax
+-------
+class base1:
+      pass
+class base2(base1):
+      pass
+class base3(base2)
+      pass
+
+
+class product:
+    def __init__(self, price, color, brand):
+        self.price = price
+        self.color = color
+        self.brand = brand
+        print("inside the constructor")
+    def purchase(self):
+        print("im purchasing mobile")
+class mobile(product):
+    print("hai from mobile")
+class smartphone(mobile):
+    print("hai from smartphone")
+mobile(12000, 'grey', 'oppo').purchase()
+smartphone(15000, 'black', 'apple').purchase()
+
+
+heirarichal inheritance 
+------------------------
+parent --> multiple child 
+
+
+
+class parent:
+     pass
+class child1(parent)
+     pass 
+class child2(parent)
+     pass
+
+
+different attributes with classes 
+----------------------------------
+class phone:
+    def __init__(self, price, brand):
+        self.price = price
+        self.brand = brand
+        print("inside the constructor")
+        print(self.price, self.brand)
+    def purchase(self):
+        print("im purchasing mobile")
+class normalphone(phone):
+    def __init__(self, color):
+        self.color = color
+        print(self.color)
+    def buy(self):
+        print("buy")
+class mobile(phone):
+    def buy(self):
+        print("buy smart phone")
+normalphone('grey').buy()
+mobile(15000,'apple').buy()
+
+
+Special methods
+---------------
+add method --> used only on object
+
+Ex
+--
+class product:
+    def __init__(self, price, brand):
+        self.price = price
+        self.brand = brand
+    def __add__(self, other): #self -> p1, other -> p2
+        return self.brand + other.brand
+p1 = product(40000, "apple")
+p2 = product(50000, "oppo")
+print(p1+ p2)
+
+Note : it will concat the string 
+
+
+Ex
+--
+class product:
+    def __init__(self, price, brand):
+        self.price = price
+        self.brand = brand
+    def __add__(self, other): #self -> p1, other -> p2
+        return self.price + other.price
+p1 = product(40000, "apple")
+p2 = product(50000, "oppo")
+print(p1+ p2)
+
+
+str method --> return string data
+
+class product:
+    def __init__(self, price, brand):
+        self.price = price
+        self.brand = brand
+    def __str__(self):
+        return "the brand is" +self.brand+ ' ' +"and price is" +str(self.price)
+p1 = product(40000, "apple")
+print(p1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Advanced Python Concepts
+------------------------
+Day 1
+------
+Python was designed by Guido von rossum in the year 1991.
+Python is an interpreter language.
+
+Features of python
+-------------------
+-> open source programming language 
+-> easy to learn 
+-> dynamically typed 
+ int a;
+ a = 20.56; --> not accepted 
+
+ a = 24.90  -> float
+ a = 56 -> int
+ a = 'python' -> string 
+
+-> platform independent 
+-> supports oops 
+-> supports database connectivity 
+-> extensibility 
+
+
+
+Shopping cart 
+--------------
+Ex 1 
+----
+purchase a mobile -> discount 
+
+if brand == "samsung"
+discount = 10%
+else 
+dicount = 30%
+
+
+we use functions to implement the logic 
+
+def mobile():
+    brand = input("enter a brand")
+    if brand == "samsung":
+        price = 15000
+        final_price = price - (price * 0.1)
+    else: 
+         price = 20000
+         final_price = price - (price * 0.3)
+    return final_price
+print(mobile())
+
+
+Ex 2
+-----
+if we need to deal multiple brands
+
+def mobile():
+     brand = input("enter brand")
+     if brand == "samsung":
+     price = 15000
+        final_price = price - (price * 0.1)
+     elif brand == "apple":
+         pass 
+     elif brand == "vivo"
+         pass
+     elif brand == "redmi"
+         pass
+     else:
+         price = 20000
+         final_price = price - (price * 0.3)
+    return final_price
+print(mobile()) 
+
+
+
+Ex 3 
+----
+if we need to deal with multiple product 
+
+if the brand = apple -> 10%
+else -> 5%
+if bag -> 3%
+
+def purchase_product(product_type, price, mobile_brand = None):
+    if product_type == "mobile":
+        if mobile_brand == "apple":
+            discount = 10
+        else:
+            discount = 5
+        total_price = price - (price * discount)/100
+    else:
+        discount = 3
+        total_price = price - (price * discount)/ 100
+    print("total price of" +product_type+ "is" +str(total_price))
+purchase_product("mobile", 20000, "apple")
+purchase_product("mobile", 30000, "vivo")
+purchase_product("bag", 400, None)
+
+
+Note : as the no of requirements are increasing the lines of the codes gets complex and might fail at some point.
+
+create template --> multiple copy 
+
+class --> objects
+structure any scenario.
+
+syntax --> class
+-------
+class classname:
+     pass
+
+syntax --> object
+------
+objectname = classname()
+
+What does class contain?
+
+properties/attributes and operation/behavior
+
+Mobile class --> brand, price, color, features, ram, ..................
+
+
+class mobile:
+     pass
+m1 = mobile() --> m1 is obj
+m2 = mobile() --> m2 is obj
+m1.brand = "apple"
+m1.price = 34000
+m1.color = "blue"
+m2.brand = "vivo"
+m2.price = 45000
+m2.color = "black"
+
+Ex
+---
+class mobile:
+    pass
+m1 = mobile()
+m2 = mobile()
+m3 = mobile()
+m1.brand = "apple"
+m1.cost = 50000
+m2.brand = "vivo"
+m2.cost = 20000
+m3.brand = "redmi"
+m3.cost = 45000
+print("price of redmi", m3.cost)
+print("brand of obj m1", m1.brand)
+
+if we want print multiple obj/attributes
+
+10 objects 10 attributes = 100 lines 
+
+constructor
+-----------
+constructor is special method --> __init__()
+
+class mobile:
+    def __init__(self, brand, price, color):
+        self.brand = brand
+        self.price = price
+        self.color = color
+m1 = mobile("apple", 50000, "black")
+m2 = mobile("vivo", 20000, "grey")
+m3 = mobile("redmi", 15000, "blue")
+print("the details of mobile1 are", m1.brand, m1.price, m1.color)
+print("the details of mobile1 are", m2.brand, m2.price, m2.color)
+print("the details of mobile1 are", m3.brand, m3.price, m3.color)
+
+how to access the attributes 
+------------------------------
+class mobile:
+    def __init__(self, brand, price, color):
+        self.brand = brand
+        self.price = price
+        self.color = color
+    def purchase(self):
+        print("purchasing a mobile")
+        print("the mobile has ", self.brand, "with", self.price)
+m1 = mobile("apple", 50000, "black")
+m1.purchase()
+m2 = mobile("vivo", 20000, "grey")
+m2.purchase()
+m3 = mobile("redmi", 15000, "blue")
+m3.purchase()
+
+destructor
+----------
+when we want remove object we can use destructor 
+deallocate the memory 
+__del__
+
+class mobile:
+    def __init__(self, brand, color, price):
+        self.brand = brand
+        self.color = color
+        self.price = price
+    """def __del__(self):
+        print(" delete the object ")"""
+class abc: 
+      pass --> null statement
+m1 = mobile("samsung", "black", 45000)
+m2 = mobile("nokia", "grey", 34000)
+m3 = mobile("oppo", "white", 32500)
+#del m1
+m4 = abc()
+print("the mobile is", m1.brand, "with", m1.color)
+print("the mobile is", m2.brand, "with", m2.color, "and", m2.price)
+
+method invocation
+-----------------
+inbound invocation -->implicitly 
+outbound invocation --> explicitly (class reference)
+
+
+class mobile:
+    def __init__(self):
+        print("inside constructor")
+    def purchase(self):
+        print("purchasing a mobile")
+m1 = mobile()
+m1.purchase() #inbound
+mobile.purchase(m1) #outbound
+----------------------------------------------------------------------------------------------------------------------------Day 2 
+-----
+
+Encapsulation 
+--------------
+lock --> hidding the data 
+
+
+will not allow us to acccess the values outside of thre class
+attributes will be represented as private by using "__".
+
+Ex
+--
+update the balance of the person based on the amount
+class customer:
+    def __init__(self, cust_id, name, age, balance):
+        self.cust_id = cust_id
+        self.name = name
+        self.age = age
+        self.balance = balance
+    def update_balance(self, amount):
+        if amount < 1000 and amount > 0:
+            self.balance += amount
+    def show_balance(self):
+        print("the balance is", self.balance)
+c1 = customer(101, "sri", 30, 1000)
+c1.update_balance(500)
+c1.show_balance()
+
+
+
+Ex -> private attributes
+---
+class customer:
+    def __init__(self, cust_id, name, age, balance):
+        self.cust_id = cust_id
+        self.name = name
+        self.age = age
+        self.__balance = balance
+    def update_balance(self, amount):
+        if amount < 1000 and amount > 0:
+            self.__balance += amount
+    def show_balance(self):
+        print("the balance is", self.__balance)
+c1 = customer(101, "sri", 30, 1000)
+c1.update_balance(800)
+#c1.balance = 10000
+c1.show_balance()
+
+Note: __balance is the private attribute.
+
+getter/ setter 
+--------------
+access the private attributes 
+
+class Customer:
+    def __init__(self, id, name, age, wallet_balance):
+        self.id = id
+        self.name = name
+        self.age = age
+        self.__wallet_balance = wallet_balance
+    def set_wallet_balance(self, amount):
+        if amount < 1000 and amount>  0:
+            self.__wallet_balance = amount
+    def get_wallet_balance(self):
+        return self.__wallet_balance
+c1=Customer(100, "Gopal", 24, 1000)
+c1.set_wallet_balance(120)
+print(c1.get_wallet_balance())
+
+
+if you are trying to purchase a product --> discount 
+do we discount round the clock? -> no 
+
+do we have same discount all the time -> no 
+
+static methods 
+--------------
+
+
+class mobile:
+    def __init__(self, price, brand):
+        self.price = price
+        self.brand = brand
+        self.discount = 0
+    def purchase(self):
+        total = self.price - self.price * self.discount / 100
+        print("total", total)
+    def enable_discount(list):
+        for mobile in list:
+            mobile.discount = 20
+    def disable_discount(list):
+        for mobile in list:
+            mobile.discount = 0
+m1 = mobile(20000, 'oopo')
+m2 = mobile(15000, 'redmi')
+list = [m1,m2]
+m1.purchase()
+mobile.enable_discount(list)
+m1.purchase()
+mobile.disable_discount([m1])
+m2.purchase()
+mobile.disable_discount(list)
+m2.purchase()
+
+
+@static method
+
+class mobile:
+    __discount = 20
+    def __init__(self, price, brand):
+        self.price = price
+        self.brand = brand
+    def purchase(self):
+        total = self.price - self.price * mobile.__discount / 100
+        print("total", total)
+    @staticmethod
+    def get_discount():
+        return mobile.__discount
+    @staticmethod
+    def set_discount(discount):
+        mobile.__discount = discount
+    @staticmethod
+    def enable_discount():
+        mobile.set_discount(30)
+    @staticmethod
+    def disable_discount():
+        mobile.set_discount(0)
+print(mobile.get_discount())
+m1 = mobile(30000, "nokia")
+m2 = mobile(40000, "realme")
+mobile.enable_discount()
+m1.purchase()
+mobile.disable_discount()
+m1.purchase()
+m2.purchase()
+
+
+Relationoships
+--------------
+customer has an address
+
+class customer: 
+      (id, name, age, address)
+       self.
+	...
+	.....
+	.....
+class address:
+       door_no, street_no, city, pincode
+
+
+
+college has many departments 
+organization has many units 
+
+
+
+class customer:
+    def __init__(self, id, name, age, address):
+        self.id = id
+        self.name = name
+        self.age = age
+        self.address = address
+    def view_details(self):
+        print(self.id, self.name, self.age)
+        print(self.address.dno, self.address.street, self.address.city )
+class address:
+    def __init__(self, dno, street, city):
+        self.dno = dno
+        self.street = street
+        self.city = city
+a1 = address(1001, 'abcd', 'hyd')
+c1 = customer(1, 'sri', 35, a1)
+c1.view_details()
+
+a1 = address(102, 7, iaaa, 56666)
+c1 = customer(1010, annn, 20, a1)
+
+
+----------------------------------------------------------------------------------------------------------------------------
+Day 3 
+------
+Inheritance 
+------------
+acquires the properties of class to the another.
+
+parent --> child 
+
+inherting the constructor 
+-------------------------------
+class phone:
+    def __init__(self, price, brand, color):
+        print("inside the constructor")
+        self.price = price
+        self.brand = brand
+        self.color = color
+    def purchase(self):
+        print("purchasing the mobile")
+class featurephone(phone):
+    pass
+class smartphone(phone):
+    pass
+s1 = featurephone(20000, "oppo", "black")
+s1.purchase()
+
+Private attributes are not accessed by the child
+
+
+class phone:
+    def __init__(self, price, brand, color):
+        print("inside the constructor")
+        self.__price = price
+        self.brand = brand
+        self.color = color
+    def purchase(self):
+        print("purchasing the mobile")
+class featurephone(phone):
+    pass
+class smartphone(phone):
+    def know(self):
+        print(self.brand)
+        print(self.__price)
+        print(self.color)
+s1 = smartphone(20000, "oppo", "black")
+s1.purchase()
+s1.know()
+
+
+
+Accessing private attributes(inherit) 
+---------------------------
+
+class phone:
+    def __init__(self, price, brand, color):
+        print("inside the constructor")
+        self.__price = price
+        self.brand = brand
+        self.color = color
+    def purchase(self):
+        print("purchasing the mobile")
+    def get_price(self):
+        return self.__price
+    def set_price(self, price):
+        self.__price = price
+        return self.__price
+class featurephone(phone):
+    pass
+class smartphone(phone):
+    def know(self):
+        print(self.brand)
+        print(self.color)
+        print(self.get_price())
+        print(self.set_price(10000))
+s1 = smartphone(20000, "oppo", "black")
+s1.purchase()
+s1.know()
+
+
+Metod overriding 
+---------------
+What happens if the method name in parent and child are same 
+
+Ex
+--
+class phone:
+    def __init__(self, price, brand, color):
+        print("inside the constructor")
+        self.__price = price
+        self.brand = brand
+        self.color = color
+    def purchase(self):
+        print("purchasing the mobile")
+class featurephone(phone):
+    pass
+class smartphone(phone):
+    def purchase(self):
+        print("purchasing the smart phone")
+s1 = smartphone(20000, "oppo", "black")
+s1.purchase()
+
+super() ->invoke parent method 
+------
+class phone:
+    def __init__(self, price, brand, color):
+        print("inside the constructor")
+        self.__price = price
+        self.brand = brand
+        self.color = color
+    def purchase(self):
+        print("purchasing the mobile")
+class featurephone(phone):
+    pass
+class smartphone(phone):
+    def __init__(self):
+        print("from child class")
+    def purchase(self):
+        print("purchasing the smart phone")
+        super().purchase()
+s1 = smartphone()
+s1.purchase()
+
+Ex
+---
+class phone:
+    def __init__(self, price, brand, color):
+        print("inside the constructor")
+        self.__price = price
+        self.brand = brand
+        self.color = color
+    def purchase(self):
+        print("purchasing the mobile")
+class featurephone(phone):
+    pass
+class smartphone(phone):
+    def __init__(self):
+        print("from child class")
+    def purchase(self):
+        print("purchasing the smart phone")
+s1 = smartphone()
+s1.purchase()
+
+Types of inheritance 
+---------------------
+Single inheritance 
+
+class parent:
+      pass
+class child(parent):
+      pass
+
+
+Ex
+--
+class father:
+     def money(self):
+          pass
+class child(father):
+      pass
+
+Ex
+---
+class phone:
+    def __init__(self, price, color, brand):
+        self.price = price
+        self.color = color
+        self.brand = brand
+        print("inside the constructor")
+    def purchase(self):
+        print("im purchasing mobile")
+class smartphone(phone):
+    pass
+smartphone(15000, 'black', 'apple').purchase()
+
+multiple inheritance
+
+Ex
+---
+
+Syntax
+------
+class parent1:
+      pass
+class parent2:
+      pass
+class child(parent1, parent2):
+      pass
+
+
+Ex
+--
+class product:
+      pass
+class mobile:
+      pass
+class tv(product, mobile):
+      pass
+
+
+Ex
+---
+
+class phone:
+    def __init__(self, price, color, brand):
+        self.price = price
+        self.color = color
+        self.brand = brand
+        print("inside the phone class")
+    def purchase(self):
+        print("im purchasing mobile from phone")
+class product:
+    def purchase(self):
+        print("purchasing a mobile from product class")
+class smartphone(phone, product):
+    pass
+s1 = smartphone(15000, 'black', 'apple')
+s1.purchase()
+
+
+Note: from the above code both the parents has the same methods so when we call child class the method from the first parent will be invoked.
+
+To avoid the above conflict call the class using outbound invocation
+
+class phone:
+    def __init__(self, price, color, brand):
+        self.price = price
+        self.color = color
+        self.brand = brand
+        print("inside the phone class")
+    def purchase(self):
+        print("im purchasing mobile from phone")
+class product:
+    def purchase(self):
+        print("purchasing a mobile from product class")
+class smartphone(phone, product):
+    pass
+s1 = smartphone(15000, 'black', 'apple')
+product.purchase(s1) 
+
+Ex
+---
+with different method names.
+
+class phone:
+    def __init__(self, price, color, brand):
+        self.price = price
+        self.color = color
+        self.brand = brand
+        print("inside the phone class")
+    def purchase(self):
+        print("im purchasing mobile from phone")
+class product:
+    def buy(self):
+        print("purchasing a mobile from product class")
+class smartphone(phone, product):
+    pass
+s1 = smartphone(15000, 'black', 'apple')
+s1.purchase()
+s1.buy()
+
+
+multilevel inheritance 
+----------------------
+syntax
+-------
+class base1:
+      pass
+class base2(base1):
+      pass
+class base3(base2)
+      pass
+
+
+class product:
+    def __init__(self, price, color, brand):
+        self.price = price
+        self.color = color
+        self.brand = brand
+        print("inside the constructor")
+    def purchase(self):
+        print("im purchasing mobile")
+class mobile(product):
+    print("hai from mobile")
+class smartphone(mobile):
+    print("hai from smartphone")
+mobile(12000, 'grey', 'oppo').purchase()
+smartphone(15000, 'black', 'apple').purchase()
+
+
+heirarichal inheritance 
+------------------------
+parent --> multiple child 
+
+
+
+class parent:
+     pass
+class child1(parent)
+     pass 
+class child2(parent)
+     pass
+
+
+different attributes with classes 
+----------------------------------
+class phone:
+    def __init__(self, price, brand):
+        self.price = price
+        self.brand = brand
+        print("inside the constructor")
+        print(self.price, self.brand)
+    def purchase(self):
+        print("im purchasing mobile")
+class normalphone(phone):
+    def __init__(self, color):
+        self.color = color
+        print(self.color)
+    def buy(self):
+        print("buy")
+class mobile(phone):
+    def buy(self):
+        print("buy smart phone")
+normalphone('grey').buy()
+mobile(15000,'apple').buy()
+
+
+Special methods
+---------------
+add method --> used only on object
+
+Ex
+--
+class product:
+    def __init__(self, price, brand):
+        self.price = price
+        self.brand = brand
+    def __add__(self, other): #self -> p1, other -> p2
+        return self.brand + other.brand
+p1 = product(40000, "apple")
+p2 = product(50000, "oppo")
+print(p1+ p2)
+
+Note : it will concat the string 
+
+
+Ex
+--
+class product:
+    def __init__(self, price, brand):
+        self.price = price
+        self.brand = brand
+    def __add__(self, other): #self -> p1, other -> p2
+        return self.price + other.price
+p1 = product(40000, "apple")
+p2 = product(50000, "oppo")
+print(p1+ p2)
+
+
+str method --> return string data
+
+class product:
+    def __init__(self, price, brand):
+        self.price = price
+        self.brand = brand
+    def __str__(self):
+        return "the brand is" +self.brand+ ' ' +"and price is" +str(self.price)
+p1 = product(40000, "apple")
+print(p1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
